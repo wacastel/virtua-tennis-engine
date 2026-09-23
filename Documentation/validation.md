@@ -43,6 +43,12 @@ without a native fault. It also recorded four audio underruns and one timing
 recovery, so the playback limitation is present in the visible app too. One
 DualSense was detected; its physical buttons and sticks were not actuated.
 
+A [follow-up audio investigation](audio-hitch-investigation.md) measured the
+producer delays and tested two recovery changes using tagged PCM. Both changes
+were rejected after regressions in the controlled burst cases. The delivered
+app and runtime sources remain unchanged, and the original playback limitation
+and acceptance results above still apply.
+
 ## Evidence
 
 - [CPU and build acceptance](cpu-acceptance.json)
@@ -54,6 +60,7 @@ DualSense was detected; its physical buttons and sticks were not actuated.
 - [Live performance](native-performance.json)
 - [Visible window and controller detection](gui-environment-limit.json)
 - [Earlier performance investigation](playback-investigation.json)
+- [Follow-up audio investigation](audio-hitch-investigation.json)
 
 These tests do not establish whole-tournament coverage, every character or
 unvisited gameplay path, equivalence to a physical arcade board, physical

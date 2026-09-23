@@ -1,0 +1,906 @@
+{
+  "analyzerSHA256": "1c59375b3875650c010abf4b07c3ae0d161c403d07efbd18567af2ca2a26f442",
+  "comparisonsAreSingleTrials": true,
+  "decision": {
+    "candidatesPromoted": [],
+    "productionChanged": false,
+    "reason": "Always-immediate doubles short gap groups in both measured slow bursts. Isolated-only worsens continued-burst total/max/group count and triggers backlog loss of11255 source frames. Neither meets the required gates. Retain the delivered audio policy.",
+    "rejectedCandidates": [
+      "always-immediate",
+      "isolated-one-second"
+    ]
+  },
+  "independentPCMAudit": {
+    "allNineTrialsPassedEvidenceChecks": true,
+    "candidateDecisionsUnchanged": true,
+    "decodedSources": "Hash-verified submitted s16le and captured f32le PCM; exact source IDs/zero transitions independently decoded, then compared against every report scalar and transition entry. Copied AudioOutput and a pinned harness source are mandatory.",
+    "noNewDeviceRuns": true
+  },
+  "limits": [
+    "Tap observes generated PCM before the muted mixer, not actual speaker output.",
+    "An individual favorable trial is not phase-repeat qualification; all gates are necessary, not sufficient.",
+    "Initial and final intentional silence is excluded; complete first-to-last source IDs are required.",
+    "Recorded burst slices use synthetic warmup and do not reproduce original game/queue state or host flush.",
+    "Report/harness/source/input/output identities are pinned. No game engine or production changes."
+  ],
+  "productionAudioSourceSHA256": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+  "recipes": [
+    {
+      "recipe": "single-miss",
+      "recipePath": "build/audio-hitch-investigation/tagged-recipes/single-miss.json",
+      "recipeSHA256": "06acd7f9feeeed6244cd1bd64fed6cd01a936eedc3628b4aa0cc7a9d9103792b",
+      "trials": [
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 189630,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 161621,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 28008
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [],
+          "executableSHA256": "abebf5b6bdff9c14970f80645138ba74888e50f6c5f9325b9608983a2aa68edc",
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 1
+          },
+          "inputPCM_SHA256": "8b73c8f2591b8512d6a4882217ff6c9933e743c39452c59049b03109aafd54eb",
+          "interiorZeroFrames": [
+            3762
+          ],
+          "interiorZeroGroups": 1,
+          "interiorZeroMaximumMilliseconds": 85.3061224489796,
+          "interiorZeroTotalMilliseconds": 85.3061224489796,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "original",
+          "lastTag": 161621,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-control/manifest.json",
+          "manifestSHA256": "069b058bd7005e49e765bfa9f7fd94f7444bdb8e7126f856b41b39eda88770bc",
+          "minPendingAtEnqueueFrames": -465,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 3957,
+          "producerEventsSHA256": "ac7b833f8cc7f14809fef5be2a922104f4271ccb01c4cd627cbf1a2478b50542",
+          "producerLatenessMilliseconds": {
+            "max": 3.743291666978621,
+            "mean": 2.8222663619405495,
+            "p95": 3.3578333332116017
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-control/single-miss/report.json",
+          "reportSHA256": "1099ee1cc1925b6f3064b5e98b704d4c178552a2f447a03ab1e7c089c6c223d0",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 161622,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "38c3a3417e604413f18a7c8a0f8cd66330216da8656508ce37d8c4d91fe06038",
+          "tapTransitionsSHA256": "30159abb0b0bfbeae09a35c18feccd5c72f8eecc43f815aca997cafb5e226150"
+        },
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "ed3852970219656e808f22f377ac50c14658b2c996047226c553d669c94d31df",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 189630,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 161621,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 28008
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [
+            {
+              "after": "        var immediateUnderrunResume = false\n        if let rendered = renderedFramesLocked() {\n",
+              "before": "        if let rendered = renderedFramesLocked() {\n"
+            },
+            {
+              "after": "            if pending < 0 { flushLocked(reason: \"underrun\"); immediateUnderrunResume = true }\n",
+              "before": "            if pending < 0 { flushLocked(reason: \"underrun\") }\n"
+            },
+            {
+              "after": "        if !started && (immediateUnderrunResume || scheduledFrames >= prebufferFrames) {\n",
+              "before": "        if !started && scheduledFrames >= prebufferFrames {\n"
+            }
+          ],
+          "executableSHA256": "2b7a2ccd9431a566921881c0f1e3d16e87c3477c37d8e06523a260444a468f84",
+          "failedGates": [],
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 1
+          },
+          "gatesAgainstControl": {
+            "completeExactSourceTags": true,
+            "noAdditionalBacklogFlushes": true,
+            "noAdditionalGapGroups": true,
+            "noGreaterMaximumInteriorSilence": true,
+            "noGreaterTotalInteriorSilence": true
+          },
+          "inputPCM_SHA256": "8b73c8f2591b8512d6a4882217ff6c9933e743c39452c59049b03109aafd54eb",
+          "interiorZeroFrames": [
+            2349
+          ],
+          "interiorZeroGroups": 1,
+          "interiorZeroMaximumMilliseconds": 53.26530612244898,
+          "interiorZeroTotalMilliseconds": 53.26530612244898,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "always-immediate",
+          "lastTag": 161621,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-immediate/manifest.json",
+          "manifestSHA256": "cdca6884e4a21051ad2cdfb4afbf18cd970ef175d1175fa5e6f95b7dd3b3a979",
+          "minPendingAtEnqueueFrames": -936,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 3816,
+          "producerEventsSHA256": "0942daa949826efb1cc9bcab1b573cf4212ce4d67951064418b501e2c5c9f301",
+          "producerLatenessMilliseconds": {
+            "max": 4.13670833404467,
+            "mean": 2.8859722225293707,
+            "p95": 3.3268333336309297
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-immediate/single-miss/report.json",
+          "reportSHA256": "b270bc81f74f04c431f27deddaf6b91a85e41a8d6fb4ab868a084ad10b55b5eb",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 161622,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "2b75a44e67b64f31b991ae417d736d091d06082d234cfa04115d0b4ab99b2ba4",
+          "tapTransitionsSHA256": "04cfd50bd188bb76559d3d99c175933ae6efa12e44630a3ab167924678389065"
+        },
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "7a4374146f17ceada3b8ce667f161a6db8194b4001a2b70973436808ed8c5a20",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 189630,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 161621,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 28008
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [
+            {
+              "after": "        var immediateUnderrunResume = false\n        if let rendered = renderedFramesLocked() {\n",
+              "before": "        if let rendered = renderedFramesLocked() {\n"
+            },
+            {
+              "after": "            if pending < 0 {\n                let time = ProcessInfo.processInfo.systemUptime\n                immediateUnderrunResume = lastUnderrunTime.map { time - $0 >= 1 } ?? true\n                flushLocked(reason: \"underrun\")\n                lastUnderrunTime = time\n            }\n",
+              "before": "            if pending < 0 { flushLocked(reason: \"underrun\") }\n"
+            },
+            {
+              "after": "        if !started && (immediateUnderrunResume || scheduledFrames >= prebufferFrames) {\n",
+              "before": "        if !started && scheduledFrames >= prebufferFrames {\n"
+            },
+            {
+              "after": "    private var started = false\n    private var lastUnderrunTime: Double?\n",
+              "before": "    private var started = false\n"
+            },
+            {
+              "after": "    private func flushLocked(reason: String) {\n        if reason != \"underrun\" { lastUnderrunTime = nil }\n",
+              "before": "    private func flushLocked(reason: String) {\n"
+            }
+          ],
+          "executableSHA256": "7a1bfde40783b8106f1abecc066d9889ffb95f60d39db738cc7e668442211589",
+          "failedGates": [],
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 1
+          },
+          "gatesAgainstControl": {
+            "completeExactSourceTags": true,
+            "noAdditionalBacklogFlushes": true,
+            "noAdditionalGapGroups": true,
+            "noGreaterMaximumInteriorSilence": true,
+            "noGreaterTotalInteriorSilence": true
+          },
+          "inputPCM_SHA256": "8b73c8f2591b8512d6a4882217ff6c9933e743c39452c59049b03109aafd54eb",
+          "interiorZeroFrames": [
+            2349
+          ],
+          "interiorZeroGroups": 1,
+          "interiorZeroMaximumMilliseconds": 53.26530612244898,
+          "interiorZeroTotalMilliseconds": 53.26530612244898,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "isolated-one-second",
+          "lastTag": 161621,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-isolated/manifest.json",
+          "manifestSHA256": "5337cc981dadf4a8dcd2e0c008b023295cbdd2beb9ebf84b930df0b2bf379545",
+          "minPendingAtEnqueueFrames": -465,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 3957,
+          "producerEventsSHA256": "0d77967c9714d6b2a431c12dff68c6b0e650647e7638c8b10c205f46d3984d39",
+          "producerLatenessMilliseconds": {
+            "max": 4.079708334757015,
+            "mean": 2.897886416555747,
+            "p95": 3.3125833342637634
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-isolated/single-miss/report.json",
+          "reportSHA256": "5a69f1a4e7abb13cfebb66fd435f7e9808bfb8553ef53e840303093ed2e76576",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 161622,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "2b75a44e67b64f31b991ae417d736d091d06082d234cfa04115d0b4ab99b2ba4",
+          "tapTransitionsSHA256": "04cfd50bd188bb76559d3d99c175933ae6efa12e44630a3ab167924678389065"
+        }
+      ]
+    },
+    {
+      "recipe": "first-burst",
+      "recipePath": "build/audio-hitch-investigation/tagged-recipes/first-burst.json",
+      "recipeSHA256": "1acd58c537f69f695f62fbb1e03c385b568901716690835e4ee591b7c9fefc8f",
+      "trials": [
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 260190,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 222781,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 37408
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [],
+          "executableSHA256": "abebf5b6bdff9c14970f80645138ba74888e50f6c5f9325b9608983a2aa68edc",
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 5
+          },
+          "inputPCM_SHA256": "8f9deeb64dc63742721655a4ece0701dd6d062334004fd1c9df4c6502aa52570",
+          "interiorZeroFrames": [
+            3105,
+            3486,
+            3351,
+            3680,
+            3395
+          ],
+          "interiorZeroGroups": 5,
+          "interiorZeroMaximumMilliseconds": 83.44671201814059,
+          "interiorZeroTotalMilliseconds": 385.87301587301585,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "original",
+          "lastTag": 222781,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-control/manifest.json",
+          "manifestSHA256": "069b058bd7005e49e765bfa9f7fd94f7444bdb8e7126f856b41b39eda88770bc",
+          "minPendingAtEnqueueFrames": -383,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 6892,
+          "producerEventsSHA256": "077bd39ba3ee57423b925424aa292ffb5fd69a48c23762a3135b7e46a0748e94",
+          "producerLatenessMilliseconds": {
+            "max": 8.65637500101002,
+            "mean": 2.892550860848698,
+            "p95": 3.309708336018957
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-control/first-burst/report.json",
+          "reportSHA256": "9b98f386f232a0cec604b75c76925d9f27a1c8e8ecd7fc8584cfcc17a5c95feb",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 222782,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "53671a88e6076dec790476e7dfb3f38e62e244c630ff5b883f8cc576a83055d1",
+          "tapTransitionsSHA256": "60ea0eb7143861714cf04ba27fe27f184caf6acdf8d51692be2a7a52b342f0ac"
+        },
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "ed3852970219656e808f22f377ac50c14658b2c996047226c553d669c94d31df",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 260190,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 222781,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 37408
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [
+            {
+              "after": "        var immediateUnderrunResume = false\n        if let rendered = renderedFramesLocked() {\n",
+              "before": "        if let rendered = renderedFramesLocked() {\n"
+            },
+            {
+              "after": "            if pending < 0 { flushLocked(reason: \"underrun\"); immediateUnderrunResume = true }\n",
+              "before": "            if pending < 0 { flushLocked(reason: \"underrun\") }\n"
+            },
+            {
+              "after": "        if !started && (immediateUnderrunResume || scheduledFrames >= prebufferFrames) {\n",
+              "before": "        if !started && scheduledFrames >= prebufferFrames {\n"
+            }
+          ],
+          "executableSHA256": "2b7a2ccd9431a566921881c0f1e3d16e87c3477c37d8e06523a260444a468f84",
+          "failedGates": [
+            "noAdditionalGapGroups"
+          ],
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 10
+          },
+          "gatesAgainstControl": {
+            "completeExactSourceTags": true,
+            "noAdditionalBacklogFlushes": true,
+            "noAdditionalGapGroups": false,
+            "noGreaterMaximumInteriorSilence": true,
+            "noGreaterTotalInteriorSilence": true
+          },
+          "inputPCM_SHA256": "8f9deeb64dc63742721655a4ece0701dd6d062334004fd1c9df4c6502aa52570",
+          "interiorZeroFrames": [
+            1542,
+            1529,
+            1574,
+            1573,
+            2044,
+            1574,
+            1431,
+            1493,
+            1493,
+            1494
+          ],
+          "interiorZeroGroups": 10,
+          "interiorZeroMaximumMilliseconds": 46.34920634920635,
+          "interiorZeroTotalMilliseconds": 357.07482993197283,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "always-immediate",
+          "lastTag": 222781,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-immediate/manifest.json",
+          "manifestSHA256": "cdca6884e4a21051ad2cdfb4afbf18cd970ef175d1175fa5e6f95b7dd3b3a979",
+          "minPendingAtEnqueueFrames": -161,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 5953,
+          "producerEventsSHA256": "91fe84007e386933ab54ed5d03640a756208d44a07533e595c6176e127c5ea84",
+          "producerLatenessMilliseconds": {
+            "max": 4.208874999676482,
+            "mean": 2.8957503334569723,
+            "p95": 3.355708333401708
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-immediate/first-burst/report.json",
+          "reportSHA256": "993b07ad7ddaa65b452be310b197663a626113ef40e0dc5e1440fb2f6c30e70d",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 222782,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "efc850c5c01a86feca469f680dde20545f8eb0bea2375a689409c106ab308a08",
+          "tapTransitionsSHA256": "bff72c224c59b6926ed6a2ef2902eeea7bc5a3df462c90a1ebcdf8d81471d416"
+        },
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "7a4374146f17ceada3b8ce667f161a6db8194b4001a2b70973436808ed8c5a20",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 260190,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 222781,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 37408
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [
+            {
+              "after": "        var immediateUnderrunResume = false\n        if let rendered = renderedFramesLocked() {\n",
+              "before": "        if let rendered = renderedFramesLocked() {\n"
+            },
+            {
+              "after": "            if pending < 0 {\n                let time = ProcessInfo.processInfo.systemUptime\n                immediateUnderrunResume = lastUnderrunTime.map { time - $0 >= 1 } ?? true\n                flushLocked(reason: \"underrun\")\n                lastUnderrunTime = time\n            }\n",
+              "before": "            if pending < 0 { flushLocked(reason: \"underrun\") }\n"
+            },
+            {
+              "after": "        if !started && (immediateUnderrunResume || scheduledFrames >= prebufferFrames) {\n",
+              "before": "        if !started && scheduledFrames >= prebufferFrames {\n"
+            },
+            {
+              "after": "    private var started = false\n    private var lastUnderrunTime: Double?\n",
+              "before": "    private var started = false\n"
+            },
+            {
+              "after": "    private func flushLocked(reason: String) {\n        if reason != \"underrun\" { lastUnderrunTime = nil }\n",
+              "before": "    private func flushLocked(reason: String) {\n"
+            }
+          ],
+          "executableSHA256": "7a1bfde40783b8106f1abecc066d9889ffb95f60d39db738cc7e668442211589",
+          "failedGates": [
+            "noGreaterMaximumInteriorSilence"
+          ],
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 5
+          },
+          "gatesAgainstControl": {
+            "completeExactSourceTags": true,
+            "noAdditionalBacklogFlushes": true,
+            "noAdditionalGapGroups": true,
+            "noGreaterMaximumInteriorSilence": false,
+            "noGreaterTotalInteriorSilence": true
+          },
+          "inputPCM_SHA256": "8f9deeb64dc63742721655a4ece0701dd6d062334004fd1c9df4c6502aa52570",
+          "interiorZeroFrames": [
+            1542,
+            3413,
+            3352,
+            3413,
+            3804
+          ],
+          "interiorZeroGroups": 5,
+          "interiorZeroMaximumMilliseconds": 86.25850340136054,
+          "interiorZeroTotalMilliseconds": 352.01814058956916,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "isolated-one-second",
+          "lastTag": 222781,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-isolated/manifest.json",
+          "manifestSHA256": "5337cc981dadf4a8dcd2e0c008b023295cbdd2beb9ebf84b930df0b2bf379545",
+          "minPendingAtEnqueueFrames": -507,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 5745,
+          "producerEventsSHA256": "183a5d9ced55303a56b464917182b0473e4236dbc6287d02c33e7a342a6d5eae",
+          "producerLatenessMilliseconds": {
+            "max": 4.16741666776943,
+            "mean": 2.904299476339306,
+            "p95": 3.3249583357246593
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-isolated/first-burst/report.json",
+          "reportSHA256": "168b67254e3d1b000612cc36ba07eadc70586ccb3e3ffd9d521105f1b95eb779",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 222782,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "cdbb3b92c0f7f0e711531e2d3abd445708403e89457d2f2a294994f4b716d7ce",
+          "tapTransitionsSHA256": "0f7154fd229007bac7e5be87e4f7ed5016becddde7c73823b4c204632de7797f"
+        }
+      ]
+    },
+    {
+      "recipe": "continue-burst",
+      "recipePath": "build/audio-hitch-investigation/tagged-recipes/continue-burst.json",
+      "recipeSHA256": "6e96f71b2347a6430234c2388602628f86d6a5b3ee8b131a75fcf50041de45eb",
+      "trials": [
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 255780,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 230895,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 24884
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [],
+          "executableSHA256": "abebf5b6bdff9c14970f80645138ba74888e50f6c5f9325b9608983a2aa68edc",
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 3
+          },
+          "inputPCM_SHA256": "6dbd09401c9585fa992d11863c86821dc7f5d0aae045fb91e3bb7588a57e6190",
+          "interiorZeroFrames": [
+            3363,
+            3351,
+            3352
+          ],
+          "interiorZeroGroups": 3,
+          "interiorZeroMaximumMilliseconds": 76.25850340136054,
+          "interiorZeroTotalMilliseconds": 228.25396825396825,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "original",
+          "lastTag": 230895,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-control/manifest.json",
+          "manifestSHA256": "069b058bd7005e49e765bfa9f7fd94f7444bdb8e7126f856b41b39eda88770bc",
+          "minPendingAtEnqueueFrames": -66,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 11708,
+          "producerEventsSHA256": "0c33807534f2679fd1fdf4b3752f57c87cc719a34175590c2a30ff6b00e047fb",
+          "producerLatenessMilliseconds": {
+            "max": 4.291000001103384,
+            "mean": 2.904016803579323,
+            "p95": 3.353698982106579
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-control/continue-burst/report.json",
+          "reportSHA256": "262cf109a624242b8719e502f9d19c67b36c539b24735c3dfdec54b03a6c11cd",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 230896,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "ddca730bf92086d611217ba2411ee4c29806a0d50c88aee808f42572a35326dd",
+          "tapTransitionsSHA256": "9eb3d86717d2f58b0d0e8e9611c43ba78f4afecf20f95f1a07e94e528933d5b0"
+        },
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": true,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "ed3852970219656e808f22f377ac50c14658b2c996047226c553d669c94d31df",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": true,
+            "capturedStereoFrames": 255780,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 230895,
+            "missingFramesBetweenValidTags": 0,
+            "reverseTagFrames": 0,
+            "zeroFrames": 24884
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [
+            {
+              "after": "        var immediateUnderrunResume = false\n        if let rendered = renderedFramesLocked() {\n",
+              "before": "        if let rendered = renderedFramesLocked() {\n"
+            },
+            {
+              "after": "            if pending < 0 { flushLocked(reason: \"underrun\"); immediateUnderrunResume = true }\n",
+              "before": "            if pending < 0 { flushLocked(reason: \"underrun\") }\n"
+            },
+            {
+              "after": "        if !started && (immediateUnderrunResume || scheduledFrames >= prebufferFrames) {\n",
+              "before": "        if !started && scheduledFrames >= prebufferFrames {\n"
+            }
+          ],
+          "executableSHA256": "2b7a2ccd9431a566921881c0f1e3d16e87c3477c37d8e06523a260444a468f84",
+          "failedGates": [
+            "noAdditionalGapGroups"
+          ],
+          "firstTag": 0,
+          "flushCounts": {
+            "underrun": 6
+          },
+          "gatesAgainstControl": {
+            "completeExactSourceTags": true,
+            "noAdditionalBacklogFlushes": true,
+            "noAdditionalGapGroups": false,
+            "noGreaterMaximumInteriorSilence": true,
+            "noGreaterTotalInteriorSilence": true
+          },
+          "inputPCM_SHA256": "6dbd09401c9585fa992d11863c86821dc7f5d0aae045fb91e3bb7588a57e6190",
+          "interiorZeroFrames": [
+            1888,
+            1511,
+            1574,
+            1573,
+            1636,
+            1573
+          ],
+          "interiorZeroGroups": 6,
+          "interiorZeroMaximumMilliseconds": 42.811791383219955,
+          "interiorZeroTotalMilliseconds": 221.20181405895693,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "always-immediate",
+          "lastTag": 230895,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-immediate/manifest.json",
+          "manifestSHA256": "cdca6884e4a21051ad2cdfb4afbf18cd970ef175d1175fa5e6f95b7dd3b3a979",
+          "minPendingAtEnqueueFrames": -223,
+          "missingFramesBetweenTags": 0,
+          "peakPendingFrames": 11697,
+          "producerEventsSHA256": "d6b990eab4eb8a49c83b6769e44a700f02d5a92d79c9755683e97c6ba1ce4aa9",
+          "producerLatenessMilliseconds": {
+            "max": 3.518708334013354,
+            "mean": 2.889712140392962,
+            "p95": 3.2970416687021498
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-immediate/continue-burst/report.json",
+          "reportSHA256": "e101403546822f0ef80f891040026f33e0ea4d19dff0d51fbc52bb221ddf5095",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 230896,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "3380eaa6123ba32a58c885aa8302cf3747486cbc92a4d775f948c16307b3d514",
+          "tapTransitionsSHA256": "027a0183ffd634beea59f217eed4292ed677a656c6835fd8d52dd43a7f8ad6dc"
+        },
+        {
+          "PCMDecodedIndependently": true,
+          "allSubmittedTagsObservedExactlyOnceInOrder": false,
+          "captureOverflow": false,
+          "copiedSourceSHA256": {
+            "AudioOutput.swift": "7a4374146f17ceada3b8ce667f161a6db8194b4001a2b70973436808ed8c5a20",
+            "TaggedAudioBaseline.swift": "83f6782303cd4868a222cef9fb8fabb7976f70bbd7ac7af49c406aa78b8054b2"
+          },
+          "decodedTapScalars": {
+            "allSubmittedTagsObservedExactlyOnceInOrder": false,
+            "capturedStereoFrames": 255780,
+            "duplicateTagFrames": 0,
+            "firstTag": 0,
+            "invalidTagFrames": 0,
+            "lastTag": 230895,
+            "missingFramesBetweenValidTags": 11255,
+            "reverseTagFrames": 0,
+            "zeroFrames": 36139
+          },
+          "duplicateTagFrames": 0,
+          "engineLinked": false,
+          "exactInverseSourceChanges": [
+            {
+              "after": "        var immediateUnderrunResume = false\n        if let rendered = renderedFramesLocked() {\n",
+              "before": "        if let rendered = renderedFramesLocked() {\n"
+            },
+            {
+              "after": "            if pending < 0 {\n                let time = ProcessInfo.processInfo.systemUptime\n                immediateUnderrunResume = lastUnderrunTime.map { time - $0 >= 1 } ?? true\n                flushLocked(reason: \"underrun\")\n                lastUnderrunTime = time\n            }\n",
+              "before": "            if pending < 0 { flushLocked(reason: \"underrun\") }\n"
+            },
+            {
+              "after": "        if !started && (immediateUnderrunResume || scheduledFrames >= prebufferFrames) {\n",
+              "before": "        if !started && scheduledFrames >= prebufferFrames {\n"
+            },
+            {
+              "after": "    private var started = false\n    private var lastUnderrunTime: Double?\n",
+              "before": "    private var started = false\n"
+            },
+            {
+              "after": "    private func flushLocked(reason: String) {\n        if reason != \"underrun\" { lastUnderrunTime = nil }\n",
+              "before": "    private func flushLocked(reason: String) {\n"
+            }
+          ],
+          "executableSHA256": "7a1bfde40783b8106f1abecc066d9889ffb95f60d39db738cc7e668442211589",
+          "failedGates": [
+            "completeExactSourceTags",
+            "noAdditionalGapGroups",
+            "noGreaterMaximumInteriorSilence",
+            "noGreaterTotalInteriorSilence",
+            "noAdditionalBacklogFlushes"
+          ],
+          "firstTag": 0,
+          "flushCounts": {
+            "backlog": 1,
+            "underrun": 4
+          },
+          "gatesAgainstControl": {
+            "completeExactSourceTags": false,
+            "noAdditionalBacklogFlushes": false,
+            "noAdditionalGapGroups": false,
+            "noGreaterMaximumInteriorSilence": false,
+            "noGreaterTotalInteriorSilence": false
+          },
+          "inputPCM_SHA256": "6dbd09401c9585fa992d11863c86821dc7f5d0aae045fb91e3bb7588a57e6190",
+          "interiorZeroFrames": [
+            1417,
+            3457,
+            2881,
+            3475,
+            2826
+          ],
+          "interiorZeroGroups": 5,
+          "interiorZeroMaximumMilliseconds": 78.79818594104309,
+          "interiorZeroTotalMilliseconds": 318.73015873015873,
+          "invalidTagFrames": 0,
+          "inverseTransformVerified": true,
+          "label": "isolated-one-second",
+          "lastTag": 230895,
+          "manifest": "build/audio-hitch-investigation/tagged-recipe-isolated/manifest.json",
+          "manifestSHA256": "5337cc981dadf4a8dcd2e0c008b023295cbdd2beb9ebf84b930df0b2bf379545",
+          "minPendingAtEnqueueFrames": -178,
+          "missingFramesBetweenTags": 11255,
+          "peakPendingFrames": 11726,
+          "producerEventsSHA256": "bc9f4c3bad617810e61eeba21876c99fa84cb2373af014851c1d9bae2dcea646",
+          "producerLatenessMilliseconds": {
+            "max": 4.1442500023549655,
+            "mean": 2.867057129898327,
+            "p95": 3.2822083339851815
+          },
+          "report": "build/audio-hitch-investigation/tagged-recipe-isolated/continue-burst/report.json",
+          "reportSHA256": "bf7010095468c199f043626e10ed9c58698cec558c9d0fd1c3a9f4af6c084beb",
+          "reverseTagFrames": 0,
+          "submittedPCMSequenceIndependentlyVerified": true,
+          "submittedStereoFrames": 230896,
+          "tapMetadataMatchesDecodedPCM": true,
+          "tapPCM_SHA256": "6acedaa4f9f9a4235af462670657b1fd81d0843b1fa7f8a2e4b5217b62b690b9",
+          "tapTransitionsSHA256": "9225bb5c643d6cc086d18092736be93e98a878b16f5a3aab690d92c4c057f232"
+        }
+      ]
+    }
+  ],
+  "reusableLabTools": {
+    "Tools/ReferenceLab/TaggedAudio.md": "e2eac4837cb692190f339307411c46c6401d306343dee40ee8f0007c7039e2b7",
+    "Tools/ReferenceLab/TaggedAudioHarness.swift": "ff15fb2c860a3f08c41a176d886d52aac7965d49408bab19b6d8e8823027556a",
+    "Tools/ReferenceLab/analyze_tagged_audio.py": "1c59375b3875650c010abf4b07c3ae0d161c403d07efbd18567af2ca2a26f442",
+    "Tools/ReferenceLab/build_tagged_audio.py": "0ead405ecafcfc0d424cc98549c177208313ce72c92b35cfab55152c43c14b68",
+    "Tools/ReferenceLab/make_audio_recipes.py": "26fe50f67c533483d29aa08c3e117f93f3d9708e05ed00a17fa36d072ccc0346"
+  },
+  "schemaVersion": 1,
+  "specSHA256": "24dd737cf6eebd8854bd5fc44bf2ac095364d8e17a8b824ad5691783281f36ed",
+  "summary": [
+    {
+      "recipe": "single-miss",
+      "variants": [
+        {
+          "completeSourceIDs": true,
+          "failedGates": [],
+          "gapGroups": 1,
+          "label": "original",
+          "maxInteriorZeroMs": 85.3061224489796,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 85.3061224489796
+        },
+        {
+          "completeSourceIDs": true,
+          "failedGates": [],
+          "gapGroups": 1,
+          "label": "always-immediate",
+          "maxInteriorZeroMs": 53.26530612244898,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 53.26530612244898
+        },
+        {
+          "completeSourceIDs": true,
+          "failedGates": [],
+          "gapGroups": 1,
+          "label": "isolated-one-second",
+          "maxInteriorZeroMs": 53.26530612244898,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 53.26530612244898
+        }
+      ]
+    },
+    {
+      "recipe": "first-burst",
+      "variants": [
+        {
+          "completeSourceIDs": true,
+          "failedGates": [],
+          "gapGroups": 5,
+          "label": "original",
+          "maxInteriorZeroMs": 83.44671201814059,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 385.87301587301585
+        },
+        {
+          "completeSourceIDs": true,
+          "failedGates": [
+            "noAdditionalGapGroups"
+          ],
+          "gapGroups": 10,
+          "label": "always-immediate",
+          "maxInteriorZeroMs": 46.34920634920635,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 357.07482993197283
+        },
+        {
+          "completeSourceIDs": true,
+          "failedGates": [
+            "noGreaterMaximumInteriorSilence"
+          ],
+          "gapGroups": 5,
+          "label": "isolated-one-second",
+          "maxInteriorZeroMs": 86.25850340136054,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 352.01814058956916
+        }
+      ]
+    },
+    {
+      "recipe": "continue-burst",
+      "variants": [
+        {
+          "completeSourceIDs": true,
+          "failedGates": [],
+          "gapGroups": 3,
+          "label": "original",
+          "maxInteriorZeroMs": 76.25850340136054,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 228.25396825396825
+        },
+        {
+          "completeSourceIDs": true,
+          "failedGates": [
+            "noAdditionalGapGroups"
+          ],
+          "gapGroups": 6,
+          "label": "always-immediate",
+          "maxInteriorZeroMs": 42.811791383219955,
+          "missingFrames": 0,
+          "totalInteriorZeroMs": 221.20181405895693
+        },
+        {
+          "completeSourceIDs": false,
+          "failedGates": [
+            "completeExactSourceTags",
+            "noAdditionalGapGroups",
+            "noGreaterMaximumInteriorSilence",
+            "noGreaterTotalInteriorSilence",
+            "noAdditionalBacklogFlushes"
+          ],
+          "gapGroups": 5,
+          "label": "isolated-one-second",
+          "maxInteriorZeroMs": 78.79818594104309,
+          "missingFrames": 11255,
+          "totalInteriorZeroMs": 318.73015873015873
+        }
+      ]
+    }
+  ],
+  "toolValidation": {
+    "actualHistoricalTrials": "Original ignored laboratory builder compiled and ran all three policies. Retained Swift harness differs only in SPDX header/usage text; no new device runs after rejection.",
+    "analyzerSelfTests": {
+      "checks": 25,
+      "includes": [
+        "modified transition rejection",
+        "modified last-tag metadata rejection",
+        "truncated actual tail rejection",
+        "partial stereo-frame rejection",
+        "empty/missing AudioOutput/harness rejection",
+        "source identity mismatch rejection",
+        "duplicate/reverse/omitted tag reconstruction"
+      ],
+      "passed": true
+    },
+    "builderHelp": "passed",
+    "recipeGeneratorHelp": "passed",
+    "reusableBuilder": {
+      "compiled": true,
+      "evidence": "Documentation/audio-hitch-investigation.json: laboratoryToolBuild",
+      "playbackRun": false,
+      "scope": "Subsequent root verification compiled the reusable harness and reproduced all three recipe event arrays/durations; no further device playback."
+    }
+  }
+}

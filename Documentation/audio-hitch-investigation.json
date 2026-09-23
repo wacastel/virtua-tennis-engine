@@ -1,0 +1,270 @@
+{
+  "baseline": {
+    "durationSeconds": 240.06496654166403,
+    "eventCounts": {
+      "enqueueAfter": 13782,
+      "enqueueBefore": 13782,
+      "flush": 9,
+      "gameReturn": 13782,
+      "measurementEnd": 1,
+      "measurementStart": 1,
+      "nativeReturn": 13782,
+      "playerStart": 8
+    },
+    "integrityIssues": [],
+    "interpretationLimits": [
+      "Negative pending is sampled player timeline beyond submitted audio, not an independent Core Audio xrun measurement.",
+      "Backlog flush stops and unschedules queued PCM; its count is not starvation.",
+      "Flush-to-play delay measures producer re-prime time, not acoustic silence; downstream latency/render quantum are unobserved.",
+      "Host flush combines clock debt/discontinuity and lifecycle; this event stream cannot distinguish them.",
+      "Player render timestamps are sampled and quantized; no extrapolation to device-now or threshold relaxation is performed.",
+      "Grouped recovery counts are causal-inspection windows, not a count of audible hitches.",
+      "Tracing adds timestamp/append work. Reported native excess excludes frame upload and main-loop delay; it is not scene clock debt."
+    ],
+    "longEpochClockSlopes": [
+      {
+        "frames": [
+          2,
+          4173
+        ],
+        "renderedPerWallSecond": 1.0000017697300958,
+        "wallSeconds": 78.72608812500039
+      },
+      {
+        "frames": [
+          4210,
+          9346
+        ],
+        "renderedPerWallSecond": 1.0000038239028597,
+        "wallSeconds": 86.10989566666649
+      },
+      {
+        "frames": [
+          9447,
+          13782
+        ],
+        "renderedPerWallSecond": 1.0000021759221174,
+        "wallSeconds": 72.57658662500035
+      }
+    ],
+    "measuredRecoveryCounts": {
+      "backlog": 1,
+      "host": 1,
+      "underrun": 5
+    },
+    "nativeSlowRuns": [
+      {
+        "emulatedSeconds": 1.1539651199999952,
+        "firstFrame": 4139,
+        "lastFrame": 4207,
+        "nativeExcessSeconds": 0.25041550500107235,
+        "nativeSeconds": 1.4043806250010675,
+        "steps": 69,
+        "wallSeconds": 78.204285791664
+      },
+      {
+        "emulatedSeconds": 0.970000639999995,
+        "firstFrame": 9306,
+        "lastFrame": 9363,
+        "nativeExcessSeconds": 0.16711435999590663,
+        "nativeSeconds": 1.1371149999959016,
+        "steps": 58,
+        "wallSeconds": 165.01635220833123
+      }
+    ],
+    "nativeSteps": 13782,
+    "provenance": {
+      "analyzerSHA256": "2ddc50e853551ce3c192d6d775d6485bb6bd1da82a1cd7140f9e18a6c140b8fe",
+      "engineSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+      "executableSHA256": "68b4d5be3d61167af8bd0b6bef9c96d0e8cb31e849f871e6a41b6f1210c740f2",
+      "reportSHA256": "24794e2079b910f849e0d295697153ae2c6cc9afa25a00baa3648d8dcc94b32d",
+      "traceSHA256": "476d47f1f707c525aab3e7281e34fc91fe46bca3b1e53f21934419120d5dcf6f"
+    },
+    "recoveryEpisodes": [
+      {
+        "frame": 4173,
+        "lastQueueObservation": {
+          "ageSeconds": 2.0833249436691403e-07,
+          "frame": 4173,
+          "kind": "enqueueBefore",
+          "pendingSampleFrames": -14,
+          "scope": "Earlier sampled queue, not exact queue remaining at stop"
+        },
+        "reason": "underrun",
+        "sampledPendingFrames": -14,
+        "stopToPlaySeconds": 0.04850804166744638
+      },
+      {
+        "frame": 4190,
+        "lastQueueObservation": {
+          "ageSeconds": 2.0833249436691403e-07,
+          "frame": 4190,
+          "kind": "enqueueBefore",
+          "pendingSampleFrames": -162,
+          "scope": "Earlier sampled queue, not exact queue remaining at stop"
+        },
+        "reason": "underrun",
+        "sampledPendingFrames": -162,
+        "stopToPlaySeconds": 0.05307458333300019
+      },
+      {
+        "frame": 4194,
+        "lastQueueObservation": {
+          "ageSeconds": 1.1250012903474271e-06,
+          "frame": 4194,
+          "kind": "enqueueAfter",
+          "pendingSampleFrames": 2747,
+          "scope": "Earlier sampled queue, not exact queue remaining at stop"
+        },
+        "reason": "host",
+        "sampledPendingFrames": null,
+        "stopToPlaySeconds": 0.07417870833342022
+      },
+      {
+        "frame": 4207,
+        "lastQueueObservation": {
+          "ageSeconds": 1.6666672308929265e-07,
+          "frame": 4207,
+          "kind": "enqueueBefore",
+          "pendingSampleFrames": -87,
+          "scope": "Earlier sampled queue, not exact queue remaining at stop"
+        },
+        "reason": "underrun",
+        "sampledPendingFrames": -87,
+        "stopToPlaySeconds": 0.03569445833272766
+      },
+      {
+        "frame": 9346,
+        "lastQueueObservation": {
+          "ageSeconds": 4.1667590267024934e-08,
+          "frame": 9346,
+          "kind": "enqueueBefore",
+          "pendingSampleFrames": -115,
+          "scope": "Earlier sampled queue, not exact queue remaining at stop"
+        },
+        "reason": "underrun",
+        "sampledPendingFrames": -115,
+        "stopToPlaySeconds": 0.05180850000033388
+      },
+      {
+        "frame": 9363,
+        "lastQueueObservation": {
+          "ageSeconds": 1.6666672308929265e-07,
+          "frame": 9363,
+          "kind": "enqueueBefore",
+          "pendingSampleFrames": -163,
+          "scope": "Earlier sampled queue, not exact queue remaining at stop"
+        },
+        "reason": "underrun",
+        "sampledPendingFrames": -163,
+        "stopToPlaySeconds": 0.028895291667140555
+      },
+      {
+        "frame": 9444,
+        "lastQueueObservation": {
+          "ageSeconds": 1.6666672308929265e-07,
+          "frame": 9444,
+          "kind": "enqueueBefore",
+          "pendingSampleFrames": 11088,
+          "scope": "Earlier sampled queue, not exact queue remaining at stop"
+        },
+        "reason": "backlog",
+        "sampledPendingFrames": 11088,
+        "stopToPlaySeconds": 0.03589833333353454
+      }
+    ],
+    "renderSnapshotQuantization": {
+      "adjacentSampleDeltas": 13759,
+      "hypothesis": "512 output frames at48000Hz (470.4 source frames at44100Hz)",
+      "hypothesisSeconds": 0.010666666666666666,
+      "scope": "Observed compatibility only; this trace has no render callback size or node hostTime.",
+      "withinOneSourceFrameOfHypothesizedQuantumMultiple": 13759
+    },
+    "sampleAccounting": {
+      "emulatedSeconds": 239.74186655999998,
+      "measuredNonemptyBatches": 13782,
+      "measuredSubmittedBatchIdentityChecks": 13782,
+      "producedAudioSeconds": 239.74963718820862,
+      "producedStereoSampleFrames": 10572959,
+      "scope": "Measured generated/enqueued counts, rates and scheduled-frontier increments agree for one submission per nonempty batch. Stop removes remaining scheduled audio; actual rendered/dropped PCM cannot be recovered from timeline metadata alone. Summed deficits and stop-to-play durations are observations, not total acoustic silence.",
+      "sourceSampleRates": [
+        44100
+      ],
+      "submittedBatchIdentityChecks": 13782,
+      "sumSampledUnderrunDeficitFrames": 541,
+      "sumSampledUnderrunDeficitSeconds": 0.012267573696145125,
+      "sumUnderrunStopToPlaySeconds": 0.21798087500064867,
+      "underrunStopToPlaySeconds": {
+        "count": 5,
+        "max": 0.05307458333300019,
+        "median": 0.04850804166744638,
+        "min": 0.028895291667140555,
+        "p95": 0.05307458333300019,
+        "p99": 0.05307458333300019,
+        "sum": 0.21798087500064867
+      }
+    }
+  },
+  "baselineAudioOutputSHA256": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+  "decision": "Keep the delivered app and all runtime sources unchanged. Both recovery candidates failed promotion; existing strict smooth-playback failure remains.",
+  "hostRuntimeChanges": false,
+  "laboratoryToolBuild": {
+    "appModified": false,
+    "engineLinked": false,
+    "executableSHA256": "f9455519cbefb32dc07cc7d1dd5251c070141b093dc36989d2596e9d51328935",
+    "manifestSHA256": "c267d322d21ce74361ea112f49cc9d113baf907b461997490c0f77c1bdeeabfb",
+    "measuredSchedulesReproducedExactly": [
+      "single-miss",
+      "first-burst",
+      "continue-burst"
+    ],
+    "recipeGeneratorSHA256": "26fe50f67c533483d29aa08c3e117f93f3d9708e05ed00a17fa36d072ccc0346",
+    "reusableToolPlaybackRun": false,
+    "scope": "Reusable Swift harness compiled successfully; all three recipe event arrays/durations match the historical trials. No additional playback was required for these source-tool checks.",
+    "sourceSHA256": {
+      "audio": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+      "builder": "0ead405ecafcfc0d424cc98549c177208313ce72c92b35cfab55152c43c14b68",
+      "harness": "ff15fb2c860a3f08c41a176d886d52aac7965d49408bab19b6d8e8823027556a"
+    }
+  },
+  "limits": [
+    "Synthetic arrival recipes do not reproduce full native workload, queue history or host clock resets.",
+    "One phase trial per policy/recipe is sufficient to reject the observed regressions, not establish universal performance.",
+    "Unprofiled producer tracing still adds instrumentation overhead; sampled runs are separately identified and are not performance acceptance.",
+    "The specific brief event in the user session was not captured.",
+    "No remaining hitch is claimed fixed."
+  ],
+  "nativeChanges": false,
+  "preservedDelivery": {
+    "adHocDeepStrictSignatureVerified": true,
+    "artifacts": {
+      "build/Virtua Tennis.app/Contents/Frameworks/libvirtua_tennis.dylib": "a4f2a18647a5ded01910cba0004353a5afd11edb6380f66addda857092f9a420",
+      "build/Virtua Tennis.app/Contents/MacOS/VirtuaTennis": "2f27df53cd0a6c3114364a6cdac2f868d340987ae68afc9e5371276548ef8859",
+      "build/native/libvirtua_tennis.dylib": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+      "build/package/manifest.json": "659c3b1a7fe5a9d3940eff91b463562a9eb4976824f2bed1b00b06c1e70cf42f"
+    },
+    "baselineCommit": "5ef08f368c2e1a5553146258087c8588bfea2750",
+    "deliveredArtifactsUnchanged": true,
+    "runtimeSourceDiffEmpty": true,
+    "scope": "Existing delivered artifacts; no rebuild, new gameplay qualification or speaker audibility claim."
+  },
+  "relatedReports": [
+    "Documentation/audio-recovery-candidates.json",
+    "Documentation/audio-hitch-profiles.json"
+  ],
+  "schema": 1,
+  "scope": "Diagnostic producer tracing, separately sampled CPU stacks and generated player-node PCM tests. No speaker recording, physical controller test or new game acceptance.",
+  "smoothPlaybackAccepted": false,
+  "sourceAnalyzer": {
+    "checks": [
+      "event order",
+      "generated/enqueued/scheduled counts and rates",
+      "queue epoch accounting",
+      "exact recorded trace hash/count/time binding",
+      "truncation and adversarial corruption"
+    ],
+    "file": "Tools/ReferenceLab/analyze_audio_trace.py",
+    "selfTestPassed": true,
+    "sha256": "2ddc50e853551ce3c192d6d775d6485bb6bd1da82a1cd7140f9e18a6c140b8fe"
+  }
+}

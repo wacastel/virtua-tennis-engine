@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Portable findings from existing current-core stack samples and audio producer traces; source-only follow-up review.",
+  "productionEngineChanged": false,
+  "newRunOrInstrumentationImplementedByThisSummary": false,
+  "smoothPlaybackAccepted": false,
+  "identities": {
+    "engine": {
+      "path": "build/audio-hitch-investigation/trace-baseline/libvirtua_tennis.dylib",
+      "sha256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e"
+    },
+    "currentProductionEngine": {
+      "path": "build/native/libvirtua_tennis.dylib",
+      "sha256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e"
+    },
+    "sampleHarness": {
+      "path": "build/audio-hitch-investigation/trace-baseline/playback-harness",
+      "sha256": "68b4d5be3d61167af8bd0b6bef9c96d0e8cb31e849f871e6a41b6f1210c740f2"
+    },
+    "harnessManifest": {
+      "path": "build/audio-hitch-investigation/trace-baseline/manifest.json",
+      "sha256": "15df7ea3f617d47b140c9dfd6fb0c31f402fba83a97b5c454a2e088256ea8941"
+    },
+    "route": {
+      "path": "Configuration/replays/singles-continue.json",
+      "sha256": "fc61299552ac0bedc9eb14d0037e5590ab08806f9fbdc2b550135d6945c20396"
+    },
+    "fixedRTC": {
+      "unixSeconds": 946684800,
+      "shim": {
+        "path": "build/reference-lab/fixed-clock.dylib",
+        "sha256": "7684e76b24fed21469129fedb5e4324c31617e9d05189b31700bb494fa090e42"
+      }
+    },
+    "profileRecipe": {
+      "path": "build/audio-hitch-investigation/profile_current.py",
+      "sha256": "57ea68cbe60ff13e07b3f5fd7316513839c6d845d1b60890d8088f57bbf3023f"
+    },
+    "windowsRecipe": {
+      "path": "build/audio-hitch-investigation/profile-windows-current.json",
+      "sha256": "acc9f4a4bfc0eb8ca72078b3aa3cb0adc4783d60e6dc88a5518740eef67e078f"
+    },
+    "analysisRecipe": {
+      "path": "build/audio-hitch-investigation/analyze_profiles.py",
+      "sha256": "fc43621cedf65763f8be25cabb4e66e6ddd21101da9bb1107827a46550f3318e"
+    },
+    "profileRecord": {
+      "path": "build/audio-hitch-investigation/current-sampled-240/profile.json",
+      "sha256": "dbdace0e78575a08e7c5fb9acf4cd138a2ce5f7b429ddced35d4c2c65dd138e0"
+    },
+    "sampleAnalysis": {
+      "path": "build/audio-hitch-investigation/current-sampled-240/sample-analysis.json",
+      "sha256": "d26529a00741290cee3db123003129a4c73633d686963d5d47ffbcc14ecd1ba7"
+    },
+    "unprofiledTrace": {
+      "path": "build/audio-hitch-investigation/baseline-trace-240/audio-batches.jsonl",
+      "sha256": "476d47f1f707c525aab3e7281e34fc91fe46bca3b1e53f21934419120d5dcf6f"
+    },
+    "unprofiledReport": {
+      "path": "build/audio-hitch-investigation/baseline-trace-240/report.json",
+      "sha256": "24794e2079b910f849e0d295697153ae2c6cc9afa25a00baa3648d8dcc94b32d"
+    },
+    "sampledTrace": {
+      "path": "build/audio-hitch-investigation/current-sampled-240/playback/audio-batches.jsonl",
+      "sha256": "341c9d8ea450cf4ab9b83c45c28723e99de6a5f53203d006a21771607f8f8592"
+    },
+    "sampledReport": {
+      "path": "build/audio-hitch-investigation/current-sampled-240/playback/report.json",
+      "sha256": "9b2b2bc3fa45610bbd38c115e2abd08e7aa97db5a63f577b5dca4fdcc0c17c26"
+    },
+    "reviewedSources": [
+      {
+        "path": "build/generated/sh4/guarded_chain.cpp",
+        "sha256": "fb282a872c2734a02a34da49781e554ff081f853dec6407263f8032bf18b61fe"
+      },
+      {
+        "path": "build/generated/sh4/counter_loop.cpp",
+        "sha256": "6ddd6281f8bd18ec1feebf483e707088560fea4b12c8dac593bee85c06ff1b9f"
+      },
+      {
+        "path": "build/generated/sh4/overlay/core/hw/sh4/sh4_cycles.h",
+        "sha256": "57bb205dee6cd6f900c29d32544e13acdb3c36436d5e39449374b4c8b87f84bb"
+      },
+      {
+        "path": "build/clock-source/flycast/core/network/ggpo.cpp",
+        "sha256": "0c5b092b7c005a8dfbcd15c9cc3835e90242f31940c46a6f819f2ff8c9644987"
+      },
+      {
+        "path": "build/clock-source/flycast/core/build.h",
+        "sha256": "dcc6ea42fa1ac9bb62269f076fc9223bf28f503a888c1099801e51db3c386811"
+      }
+    ]
+  },
+  "method": {
+    "sampler": "macOS sample, requested 1 ms interval, main-thread tree",
+    "selfSamples": "Node count minus immediate child counts; distinct categories sum exactly to all main-thread samples.",
+    "inclusiveSamples": "Contain descendants and overlap other inclusive categories; do not sum them.",
+    "wallToFrameBinding": "Sample process start/end monotonic timestamps intersect producer native-call intervals in the same run.",
+    "host": "Existing instrumented copies of current host classes, fresh saves, unchanged route/RTC/buffering/scheduling. No visible window."
+  },
+  "unprofiledInstrumentedResult": {
+    "passed": false,
+    "measuredWallSeconds": 240.06496654166403,
+    "emulatedToWallTimeRatio": 0.9986541143994536,
+    "underrunCount": 5,
+    "backlogRecoveryCount": 1,
+    "discardedClockGaps": 1,
+    "engineFailureCount": 0,
+    "traceEvents": 55147,
+    "traceDroppedEvents": 0,
+    "nativeFaultCode": 0
+  },
+  "sampledDiagnosticResult": {
+    "passed": false,
+    "measuredWallSeconds": 240.0931562083315,
+    "emulatedToWallTimeRatio": 0.994357448626499,
+    "underrunCount": 12,
+    "backlogRecoveryCount": 1,
+    "discardedClockGaps": 5,
+    "engineFailureCount": 0,
+    "traceEvents": 54929,
+    "traceDroppedEvents": 0,
+    "nativeFaultCode": 0
+  },
+  "windows": [
+    {
+      "name": "first gameplay",
+      "sample": {
+        "path": "build/audio-hitch-investigation/current-sampled-240/first-sample.txt",
+        "sha256": "1c79d892e7c998470cb3db84ed1b6408032e8041382e208b75b1597e1b6f0fd9"
+      },
+      "wallSecondsSinceProcessLaunch": [
+        77.04280008299975,
+        83.44300291699983
+      ],
+      "overlappingFrameRangeInclusive": [
+        4049,
+        4383
+      ],
+      "emulatedSeconds": [
+        76.64795264,
+        82.26727039999999
+      ],
+      "overlappingNativeCalls": 335,
+      "nativeCallsLongerThanOwnEmulatedInterval": 89,
+      "mainThreadSamples": 4339,
+      "distinctSelfCategories": [
+        {
+          "category": "Host/OS outside native step",
+          "samples": 731,
+          "percentOfMainThreadSamples": 16.847
+        },
+        {
+          "category": "Native bridge/core outside SH4 Run",
+          "samples": 184,
+          "percentOfMainThreadSamples": 4.241
+        },
+        {
+          "category": "SH4 Run remainder after renderer/audio",
+          "samples": 2181,
+          "percentOfMainThreadSamples": 50.265
+        },
+        {
+          "category": "OpenGL renderer and descendants",
+          "samples": 1010,
+          "percentOfMainThreadSamples": 23.277
+        },
+        {
+          "category": "Other AICA hardware and descendants",
+          "samples": 1,
+          "percentOfMainThreadSamples": 0.023
+        },
+        {
+          "category": "ARM audio CPU and descendants",
+          "samples": 232,
+          "percentOfMainThreadSamples": 5.347
+        }
+      ],
+      "selectedFunctions": [
+        {
+          "name": "SH4 Run",
+          "selfSamples": 559,
+          "inclusiveSamples": 3424
+        },
+        {
+          "name": "six-node fixed chain",
+          "selfSamples": 142,
+          "inclusiveSamples": 196
+        },
+        {
+          "name": "bounded RAM counter helper",
+          "selfSamples": 48,
+          "inclusiveSamples": 53
+        },
+        {
+          "name": "Maple polling block",
+          "selfSamples": 146,
+          "inclusiveSamples": 220
+        },
+        {
+          "name": "fixed ARM step",
+          "selfSamples": 23,
+          "inclusiveSamples": 23
+        },
+        {
+          "name": "renderer entry",
+          "selfSamples": null,
+          "inclusiveSamples": 916
+        },
+        {
+          "name": "GGPO active query",
+          "selfSamples": 0,
+          "inclusiveSamples": 0
+        }
+      ],
+      "selectedFunctionSelfScope": "Null means the symbol was absent from the retained top-50 self list, not zero; zero GGPO inclusive count means it was absent from the full selected-inclusive scan."
+    },
+    {
+      "name": "continuation",
+      "sample": {
+        "path": "build/audio-hitch-investigation/current-sampled-240/continue-sample.txt",
+        "sha256": "effba94fcd4e1fd0f24fc79b56eb605fa0e960a6e4322fa061b618c06debb983"
+      },
+      "wallSecondsSinceProcessLaunch": [
+        163.045845749999,
+        171.3617464580002
+      ],
+      "overlappingFrameRangeInclusive": [
+        9137,
+        9590
+      ],
+      "emulatedSeconds": [
+        161.8909488,
+        169.51716095999998
+      ],
+      "overlappingNativeCalls": 454,
+      "nativeCallsLongerThanOwnEmulatedInterval": 131,
+      "mainThreadSamples": 6012,
+      "distinctSelfCategories": [
+        {
+          "category": "Host/OS outside native step",
+          "samples": 714,
+          "percentOfMainThreadSamples": 11.876
+        },
+        {
+          "category": "Native bridge/core outside SH4 Run",
+          "samples": 220,
+          "percentOfMainThreadSamples": 3.659
+        },
+        {
+          "category": "SH4 Run remainder after renderer/audio",
+          "samples": 3354,
+          "percentOfMainThreadSamples": 55.788
+        },
+        {
+          "category": "OpenGL renderer and descendants",
+          "samples": 1355,
+          "percentOfMainThreadSamples": 22.538
+        },
+        {
+          "category": "Other AICA hardware and descendants",
+          "samples": 0,
+          "percentOfMainThreadSamples": 0.0
+        },
+        {
+          "category": "ARM audio CPU and descendants",
+          "samples": 369,
+          "percentOfMainThreadSamples": 6.138
+        }
+      ],
+      "selectedFunctions": [
+        {
+          "name": "SH4 Run",
+          "selfSamples": 823,
+          "inclusiveSamples": 5078
+        },
+        {
+          "name": "six-node fixed chain",
+          "selfSamples": 594,
+          "inclusiveSamples": 643
+        },
+        {
+          "name": "bounded RAM counter helper",
+          "selfSamples": 30,
+          "inclusiveSamples": 30
+        },
+        {
+          "name": "Maple polling block",
+          "selfSamples": 113,
+          "inclusiveSamples": 157
+        },
+        {
+          "name": "fixed ARM step",
+          "selfSamples": 38,
+          "inclusiveSamples": 38
+        },
+        {
+          "name": "renderer entry",
+          "selfSamples": null,
+          "inclusiveSamples": 1236
+        },
+        {
+          "name": "GGPO active query",
+          "selfSamples": 0,
+          "inclusiveSamples": 0
+        }
+      ],
+      "selectedFunctionSelfScope": "Null means the symbol was absent from the retained top-50 self list, not zero; zero GGPO inclusive count means it was absent from the full selected-inclusive scan."
+    }
+  ],
+  "conclusions": [
+    "Both sampling windows contain the actual first-gameplay and continuation deficit frames identified by the unprofiled producer trace, rather than only relying on nominal launch time.",
+    "SH4 Run remainder and renderer descendants dominate both broad intervals. Renderer descendants account for about 23 percent of all main-thread samples; this is CPU stack residence, not GPU utilization.",
+    "Continuation has substantially more chain self samples. A low helper-to-chain sample ratio is not an admission or rejection rate: samples measure time, and the chain has six independently callable entries while only its first entry attempts contraction.",
+    "Generic function-table calls, other callers/targets, mid-chain scheduler resumption, comparison exits, and final iterations can execute the chain without a successful contraction. The present traces do not identify which dominates.",
+    "No direct GGPO active-query samples were observed. Its authenticated LIBRETRO constant-false stub might remove a call barrier locally, but its benefit is unmeasured; the mutable rollback query and other network guards must remain.",
+    "These data do not justify broader arithmetic contraction, changed scheduler budgets, hardware polling elision, fast-math, global aliasing changes, or a claim that one compiler/link tweak resolves audio recovery."
+  ],
+  "counterInvestigation": {
+    "status": "Source review only; no attempt/acceptance counters exist in this capture.",
+    "scope": "Six-node fixed chain with one helper attempt point; ordinary dispatch and fallback remain required.",
+    "plausibleNormalRejections": [
+      "Less than one complete continuing iteration of cycle budget remains.",
+      "Cycle pairing state is not the required steady state.",
+      "Function target or comparison value differs.",
+      "Counter is at its final iteration or outside the admitted positive range."
+    ],
+    "unmeasuredSafetyRejections": [
+      "Reader/writer or live RAM mapping identity.",
+      "Observer/network/MMU exclusions.",
+      "Code authentication or host-range overlap."
+    ],
+    "ranking": "Unknown. Entry distribution and edge outcomes must be counted before treating safety-guard rejection as the explanation.",
+    "proposedDiagnosticOnly": {
+      "implemented": false,
+      "gate": "Fixed phase windows set at the original host frame boundary; do not query clocks or add bus reads per emulated instruction.",
+      "counts": [
+        "External chain entry by node; internal node visits.",
+        "Edge exits by exhausted budget, different actual successor, or fetched-word/post-fetch-PC fallback.",
+        "Helper attempts, accepts, batched iterations, and iteration-count histogram.",
+        "First rejection class at existing short-circuit return points: context/budget/cycle state, observer state, reader identity, mapping/alignment, target/compare, count, code identity, overlap, final reader check."
+      ],
+      "constraints": [
+        "Preserve evaluation and short-circuit order; reuse already-read values.",
+        "Bounded host-only counters; no guest writes, extra callbacks, per-event disk output, or altered fallback.",
+        "Record after shutdown; authenticate inverse instrumentation and unchanged other objects.",
+        "Require exact original-route RGBA/PCM/sample-count/SH4-tick equality before interpreting counts.",
+        "Treat instrumented timing as diagnostic only; do not promote or widen contraction from samples alone."
+      ]
+    }
+  },
+  "uncertainty": [
+    "Both captures have trace overhead; the sampled run additionally has OS sampling overhead and is not a clean performance comparison.",
+    "Broad samples include onset, recovery and idle. Symbol offsets coalesced by the sampler cannot identify a single hot instruction within Run or the chain.",
+    "An inclusive helper sample count is neither a call count nor a fast-path success count; no admission percentage can be calculated.",
+    "Underrun counters describe producer/player queue policy, not independently measured device xruns or audible silence. No physical speaker or microphone measurement was made.",
+    "The strict playback checks still fail. Correct fixed-engine execution evidence does not establish smooth real-time playback."
+  ]
+}
