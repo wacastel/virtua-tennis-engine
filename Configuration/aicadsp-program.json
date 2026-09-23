@@ -1,0 +1,10 @@
+{
+  "bytes": 2048,
+  "fileSHA256": "50c2cee5a34096b6f86f01327491734b3e5a30bfb2831a154e144d7b40f767c7",
+  "name": "mpr-22926.ic11",
+  "offset": 17304,
+  "processor": "AICA DSP",
+  "programSHA256": "20f83a224c4a53a3b9b8d4e882bd8f2684531de3e65e4f9513d8e63a26f6861b",
+  "schema": 1,
+  "transitions": "All ascending 32-bit-slot zero-to-program and program-to-zero prefixes, including endpoints."
+}

@@ -1,0 +1,58 @@
+{
+  "canonicalArtifactBinding": {
+    "executedPreparationScriptsRevalidated": true,
+    "files": {
+      "build/native/cpu/aicadsp/manifest.json": "576409af0fcffec44d6b3c1c069da58f386c5f24f612823fd1559f669b6115fb",
+      "build/native/cpu/arm7/manifest.json": "d9379eb7df662fcde6f9b5542e19a30280bf3a434dee7dbb8a68775ac9f283f9",
+      "build/native/cpu/sh4/manifest.json": "d276592fb6b3145123e252c3a87eb87e9117875b004ca5e506d09c81cb3cf814",
+      "build/native/libvirtua_tennis.dylib": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+      "build/native/manifest.json": "7938749170baea217f01e3f1e08ba5bde8d8ba1550431dc9ec5d0d4618394702",
+      "build/native/preparation.json": "d5cf28e0cb0dbcb40c776460a5a6f6371c0afc4e11bd4d8a8edf56ddfeb23abc",
+      "build/reference-lab/fixed-clock.dylib": "7684e76b24fed21469129fedb5e4324c31617e9d05189b31700bb494fa090e42",
+      "build/verification/canonical-baseline/inputs.json": "dea3be5fc7d858a5a575ddcae1b357a1dee76a731811a7c45b0312aec9084962"
+    },
+    "fixedClockEpoch": 946684800,
+    "freshSaves": true,
+    "performanceClaim": false,
+    "preparationReportsRevalidated": true,
+    "replayUsedImmutableCopyWithIdenticalCoreSHA256": true
+  },
+  "comparedSteps": 6244,
+  "emulatedSeconds": 113.45780992,
+  "exactInputAndHardwareClock": true,
+  "exactPCMAndCounts": true,
+  "exactRGBA": true,
+  "finalSH4Ticks": 22691561984,
+  "firstDifferences": [],
+  "historicalScope": "The original CPU replay is preserved unchanged. The earlier fixed-engine comparison is archived under ignored build/performance/canonical-first-pass; this report binds the current canonical engine.",
+  "passed": true,
+  "purpose": "Canonical 200 MHz ROM-rooted fixed CPU engine against original CPUs",
+  "runs": [
+    {
+      "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+      "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+      "finalRGBA_SHA256": "126a4be93a6329a4b2393fae883b2e08f8f31cc8018592c461bf92fdda155b9c",
+      "frameStreamSHA256": "100688f2429120b3829392727deac017fd551d65700776a07215bb92e51fe77a",
+      "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+      "path": "build/verification/reference-clock1",
+      "pcmStreamSHA256": "745d2bc88bcbd0a3c01e80a7c40a918b57e3c5d5c5385dea941976d84a3a9f91",
+      "reportSHA256": "d79f7ce58fb37d83805bf8ceb548655b712d182369516040b8c7ec90f3bfee8c",
+      "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+    },
+    {
+      "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+      "coreSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+      "finalRGBA_SHA256": "126a4be93a6329a4b2393fae883b2e08f8f31cc8018592c461bf92fdda155b9c",
+      "frameStreamSHA256": "100688f2429120b3829392727deac017fd551d65700776a07215bb92e51fe77a",
+      "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+      "path": "build/verification/canonical-baseline/replay",
+      "pcmStreamSHA256": "745d2bc88bcbd0a3c01e80a7c40a918b57e3c5d5c5385dea941976d84a3a9f91",
+      "reportSHA256": "e53f63fa29e435cae6f32e25468e066be4c95700493356bc24ad5aa709d26972",
+      "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+    }
+  ],
+  "scope": "Exact pixels, samples/counts, inputs and scheduler ticks for this authentic replay on this host. This does not prove unvisited paths, all players or physical-board equivalence.",
+  "sourceScriptSHA256": "7a0d3ac10b47bdfe235eb747126e68d89f083129d4b1a004465a33320e15f368",
+  "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+  "stereoSampleFrames": 5003652
+}

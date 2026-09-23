@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "game": "Virtua Tennis / Power Smash",
+  "set": "vtennis",
+  "version": "1999 cartridge",
+  "region": "USA",
+  "bios": "epr-21577h.ic27",
+  "hardware": "NAOMI M2 cartridge",
+  "boardKey": "2803eb15",
+  "flycastCommit": "628bd3dbb160ea2750230fc6b00c0bb8173cb1f6",
+  "files": [
+    {
+      "name": "epr-22927.ic22",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 4194304,
+      "crc32": "89781723",
+      "sha1": "cf644aa66abcec6964d77485a0292f11ba80dd0d",
+      "sha256": "aac8608949d7539465459bca990fa21dfb0406be02e77fdc721dd266c482e132"
+    },
+    {
+      "name": "mpr-22916.ic1",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "903873e5",
+      "sha1": "09af791bc02cca0e2dc72187679830ed9f4fc772",
+      "sha256": "b10482022f77c9058a74276ecf860d6d7e7b24fa8d3793449b3c381213a03f80"
+    },
+    {
+      "name": "mpr-22917.ic2",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "5f020fa6",
+      "sha1": "bd2519be8c88ff34cf2fd2b17271d2b41b64ce9f",
+      "sha256": "9ed93d6cc1215bcf5966f882342fa033b637ebe228cf5d2fec8a6dc8bca928ae"
+    },
+    {
+      "name": "mpr-22918.ic3",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "3c3bf533",
+      "sha1": "db43ca9332e76b968b9b388b4824b768f82b9859",
+      "sha256": "19bc0644337e538ce3e40bd1b8d5830002d73db73f7fa689d2ee667a2a6a89ef"
+    },
+    {
+      "name": "mpr-22919.ic4",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "3d8dd003",
+      "sha1": "91f494b06b9977215ab726a2499b5855d4d49e81",
+      "sha256": "cb0d5f70eaebd3197d3efefc976bdfb43da12c685420bf86255966eec7a193ee"
+    },
+    {
+      "name": "mpr-22920.ic5",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "efd781d4",
+      "sha1": "ced5a8dc8ff7677b3cac2a4fae04670c46cc96af",
+      "sha256": "87beeda296d623c8daff2f2da932df09c275248b6cf345133b459210cfd4a900"
+    },
+    {
+      "name": "mpr-22921.ic6",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "79e75be1",
+      "sha1": "82318613c947907e01bbe50569b05ef24789d7c9",
+      "sha256": "977b1bb82339899c2afb0ca016558c68123ab55a36c0a30dec25e6c99e04a7b2"
+    },
+    {
+      "name": "mpr-22922.ic7",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "44bd3883",
+      "sha1": "5c595d903d8865bf8bf3aafb1f527bff232718ed",
+      "sha256": "b2f15968bd879d776f52537f0f811abdaf171ed5dfd2e6abd762a509f89fdab8"
+    },
+    {
+      "name": "mpr-22923.ic8",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "9ebdf0f8",
+      "sha1": "f1b688bda387fc00c70cb6a0c374c6c13926c138",
+      "sha256": "75bbb1ac30c6dab70838ce8a7de6e1a797bc6cdefdc60172be89991891759978"
+    },
+    {
+      "name": "mpr-22924.ic9",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "ecde9d57",
+      "sha1": "1fbe7fdf66a56f4f1765baf113dff95142bfd114",
+      "sha256": "56080e0f00e0f1d788d4313cae51e24438a5830a0b826ad798420249c407bab7"
+    },
+    {
+      "name": "mpr-22925.ic10",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "81057e42",
+      "sha1": "d41137ae28c64dbdb50150db8cf25851bc0709c4",
+      "sha256": "be3ebcabb44d62f1f8b0bf41da24bed09aced3e93f34938b11dd4c63862e2259"
+    },
+    {
+      "name": "mpr-22926.ic11",
+      "group": "vtennis",
+      "role": "game cartridge",
+      "bytes": 8388608,
+      "crc32": "57eec89d",
+      "sha1": "dd8f9a9155e51ee5260f559449fb0ea245077952",
+      "sha256": "50c2cee5a34096b6f86f01327491734b3e5a30bfb2831a154e144d7b40f767c7"
+    },
+    {
+      "name": "epr-21577h.ic27",
+      "group": "vtennis",
+      "role": "USA BIOS",
+      "bytes": 2097152,
+      "crc32": "fdf17452",
+      "sha1": "5f3e4b677f0046ce690a4f096b0481e5dd8bb6e6",
+      "sha256": "db1b5d7f4d4c67abf67df93f517ee81b6c1ff72d86eb2f68a380c3f37ea56729"
+    }
+  ]
+}

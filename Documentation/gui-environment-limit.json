@@ -1,0 +1,159 @@
+{
+  "app": "build/Virtua Tennis.app",
+  "capture": {
+    "kind": "Engine frame captured by the actual visible packaged app; CUA native-window inspection is recorded in the tool transcript.",
+    "path": "build/verification/final-visible/engine-frame.png",
+    "sha256": "a3323e55bf28e95411a238f692ed8abc4c5e88d01dd74d6e884b723d5f88d7f8"
+  },
+  "controllerInventory": {
+    "connectedCount": 1,
+    "controllers": [
+      {
+        "category": "DualSense",
+        "dualSense": true,
+        "extendedGamepad": true,
+        "name": "DualSense Wireless Controller"
+      }
+    ],
+    "game": "Virtua Tennis",
+    "physicalActuationTested": false
+  },
+  "controllerInventorySHA256": "9a940ff35eb070fe3291b92d4e8c68054eef2f0d631c5d925e9ee9aba08f11dc",
+  "desktopCaptureAvailable": true,
+  "displayUpdates": 4874,
+  "engineManifestSHA256": "7938749170baea217f01e3f1e08ba5bde8d8ba1550431dc9ec5d0d4618394702",
+  "freshSaveDirectory": true,
+  "gameFrames": 5279,
+  "limits": [
+    "Visible presentation is established separately from smoothness: this run recorded four underruns and one discarded clock gap.",
+    "Actual AVAudioEngine playback/rendering was measured; continuous audible-speaker output was not independently verified.",
+    "One DualSense was enumerated; physical stick/button actuation was not tested.",
+    "The timed replay and fresh saves isolate this test from user preferences and persistent game data."
+  ],
+  "liveGUIQualified": true,
+  "nativeEngineInputSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+  "observations": [
+    "Native CUA window screenshots showed the court and English INSERT COIN(S) prompt, then the actual1P Courier versus COM Johansson first-round screen.",
+    "The actual app engine capture at the requested86-second point shows player-one court gameplay, a ball in flight,83km/h and English player/score labels.",
+    "One Return key was sent after the initial accessibility view reported Paused. The final telemetry is unpaused; no physical controller button actuation is claimed.",
+    "The owned timed test exited0. A separate no-argument process appeared afterward; its ownership was unclear and it was left untouched."
+  ],
+  "ownedBoundedTestProcessExitedNormally": true,
+  "packageArtifacts": {
+    "Contents/Frameworks/libvirtua_tennis.dylib": {
+      "architecture": "arm64",
+      "dependencies": [
+        "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+        "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+        "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)"
+      ],
+      "minimumMacOS": "14.0",
+      "sha256": "a4f2a18647a5ded01910cba0004353a5afd11edb6380f66addda857092f9a420"
+    },
+    "Contents/MacOS/VirtuaTennis": {
+      "architecture": "arm64",
+      "dependencies": [
+        "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+        "/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit (compatibility version 1.0.0, current version 53.0.2)",
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController (compatibility version 1.0.0, current version 14.0.24)",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+        "/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)",
+        "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+        "/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2450.77.5, weak)",
+        "/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 482.102.10, weak)",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)",
+        "/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 3.0.0, weak)",
+        "/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)",
+        "/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.0.10)",
+        "/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.0.2)",
+        "/usr/lib/swift/libswiftGLKit.dylib (compatibility version 1.0.0, current version 1.1.0, weak)",
+        "/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 382.5.3, weak)",
+        "/usr/lib/swift/libswiftModelIO.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)",
+        "/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0)",
+        "/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)",
+        "/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftSpriteKit.dylib (compatibility version 1.0.0, current version 1.2.0, weak)",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 917.0.1)",
+        "/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)",
+        "/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.0.0, weak)",
+        "/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 25.0.0, weak)"
+      ],
+      "minimumMacOS": "14.0",
+      "sha256": "2f27df53cd0a6c3114364a6cdac2f868d340987ae68afc9e5371276548ef8859"
+    }
+  },
+  "packageManifestSHA256": "659c3b1a7fe5a9d3940eff91b463562a9eb4976824f2bed1b00b06c1e70cf42f",
+  "preferencesSaved": false,
+  "requestedDurationSeconds": 100,
+  "route": "Configuration/replays/singles-baseline.json",
+  "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3",
+  "smoothPlaybackQualified": false,
+  "status": "Visible window and English player-one gameplay verified; strict smooth-playback qualification failed.",
+  "telemetry": {
+    "automaticRecoveryCount": 4,
+    "backlogRecoveryCount": 0,
+    "clockBalanceSeconds": -0.0017762783455026465,
+    "continuationUpdates": 1794,
+    "discardedClockGaps": 1,
+    "displayUpdates": 4874,
+    "engineFailureCount": 0,
+    "engineStartCount": 1,
+    "flushCounts": {
+      "host": 4,
+      "underrun": 4
+    },
+    "gameFrames": 5279,
+    "gameState": {
+      "closed": false,
+      "emulatedSeconds": 97.30228032,
+      "faultCode": 0,
+      "frame": 5279,
+      "framesPerSecond": 59.79377128284546,
+      "height": 480,
+      "sampleRate": 44100,
+      "width": 640
+    },
+    "isPlaying": true,
+    "isRunning": true,
+    "lastInput": {
+      "buttons": 0
+    },
+    "maximumDisplayUpdateGapSeconds": 0.16431958331668284,
+    "maximumSceneUpdateGapSeconds": 0.12022970832185818,
+    "maximumSceneUpdateSeconds": 0.11926770831632894,
+    "minPendingFrames": -552,
+    "outputLatencySeconds": 0.059604166666666666,
+    "outputSampleRate": 48000,
+    "pausedByHost": false,
+    "peakPendingFrames": 9515,
+    "pendingFrames": 7779,
+    "preferredDisplayFramesPerSecond": 60,
+    "renderedFrames": 785098,
+    "sceneUpdateWallSeconds": 68.4151125423814,
+    "sceneUpdates": 6668,
+    "scheduledFrames": 792877,
+    "sourceSampleRate": 44100,
+    "texturePresentations": 4590,
+    "underrunCount": 4,
+    "updatesOnMainThread": true,
+    "windowOccluded": false,
+    "windowVisible": true
+  },
+  "telemetrySHA256": "ed8e7cac6c6a588596190289f6934f81110a2e8fdc351f0994d7a9c7cdf18d4c",
+  "visiblePresentationQualified": true,
+  "windowOccluded": false
+}

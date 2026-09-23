@@ -1,0 +1,38 @@
+{
+  "architecture": "Fixed PC/expected-word bindings to constant-opcode operations; original FIQ, banking, bus and sample scheduler",
+  "buildManifestSHA256": "177eb3192ed18508d534b13a0ef1b2b9fe31f9e1ba332dc4317a1e9c368d0426",
+  "capturedPages": 60,
+  "coverageLimit": "All aligned words in the two pinned 32KiB ROM windows; unknown PC or changed unadmitted word fails closed.",
+  "definedSemanticsAdaptation": "Six original rotate expressions use __builtin_rotateright32 to preserve original ARM64 runtime rotation at count zero under offline constant specialization; original oracle remains unchanged.",
+  "fixedIdentities": 15898,
+  "generatorSHA256": "04ac907e0e9b0d2b3a883ce82118499b40a1236e527c8cff83d2c1382a72910a",
+  "observedIdentities": 5062,
+  "originalGenerationSHA256": "c0e103f271dd9b25444b0e6d4e683b9ba02efdc3258172e37ee94a28d13e03ad",
+  "programWindows": [
+    {
+      "bytes": 32768,
+      "fileSHA256": "db1b5d7f4d4c67abf67df93f517ee81b6c1ff72d86eb2f68a380c3f37ea56729",
+      "mappedBase": 0,
+      "name": "epr-21577h.ic27",
+      "offset": 458752,
+      "windowSHA256": "e30a61eb64d908697d256a58cf4f22ef5cf5ac8a3ae79f4f2cb48d31a3a65ff4"
+    },
+    {
+      "bytes": 32768,
+      "fileSHA256": "56080e0f00e0f1d788d4313cae51e24438a5830a0b826ad798420249c407bab7",
+      "mappedBase": 0,
+      "name": "mpr-22924.ic9",
+      "offset": 0,
+      "windowSHA256": "3b8bd2f49d97af3a62b96a4996529c9e07d4f842d69dd61f4754c4d48e0c55f0"
+    }
+  ],
+  "replaces": [
+    "core/hw/arm7/arm7.cpp"
+  ],
+  "sourcePins": {
+    "core/hw/arm7/arm-new.h": "1e16e52b2bdb07538e0e25ffbe2e1c4568173902f0b3a3c86da0f6d11a2b75f8",
+    "core/hw/arm7/arm7.cpp": "9a1e0193312f54d4de27bf5ff688917c28bb23ef991611e5426b1b50be802074"
+  },
+  "traceIndependentCodeProof": "Documentation/sound-clock1-coverage.json",
+  "uniqueOperations": 4854
+}

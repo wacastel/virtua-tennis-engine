@@ -1,0 +1,174 @@
+{
+  "bios": "epr-21577h.ic27",
+  "biosSHA256": "db1b5d7f4d4c67abf67df93f517ee81b6c1ff72d86eb2f68a380c3f37ea56729",
+  "copies": [
+    {
+      "bytes": 32,
+      "destination": 201326816,
+      "loaderPCs": [
+        "0x800000bc",
+        "0x800000be",
+        "0x800000c0",
+        "0x800000c2",
+        "0x800000c4",
+        "0x800000c8",
+        "0x800000ca"
+      ],
+      "name": "bios_bootstrap",
+      "source": 224,
+      "transform": "reverse-halfwords"
+    },
+    {
+      "bytes": 2096896,
+      "destination": 201326848,
+      "loaderPCs": [
+        "0x8c0000e4",
+        "0x8c0000e6",
+        "0x8c0000e8",
+        "0x8c0000ea",
+        "0x8c0000ec",
+        "0x8c0000ee",
+        "0x8c0000f0"
+      ],
+      "name": "bios_ram",
+      "source": 256,
+      "transform": "identity"
+    },
+    {
+      "bytes": 10240,
+      "destination": 201330688,
+      "loaderPCs": [
+        "0xa00005a6",
+        "0xa00005a8",
+        "0xa00005aa",
+        "0xa00005ac",
+        "0xa00005ae",
+        "0xa00005b0",
+        "0xa00005b2",
+        "0xa00005b4",
+        "0xa00005b6"
+      ],
+      "name": "bios_relocated",
+      "source": 2048,
+      "transform": "identity"
+    },
+    {
+      "bytes": 28672,
+      "destination": 201424896,
+      "loaderPCs": [
+        "0x0c033c8e",
+        "0x0c033c90",
+        "0x0c033c92",
+        "0x0c033ca0",
+        "0x0c033ca2",
+        "0x0c033ca8",
+        "0x0c033caa"
+      ],
+      "name": "bios_module",
+      "source": 393216,
+      "transform": "identity"
+    },
+    {
+      "bytes": 12,
+      "destination": 201328160,
+      "loaderPCs": [
+        "0xac001b58",
+        "0xac001b62",
+        "0xac001b64",
+        "0xac001b66"
+      ],
+      "name": "bios_exception_return",
+      "note": "Only immutable instruction prefix; original initializer patches following literal at destination+12.",
+      "originalCopyBytes": 32,
+      "source": 5236,
+      "transform": "identity"
+    },
+    {
+      "bytes": 20,
+      "destination": 201326848,
+      "loaderPCs": [
+        "0xac001b8c",
+        "0xac001b8e"
+      ],
+      "name": "bios_vector_100",
+      "note": "Only immutable instruction prefix; original initializer patches following handler pointer at destination+20.",
+      "originalCopyBytes": 32,
+      "source": 5268,
+      "transform": "identity"
+    },
+    {
+      "bytes": 20,
+      "destination": 201327616,
+      "loaderPCs": [
+        "0xac001b9e",
+        "0xac001ba0"
+      ],
+      "name": "bios_vector_400",
+      "note": "Only immutable instruction prefix; original initializer patches following handler pointer at destination+20.",
+      "originalCopyBytes": 32,
+      "source": 5268,
+      "transform": "identity"
+    },
+    {
+      "bytes": 20,
+      "destination": 201328128,
+      "loaderPCs": [
+        "0xac001bb0",
+        "0xac001bb2"
+      ],
+      "name": "bios_vector_600",
+      "note": "Only immutable instruction prefix; original initializer patches following handler pointer at destination+20.",
+      "originalCopyBytes": 32,
+      "source": 5268,
+      "transform": "identity"
+    }
+  ],
+  "evidence": "Original observed loader PCs and direct RAM snapshots; the BIOS byte identity and loader blocks are pinned. The reverse bootstrap contains the original 0x7ffc0-longword main-copy count; the second loader reads original source/destination/end literals at BIOS0x604/0x608/0x60c.",
+  "loaderSourceBlocks": [
+    {
+      "bytes": 76,
+      "offset": 128,
+      "sha256": "a7785766e8ef53321fdcfd5d7de02ea0a41c4fe53c66e2852662305122c82480"
+    },
+    {
+      "bytes": 32,
+      "offset": 224,
+      "sha256": "28b487c8afda99e67583ff1d8b55da9560812b8514596c0c3379d52ea1683a58"
+    },
+    {
+      "bytes": 18,
+      "offset": 1446,
+      "sha256": "3013787b761fb5a6521131d8c8a3cd40deba8d3b37bd2323fd96e63cdab9acb5"
+    },
+    {
+      "bytes": 12,
+      "offset": 1540,
+      "sha256": "78614a341ffeb5470ef9158710863d352c220b38a3d1d645e0ff5df3a593a667"
+    },
+    {
+      "bytes": 64,
+      "offset": 212080,
+      "sha256": "6b5e25ba8a17d43aab55e1122d49244303e8f2b5b5a06160ea20ac8645eba851"
+    },
+    {
+      "bytes": 24,
+      "offset": 212288,
+      "sha256": "68594da503ea06c51d086060a49fcdba9b224586ef73aab6bdda42ac6151dd48"
+    },
+    {
+      "bytes": 26,
+      "offset": 4836,
+      "sha256": "cec02ad5184a474f397ec6a9e2854e1aaf400bbfbe51fa3a3d4b6f8695e6841f"
+    },
+    {
+      "bytes": 152,
+      "offset": 4940,
+      "sha256": "6b67224fee900268cb4be511c22f38e3d4c0bac1bb515a8696e7cbfd4da4ebe7"
+    },
+    {
+      "bytes": 24,
+      "offset": 5728,
+      "sha256": "8c5233acf955bea745149188db2bde2037d494356cde1aab88ba647b764e1c0e"
+    }
+  ]
+}

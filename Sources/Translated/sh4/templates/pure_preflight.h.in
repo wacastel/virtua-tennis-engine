@@ -1,0 +1,37 @@
+#pragma once
+#include "block_templates.h"
+#include "hw/sh4/modules/mmu.h"
+#include "cfg/option.h"
+#include "network/ggpo.h"
+#include <cstring>
+#if defined(GDB_SERVER) || defined(STRICT_MODE) || FEAT_SHREC != DYNAREC_NONE
+#error Pure segments require the reviewed plain single-owner fixed core.
+#endif
+namespace vt_pure {
+__attribute__((always_inline)) static inline bool overlap(uintptr_t a,size_t an,uintptr_t b,size_t bn) { return a<b+bn && b<a+an; }
+__attribute__((always_inline)) static inline bool preflight(Sh4Context* ctx,Sh4Cycles& cycles,u32 expectedPC,size_t bytes,unsigned maxCycles,const u8*& code) {
+ const u32 entryPC=ctx->pc-2,alias=entryPC&0xe0000000u;
+ if ((alias!=0 && alias!=0x80000000u && alias!=0xa0000000u)
+  || (entryPC&0x1fffffffu)!=expectedPC || !cycles.vtPureSegmentReady(ctx,maxCycles)
+  || ctx->cycle_counter>SH4_TIMESLICE || mmu_enabled() || RAM_SIZE!=32u*1024u*1024u) return false;
+ if(config::ThreadedRendering || config::NetworkEnable || config::GGPOEnable
+  || settings.network.online || ggpo::active() || ggpo::rollbacking()
+  || settings.naomi.multiboard || settings.naomi.slave || settings.naomi.drivingSimSlave) return false;
+ if(IReadMem16!=addrspace::read16 || ReadMem32!=addrspace::read32 || WriteMem32!=addrspace::write32) return false;
+ const uintptr_t ram=reinterpret_cast<uintptr_t>(&mem_b[0]);
+ if(overlap(ram,RAM_SIZE,reinterpret_cast<uintptr_t>(ctx),sizeof(*ctx))
+  || overlap(ram,RAM_SIZE,reinterpret_cast<uintptr_t>(&cycles),sizeof(cycles))) return false;
+ const u32 physical=entryPC&0x1fffffffu;
+ if(physical<0x0c000000u || physical>=0x0e000000u || (entryPC&1u)) return false;
+ const u32 offset=physical-0x0c000000u;
+ if(bytes>RAM_SIZE || offset>RAM_SIZE-bytes || (entryPC&0x00ffffffu)>0x01000000u-bytes) return false;
+ const uintptr_t encoded=reinterpret_cast<uintptr_t>(addrspace::memInfo_ptr[entryPC>>24]);
+ const uintptr_t pointer=encoded&~uintptr_t(31);if(!pointer)return false;
+ const u32 shift=static_cast<u32>(encoded)&31u;
+ const u32 endAddress=entryPC+static_cast<u32>(bytes)-1u;
+ const uintptr_t begin=pointer+((entryPC<<shift)>>shift),end=pointer+((endAddress<<shift)>>shift);
+ if(begin!=ram+offset || end!=ram+offset+bytes-1u)return false;
+ code=reinterpret_cast<const u8*>(begin);return true;
+}
+template<typename T> __attribute__((always_inline)) static inline T load(const u8* p){T v;std::memcpy(&v,p,sizeof(v));return v;}
+}

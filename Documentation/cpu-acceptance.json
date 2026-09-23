@@ -1,0 +1,162 @@
+{
+  "CPUManifests": {
+    "aicadsp": "576409af0fcffec44d6b3c1c069da58f386c5f24f612823fd1559f669b6115fb",
+    "arm7": "d9379eb7df662fcde6f9b5542e19a30280bf3a434dee7dbb8a68775ac9f283f9",
+    "sh4": "d276592fb6b3145123e252c3a87eb87e9117875b004ca5e506d09c81cb3cf814"
+  },
+  "engineManifestSHA256": "7938749170baea217f01e3f1e08ba5bde8d8ba1550431dc9ec5d0d4618394702",
+  "engineSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+  "passed": true,
+  "preparationReportSHA256": "d5cf28e0cb0dbcb40c776460a5a6f6371c0afc4e11bd4d8a8edf56ddfeb23abc",
+  "scope": "Original/native CPU, memory, exception and interrupt fixtures, generated-input provenance, complete linked SH4 target tables and configured native function order. This does not establish unvisited gameplay coverage or real-time playback.",
+  "verificationReports": [
+    {
+      "limits": "Exhaustive metadata mapping, not instruction execution or gameplay.",
+      "measurements": {
+        "comparisons": [
+          "original handler pointer identity",
+          "FPU disabled classification",
+          "issue cycles",
+          "execution unit",
+          "memory-cycle classification"
+        ],
+        "instructionWords": 65536
+      },
+      "passed": true,
+      "report": "Documentation/sh4-metadata-acceptance.json",
+      "sha256": "ab4f73989f0c99a6cf161138703b997b28320787500b089b3501d1fad3a3ed16"
+    },
+    {
+      "limits": "Context-local operations only; no claim of complete bus/MMU/IRQ/delay-slot validation. Full original/native replay is reported separately.",
+      "measurements": {
+        "cases": 135624,
+        "contextsPerWord": 8,
+        "distinctWords": 16953,
+        "guardCases": [
+          "unknown PC gives sticky controlled FlycastException",
+          "changed BIOS reset word gives sticky controlled FlycastException"
+        ]
+      },
+      "passed": true,
+      "report": "Documentation/sh4-operation-acceptance.json",
+      "sha256": "52b592a60ff4ee44021ef7a5c669c9eb40f1bc760566ea0fcf75a7f1e952c0f8"
+    },
+    {
+      "limits": "Isolated inner-Run differential test on deterministic redirected buses, with SR.S=0 because the pinned original MAC.L rejects saturated arithmetic. Non-delay terminal tests supply both T values at redirected fetch. The grounded BF/S tests control the preceding load as zero/nonzero, retaining the real TST and independently fetched store; they exercise taken/untaken paths, delay exceptions and exact cycle exhaustion. The original delay lifecycle body is byte-identical to the candidate and calls its exact fixed dispatcher body in native fixture mode. A separate admitted floating instruction checks the same delay helper with FPU disabled. Ordinary budget cases execute bounded internal back-edges. Does not claim complete MMU/cache or physical-device testing, outer interrupt/exception delivery, or new Step/RTE coverage. Complete original/native replays remain required. No performance measurement.",
+      "measurements": {
+        "blocks": 384,
+        "cases": 131874,
+        "failClosedCases": 11036,
+        "fixedInstructionPositions": 2743
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/sh4-blocks/acceptance.json",
+      "sha256": "27bfb17de8c37e2ecf4b512a76e0395fa775f3909220ca038445542977641329"
+    },
+    {
+      "limits": "Isolated deterministic original mapping API tests, not complete MMU/cache/device validation or performance evidence. Valid power-of-two mapping masks cover shifts31 through0; larger masks use addresses within the allocated64MiB backing. The real CPU block suite and complete gameplay replay remain independently required.",
+      "measurements": {
+        "cases": 51232,
+        "independentValueAndPCAssertions": 51772,
+        "readSteps": 60592
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/sh4-fetch/acceptance.json",
+      "sha256": "70854c9a07bb4271e97f6872e41fa0d8f0f598de97f7d08502e9a7c421bea2c6"
+    },
+    {
+      "limits": "Deterministic synthetic stack/function-table data, not a game replay. Exact original instructions and actual compiled chain execute. Cycle exhaustion verifies return to the unchanged scheduler boundary; outer IRQ delivery, full hardware/MMU behavior and real-time performance are not claimed. Mapping tests and whole-engine replay remain separately required.",
+      "measurements": {
+        "cases": 2155,
+        "failClosedCases": 24
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/sh4-chain/acceptance.json",
+      "sha256": "728022734790fb88cb2929e51e82cdba54b13a9b3a33e65a33161ecb48e8cae7"
+    },
+    {
+      "limits": "Isolated deterministic original mapping API tests. Full MMU/cache/device emulation and performance are not claimed. Mapping masks cover shifts31 through0; larger masks use addresses within allocated64MiB backing plus boundary padding. Actual CPU block/chain suites and complete gameplay replay remain independently required.",
+      "measurements": {
+        "cases": 78024,
+        "independentValueAndStateAssertions": 152940,
+        "readSteps": 93480
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/sh4-read32/acceptance.json",
+      "sha256": "fad18e6e6dfb87c668f575d6dc8dd2a1cd6738e8ca5bfe8082756d20d32b6eaa"
+    },
+    {
+      "limits": "Synthetic plain-RAM prepared loop states, not a gameplay or performance test. Successful contraction intentionally elides ordinary RAM fetch/read events; those counts are not claimed equal. Four final RAM writes and full RAM are compared. Full device scheduling is excluded by choosing no device event before the tested boundary; actual original pending IRQ delivery is exercised. Existing mapping, full-engine replay and realtime tests remain separate.",
+      "measurements": {
+        "acceptedBatchCount": 1714,
+        "acceptedCompleteIterations": 10019,
+        "actualInterruptDeliveries": 450,
+        "cases": 4278
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/sh4-counter/acceptance.json",
+      "sha256": "03ccf8e709dfe3a410396b68fea392512e3aca17eafea7679468398c5b43ef04"
+    },
+    {
+      "limits": [
+        "All512 architectural context bytes, cycle lastUnit/memOps/ratio and full32MiB RAM compare against original operations at each admitted/rejected batch exit.",
+        "Actual helper functions compiled into the six changed production block TUs are directly invoked; complete pure blocks also use the actual Run selector.",
+        "Callback fallback preserves every recorded fetch/PC/cycle event; admitted batches intentionally omit pure RAM fetch callbacks under original-reader guards.",
+        "IRQ tests advance both equal post-segment cycle states to the same unchanged448-cycle boundary before calling original UpdateSystem_INTC; they are not independent long gameplay tests.",
+        "Changed-word negative oracle stops before that fetched instruction; candidate must fail fixed admission at the identical prefix, never from preflight."
+      ],
+      "measurements": {
+        "cases": 9336,
+        "matchingExceptionRows": 312,
+        "negativeNoEffectRows": 895,
+        "originalIRQDeliveries": 96,
+        "successfulBatches": 7919
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/sh4-pure/acceptance.json",
+      "sha256": "4fe9785fa954b99b05cedc7641c61ad619a875a730791f324022e564705a79bd"
+    },
+    {
+      "limits": "All 50 registers, flags, mode and interrupt latches, cycles, exact memory-mapped bus events and entire 8MiB sound RAM. Two seeded states per fixed PC/word binding, plus FIQ-entry cases at each admitted vector image.",
+      "measurements": {
+        "fullStateCases": 31800,
+        "unknownPCOrWordGuards": 4
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/arm7/acceptance.json",
+      "sha256": "d82689f9cf806a73f5bebd507326f2dea7ccbc5eb9768086be3f64cd28bc4396"
+    },
+    {
+      "limits": "Dispatcher-only operation markers establish exact binding/guard and fault-argument selection. Full actual operation, CPU/FIQ/bus/8MiB RAM semantics are verified separately with31,800 cases. No performance or whole-engine claim.",
+      "measurements": {
+        "authenticatedBindings": 15898,
+        "changedWordGuards": 8192,
+        "comparisons": 2201224
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/arm7-dispatch/acceptance.json",
+      "sha256": "0995f24a0bf1707290b41942a2442b3798658690d5da8c2094ed32c1bd78f04c"
+    },
+    {
+      "limits": "All DSP state fields, entire DSP register block, all 8MiB sound RAM; four consecutive samples per seeded case at product optimization",
+      "measurements": {
+        "fullStateCases": 2576,
+        "samples": 10304,
+        "testedProgramImages": 644,
+        "unknownProgramGuards": 3
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/aicadsp/acceptance.json",
+      "sha256": "2bc259b684ca9801fe074e6599870ac14113cb0607a3440a46c72a60a0f06a58"
+    },
+    {
+      "limits": null,
+      "measurements": {
+        "immutablePCEntriesChecked": 3145728
+      },
+      "passed": true,
+      "report": "build/verification/rebuild-1790171340115337000/sh4-targets.json",
+      "sha256": "0383bd32e9125bed089a96cc0c1636137532a0354cdea8f50d3426cab3b9b616"
+    }
+  ]
+}

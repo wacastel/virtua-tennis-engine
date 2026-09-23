@@ -1,0 +1,30 @@
+{
+  "admittedPrograms": 644,
+  "architecture": "Exact complete MPRO identity -> 128 fixed step functions, with literal bitfields and original data/RAM timing",
+  "buildManifestSHA256": "27445789c97bc7c39c77eb26677db76e23509277179e11581501471618180ca4",
+  "coverageLimit": "Every ascending load/clear prefix of the pinned cartridge program; all other full MPRO images fail closed. No runtime instruction decode.",
+  "generatorSHA256": "91943a43d949e847006d67c5726126082d7b08b5ae66058d949df05eaf977584",
+  "observedUploadImages": 644,
+  "originalGenerationSHA256": "b19318927c465c91300d6ea1683c0cee8a7a99c994e91cfbd9b20d3459175dbe",
+  "programRecipe": {
+    "bytes": 2048,
+    "fileSHA256": "50c2cee5a34096b6f86f01327491734b3e5a30bfb2831a154e144d7b40f767c7",
+    "name": "mpr-22926.ic11",
+    "offset": 17304,
+    "processor": "AICA DSP",
+    "programSHA256": "20f83a224c4a53a3b9b8d4e882bd8f2684531de3e65e4f9513d8e63a26f6861b",
+    "schema": 1,
+    "transitions": "All ascending 32-bit-slot zero-to-program and program-to-zero prefixes, including endpoints."
+  },
+  "replaces": [
+    "core/hw/aica/dsp.cpp",
+    "core/hw/aica/dsp_interp.cpp"
+  ],
+  "sampledPrograms": 172,
+  "sourcePins": {
+    "core/hw/aica/dsp.cpp": "73f68333463766d6ebcf17484570525d9ed9425b98a06fcf35b64dfd9538bf06",
+    "core/hw/aica/dsp_interp.cpp": "7e6bb74070726c64287a0350b89767e8eb0ce7bd5c2375f2f5f1cef2dea3f3d4"
+  },
+  "traceIndependentCodeProof": "Documentation/sound-clock1-coverage.json",
+  "uniqueStepOperations": 652
+}

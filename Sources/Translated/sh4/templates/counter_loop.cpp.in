@@ -1,0 +1,91 @@
+#include "counter_loop.h"
+#include "hw/sh4/sh4_mem.h"
+#include "hw/sh4/modules/mmu.h"
+#include "hw/mem/addrspace.h"
+#include "cfg/option.h"
+#include "network/ggpo.h"
+#include <algorithm>
+#include <cstring>
+#if defined(GDB_SERVER) || defined(STRICT_MODE) || FEAT_SHREC != DYNAREC_NONE
+#error Counter-loop contraction requires the reviewed plain single-owner fixed core.
+#endif
+namespace addrspace { extern __attribute__((visibility("hidden"))) void* memInfo_ptr[0x100]; }
+namespace {
+struct Range { uintptr_t address; size_t size; };
+__attribute__((always_inline)) inline bool overlap(Range a,Range b) { return a.address < b.address+b.size && b.address < a.address+a.size; }
+__attribute__((always_inline)) inline bool ramSpan(u32 address,size_t size,Range &range) {
+    const u32 alias=address&0xe0000000u,physical=address&0x1fffffffu;
+    if ((alias!=0 && alias!=0x80000000u && alias!=0xa0000000u)
+        || physical<0x0c000000u || physical>=0x10000000u || size>4*1024*1024u) return false;
+    const u32 offset=(physical-0x0c000000u)&(RAM_SIZE-1u);
+    if (size>RAM_SIZE || offset>RAM_SIZE-size || (address&0x00ffffffu)>0x01000000u-size) return false;
+    const uintptr_t entry=reinterpret_cast<uintptr_t>(addrspace::memInfo_ptr[address>>24]);
+    const uintptr_t pointer=entry&~uintptr_t(31);
+    if (!pointer) return false;
+    const u32 shift=static_cast<u32>(entry)&31u;
+    const uintptr_t resolved=pointer+((address<<shift)>>shift);
+    const uintptr_t actual=reinterpret_cast<uintptr_t>(&mem_b[offset]);
+    if (resolved!=actual) return false;
+    // The entire span must be contiguous under the same live mapping mask.
+    const u32 end=address+u32(size)-1u;
+    if (pointer+((end<<shift)>>shift)!=actual+size-1u) return false;
+    range={actual,size};return true;
+}
+__attribute__((always_inline)) inline u16 load16(uintptr_t p) { u16 x; std::memcpy(&x,reinterpret_cast<const void*>(p),2);return x; }
+__attribute__((always_inline)) inline u64 load64(uintptr_t p) { u64 x; std::memcpy(&x,reinterpret_cast<const void*>(p),8);return x; }
+__attribute__((always_inline)) inline u32 load32(Range p) { u32 x; std::memcpy(&x,reinterpret_cast<const void*>(p.address),4);return x; }
+
+}
+bool vt_try_counter_loop(Sh4Context *ctx,Sh4Cycles &cycles)
+{
+    const u32 entry=ctx->pc-2,alias=entry&0xe0000000u;
+    if ((alias!=0 && alias!=0x80000000u && alias!=0xa0000000u)
+        || (entry&0x1fffffffu)!=0x0c0c183au || ctx->r[13]!=(alias|0x0c0bf320u)
+        || ctx->cycle_counter<31 || ctx->cycle_counter>SH4_TIMESLICE
+        || !cycles.vtCounterLoopReady(ctx) || mmu_enabled() || RAM_SIZE!=32*1024*1024u) return false;
+    // No debugger, concurrent emulator/rendering owner, network or rollback observer.
+    if (config::ThreadedRendering || config::NetworkEnable || config::GGPOEnable
+        || settings.network.online || ggpo::active() || ggpo::rollbacking()
+        || settings.naomi.multiboard || settings.naomi.slave || settings.naomi.drivingSimSlave) return false;
+    const auto fetch=IReadMem16;const auto reader=ReadMem32;const auto writer=WriteMem32;
+    if (fetch!=addrspace::read16 || reader!=addrspace::read32 || writer!=addrspace::write32) return false;
+    const u32 sp=ctx->r[15];if (sp&3u) return false;
+    const Range actualRam{reinterpret_cast<uintptr_t>(&mem_b[0]),RAM_SIZE};
+    if (overlap(actualRam,{reinterpret_cast<uintptr_t>(ctx),sizeof(*ctx)})
+        || overlap(actualRam,{reinterpret_cast<uintptr_t>(&cycles),sizeof(cycles)})) return false;
+    Range code[6],literal,stackInput,counterPointer,comparePointer,target,arg,compare;
+
+    if (!ramSpan(alias|0x0c0bf360u,4,literal) || load32(literal)!=@@TABLE_LITERAL@@u
+        || !ramSpan(sp,8,stackInput)) return false;
+    counterPointer={stackInput.address,4};comparePointer={stackInput.address+4,4};
+    const u32 counterAddress=load32(counterPointer),compareAddress=load32(comparePointer);
+    if ((counterAddress|compareAddress)&3u) return false;
+    const u32 table=load32(literal),tableEntry=table+56u;
+    if (!ramSpan(tableEntry,4,target) || load32(target)!=(alias|0x0c0be080u)
+        || !ramSpan(tableEntry+4u,4,arg) || !ramSpan(compareAddress,4,compare)
+        || load32(compare)!=ctx->r[14]) return false;
+    Range writes[4];
+    if (!ramSpan(sp-4u,4,writes[0]) || !ramSpan(sp-12u,4,writes[1])
+        || !ramSpan(sp-8u,4,writes[2]) || !ramSpan(counterAddress,4,writes[3])) return false;
+    const u32 count=load32(writes[3]);if (count<2u || count>0x7fffffffu) return false;
+    const unsigned iterations=std::min({14u,u32((ctx->cycle_counter-1)/30),count-1u});
+    if (!iterations) return false;
+@@CODE_GUARDS@@
+    const Range reads[]={literal,counterPointer,comparePointer,target,arg,compare};
+    const Range cpu{reinterpret_cast<uintptr_t>(ctx),sizeof(*ctx)},cycleState{reinterpret_cast<uintptr_t>(&cycles),sizeof(cycles)};
+    for (unsigned i=0;i<4;++i) {
+        for (unsigned j=0;j<i;++j) if (overlap(writes[i],writes[j])) return false;
+        for (Range r:code) if (overlap(writes[i],r)) return false;
+        for (Range r:reads) if (overlap(writes[i],r)) return false;
+        if (overlap(writes[i],cpu) || overlap(writes[i],cycleState)) return false;
+    }
+    const u32 argument=load32(arg),compared=load32(compare),after=count-iterations,ret=alias|0x0c0c183eu;
+    // Preflight uses only bounded pure RAM loads; no callback can change these
+    // mappings/readers or CPU state between validation and the four plain writes.
+    if (IReadMem16!=fetch || ReadMem32!=reader || WriteMem32!=writer) return false;
+    writer(sp-4u,ret);writer(sp-12u,7u);writer(sp-8u,tableEntry);writer(counterAddress,after);
+    ctx->r[0]=0;ctx->r[1]=counterAddress;ctx->r[2]=compared;ctx->r[3]=after;ctx->r[4]=argument;
+    ctx->pr=ret;ctx->sr.T=0;ctx->pc=entry;
+    cycles.vtCounterLoopCommit(iterations);
+    return true;
+}

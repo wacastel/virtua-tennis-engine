@@ -1,0 +1,28 @@
+{
+  "cases": 135624,
+  "compared": [
+    "complete pointer-free prepared Sh4Context bytes including all registers and cycle counter",
+    "SH4 exception PC and event"
+  ],
+  "contextsPerWord": 8,
+  "distinctWords": 16953,
+  "fixedManifestSHA256": "d276592fb6b3145123e252c3a87eb87e9117875b004ca5e506d09c81cb3cf814",
+  "fixtureLibrarySHA256": "fcadd13f34dfa82a2eb53f5f86e1692f1af91b81a9d55a357f561d935fa0b3ea",
+  "guardCases": [
+    "unknown PC gives sticky controlled FlycastException",
+    "changed BIOS reset word gives sticky controlled FlycastException"
+  ],
+  "harnessSourceSHA256": {
+    "fixed.cpp": "23a3136653f7edf49271a5b68367c1e66428e095d5f52e9f0c0790dade450ce4",
+    "original.cpp": "10aeee6dd034ad89ea9ab45a889e02053af5c3ffe1862538d0767ce2b337c5d8",
+    "vt_fixed_fault.cpp": "e2378b40cfa6783f02d3a43400ca2f538920b62b28d7ce4aeb331259fa17566d"
+  },
+  "instructionsPerCase": 2,
+  "interpreterCycleMultiplier": 1,
+  "limits": "Context-local operations only; no claim of complete bus/MMU/IRQ/delay-slot validation. Full original/native replay is reported separately.",
+  "negativeControl": "One intentionally flipped fixed-context R0 bit is detected",
+  "passed": true,
+  "referenceLibrarySHA256": "3772f0ac91c10d5ce7f18295d2d738ec2c8e52224ac9c8acdddb1cb2effad0c6",
+  "sh4ClockHz": 200000000,
+  "verifierSHA256": "c0041899c2473c5cc4b7b33ded631222564df10edb247fd38ef8551b89cd9214"
+}

@@ -1,0 +1,28 @@
+{
+  "configuration": "Configuration/arm7-programs.json",
+  "fixed32KiBWindowIdentities": 15898,
+  "immutableSources": [
+    {
+      "bytes": 32768,
+      "fileSHA256": "db1b5d7f4d4c67abf67df93f517ee81b6c1ff72d86eb2f68a380c3f37ea56729",
+      "mappedBase": 0,
+      "name": "epr-21577h.ic27",
+      "offset": 458752,
+      "windowSHA256": "e30a61eb64d908697d256a58cf4f22ef5cf5ac8a3ae79f4f2cb48d31a3a65ff4"
+    },
+    {
+      "bytes": 32768,
+      "fileSHA256": "56080e0f00e0f1d788d4313cae51e24438a5830a0b826ad798420249c407bab7",
+      "mappedBase": 0,
+      "name": "mpr-22924.ic9",
+      "offset": 0,
+      "windowSHA256": "3b8bd2f49d97af3a62b96a4996529c9e07d4f842d69dd61f4754c4d48e0c55f0"
+    }
+  ],
+  "observedIdentities": 5062,
+  "observedIdentitiesMatchingROM": 5062,
+  "observedTraceSHA256": "2a0ea591b28792137d820824d8d0aa217bf45412f0224e784711f1c1bf04bff8",
+  "scope": "The fixed generator now uses these two immutable32KiB windows. Optional original traces validate but cannot extend their instruction bindings.",
+  "status": "passed",
+  "uniqueLiteralOperations": 4854
+}

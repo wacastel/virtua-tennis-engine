@@ -1,0 +1,17 @@
+{
+  "comparisons": [
+    "original handler pointer identity",
+    "FPU disabled classification",
+    "issue cycles",
+    "execution unit",
+    "memory-cycle classification"
+  ],
+  "generatorSHA256": "569b70b3d2ef4b9463f78898a5c79031ad943e526ccb0e5cbf8f75e0a6a7a0ee",
+  "instructionWords": 65536,
+  "oracleLibrarySHA256": "c0a791915da8fcbeae5dfa28b5836b13c2e8ee9fbeb523ce758b7e23d7eefad5",
+  "oracleSourceSHA256": "d97505dd58a6265ffa031786dc2f59c2a1122ea441d48e35740e3e9ab593bdf4",
+  "passed": true,
+  "referenceLibrarySHA256": "3772f0ac91c10d5ce7f18295d2d738ec2c8e52224ac9c8acdddb1cb2effad0c6",
+  "scope": "Exhaustive metadata mapping, not instruction execution or gameplay.",
+  "verifierSHA256": "1920e53501390c2546a478f432d654408c2c55e071c48d7274767c7701677d92"
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "core/hw/naomi/naomi_cart.h": "c1acdbc67eae2ac5b6591c8dccf0fe743015429eb4e53dd627425e0149feeb31",
+    "core/hw/sh4/interpr/sh4_fpu.cpp": "7909424e2124989d94335955d8e12bf057ffd579461c372ccb657c858db58def",
+    "core/hw/sh4/interpr/sh4_interpreter.cpp": "ad864b0755f5be43a04b86e712e474ef88688f67799f67fcf95ea462a402b1b6",
+    "core/hw/sh4/interpr/sh4_opcodes.cpp": "f1b0da1c74094225d073335efe505f0d2e5403974ff7436aefc2d62be67e5d10",
+    "core/hw/sh4/sh4_cycles.cpp": "54cf0a06dad848cab8d8b2fefc6abb450f554f7263ef4cfd2479a2649b6c22a0",
+    "core/hw/sh4/sh4_cycles.h": "67c571bb4aff2a36c18fb1d52be63db222815e4fe42bb18e060648e000ccfb27",
+    "core/hw/sh4/sh4_interpreter.h": "d166759b49fd60b4f7e49c3cf2742e710dcef520abb044e36d4131508491adb8",
+    "core/hw/sh4/sh4_opcode_list.cpp": "4a5c2aff6aefe9d948544cbe63cd4e1ca37db6506ffd0f73db74b5812295d772",
+    "core/reios/reios.h": "d07ff8a3792265885317b2cb14d9e176766809a9b51cccf84f36c4aa0cf1f6d3"
+  },
+  "upstreamCommit": "628bd3dbb160ea2750230fc6b00c0bb8173cb1f6"
+}

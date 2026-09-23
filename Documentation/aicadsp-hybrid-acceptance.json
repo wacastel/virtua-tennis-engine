@@ -1,0 +1,39 @@
+{
+  "comparedSteps": 6244,
+  "emulatedSeconds": 233.26448544,
+  "exactInputAndHardwareClock": true,
+  "exactPCMAndCounts": true,
+  "exactRGBA": true,
+  "finalSH4Ticks": 46652897088,
+  "firstDifferences": [],
+  "passed": true,
+  "purpose": "Fixed AICA DSP with original SH4 and ARM7 matches original replay",
+  "runs": [
+    {
+      "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+      "coreSHA256": "e4541eea4853f7766adb357a01591e6af0db7c0e680fc6d2fe042fb9af8214ca",
+      "finalRGBA_SHA256": "a361a5886272275fa45352507e2e81e536db81a5e34b4ec72b6a2d6d172da892",
+      "frameStreamSHA256": "bc8fdfed9ee73e9e69f70718b99fe7d1ccffced7ac98bf23974186bfd24423c2",
+      "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+      "path": "build/verification/reference-play-rtc",
+      "pcmStreamSHA256": "655039cf63088afc06863c70a49f0872fa3d4c4ab8ef418dda751210490e669e",
+      "reportSHA256": "73116fdf2f711f4449de0381d2803c7e67d9b69b760d91793100b35156a89288",
+      "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+    },
+    {
+      "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+      "coreSHA256": "5dbf8ca3557c9ddf908b84a0b09e77d0b598d9099c5aa77113869097a4b311ec",
+      "finalRGBA_SHA256": "a361a5886272275fa45352507e2e81e536db81a5e34b4ec72b6a2d6d172da892",
+      "frameStreamSHA256": "bc8fdfed9ee73e9e69f70718b99fe7d1ccffced7ac98bf23974186bfd24423c2",
+      "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+      "path": "build/verification/hybrid-aicadsp",
+      "pcmStreamSHA256": "655039cf63088afc06863c70a49f0872fa3d4c4ab8ef418dda751210490e669e",
+      "reportSHA256": "d297e82122635bfcc96007afd4d8251d9df7641bbf38e28fea926e667d2eab37",
+      "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+    }
+  ],
+  "scope": "Exact pixels, samples/counts, inputs and scheduler ticks for this authentic replay on this host. This does not prove unvisited paths, all players or physical-board equivalence.",
+  "sourceScriptSHA256": "f1d92afa428b27f2fa7a2576fb61c51dd7548a9b3a34e2eb8969a8daf77134e1",
+  "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+  "stereoSampleFrames": 10287298
+}

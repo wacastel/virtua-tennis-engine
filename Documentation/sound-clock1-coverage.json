@@ -1,0 +1,27 @@
+{
+  "clockHz": 200000000,
+  "results": {
+    "aicadsp": {
+      "clock1ValidationCodeByteIdentical": true,
+      "codeSourceFiles": 14,
+      "counts": {
+        "admittedPrograms": 644,
+        "observedUploadImages": 644,
+        "sampledPrograms": 184
+      },
+      "generationSHA256": "ce4ddc2a529f241f5a3ff8641269ad9ebacabf63a2167005fbc1f038336a1b09",
+      "traceSHA256": "e3b1bec6f6f88155878ff7d9db018bcd9c124aae35a3ea27c068e11df36895b2"
+    },
+    "arm7": {
+      "clock1ValidationCodeByteIdentical": true,
+      "codeSourceFiles": 80,
+      "counts": {
+        "fixedIdentities": 15898,
+        "observedIdentities": 5058
+      },
+      "generationSHA256": "97b400d0ee79dec8d61ff30dc8f2970c42065a6bcdf8134307b230c188441dc9",
+      "traceSHA256": "c5ad66adfba6226643b590c08084d64eef95571eecea1e3f5d5001d6d3938fd1"
+    }
+  },
+  "status": "passed"
+}

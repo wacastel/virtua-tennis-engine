@@ -1,0 +1,167 @@
+{
+  "authoredOriginalInputsOnly": true,
+  "comparedSteps": 20704,
+  "exactPCMCountsInputAndHardwareTicksEveryStep": true,
+  "exactRGBAEveryStep": true,
+  "finalCanonicalBuildPins": {
+    "build/native/manifest.json": "7938749170baea217f01e3f1e08ba5bde8d8ba1550431dc9ec5d0d4618394702",
+    "build/native/preparation.json": "d5cf28e0cb0dbcb40c776460a5a6f6371c0afc4e11bd4d8a8edf56ddfeb23abc"
+  },
+  "finalCoreRecheckedAfterCachedPreparation": true,
+  "fixedRTCUnixEpoch": 946684800,
+  "isolatedFreshSaves": true,
+  "limits": [
+    "The reference is the pinned original execution engine with corrected SH4 clock and read-only scheduler-tick instrumentation. No original CPU decoder is used by the native candidate.",
+    "Reviewed images establish human player selection, scoring and each human winning a game in the two-player route; the singles route establishes match loss, original Continue countdown, accepted continuation and resumed match play.",
+    "Authored Shot, Lob and directional inputs do not classify every stroke, prove every player or stage, a full tournament, or physical arcade-board equivalence.",
+    "The original and native runs may be concurrent or paused. These are exact-output correctness proofs, not realtime, physical-controller, acoustic or GUI performance measurements.",
+    "Raw captures, local saves and media remain excluded from source publication; this document records only paths, hashes, counts and observations."
+  ],
+  "nativeCore": "build/native/libvirtua_tennis.dylib",
+  "nativeCoreSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+  "passed": true,
+  "referenceCoreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+  "routes": [
+    {
+      "comparedSteps": 9004,
+      "comparisonReport": "build/verification/extended-final-clock1/two-player-join/native-636b4ad2edf5/acceptance.json",
+      "comparisonReportSHA256": "83bd09f784de1e82be66e4b4c8227c08916ffecd3822dfe375afd4c1f5aa69da",
+      "emulatedSeconds": 159.73353312,
+      "finalSH4Ticks": 31946706624,
+      "name": "two-player-join",
+      "native": {
+        "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+        "coreSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+        "finalRGBA_SHA256": "360726cef7154fd5065ef8577681b91534f95f967a97da1a6a076230ad51a3ac",
+        "frameStreamSHA256": "cab0a2b18b5913782ace7d46bb39c9dc58bd01de30e8707d7056d3b5361beefd",
+        "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+        "path": "build/verification/extended-final-clock1/two-player-join/native-636b4ad2edf5/capture",
+        "pcmStreamSHA256": "cc2177f495555ed64b4d9ce3feb79df790d4ae4286b33219bf94d0bc2a7c1ad0",
+        "reportSHA256": "a433ca774b75eefe194ebf9fb2d806812ed8452ed08e30d4a837cbd2bd1b17ff",
+        "routeSHA256": "60b3b33ca0236e3fce086d9431bc6068d0392b4d4eb56477f9a97c8a15c04515"
+      },
+      "reference": {
+        "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+        "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+        "finalRGBA_SHA256": "360726cef7154fd5065ef8577681b91534f95f967a97da1a6a076230ad51a3ac",
+        "frameStreamSHA256": "cab0a2b18b5913782ace7d46bb39c9dc58bd01de30e8707d7056d3b5361beefd",
+        "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+        "path": "build/verification/extended-final-clock1/two-player-join/reference/capture",
+        "pcmStreamSHA256": "cc2177f495555ed64b4d9ce3feb79df790d4ae4286b33219bf94d0bc2a7c1ad0",
+        "reportSHA256": "361a95715262ab5844f9d84325e9db936a699cad881b13b09270d473a8c9ae61",
+        "routeSHA256": "60b3b33ca0236e3fce086d9431bc6068d0392b4d4eb56477f9a97c8a15c04515"
+      },
+      "reviewedOriginalScenes": [
+        {
+          "PNG_SHA256": "ab644c0c1c54a8055d0ecb10a5757884ff37c83e520200db6901bf07b853d119",
+          "observed": "Both player-selection slots are human; P1 Courier and highlighted P2 Haas.",
+          "step": 3840
+        },
+        {
+          "PNG_SHA256": "eb6a156ac421b521b4f5eb7c5c3caee301521a9e57cc7872c6e499a5445e32b1",
+          "observed": "Actual Courier versus Pioline play; both players have15points.",
+          "step": 5280
+        },
+        {
+          "PNG_SHA256": "056ff1f0a788a8b0fda7ca7b7e8e444da1a7dfdb5aeae2da8e00fcc3b714fc91",
+          "observed": "P2 has won the first game; next game starts0\u20130.",
+          "step": 6720
+        },
+        {
+          "PNG_SHA256": "64611b443690a849cb2c4367a90a05141cce81dba22794d571fe3d29e5bc387a",
+          "observed": "Visible P1 forehand and ball in active rally.",
+          "step": 7440
+        },
+        {
+          "PNG_SHA256": "41955b06d195df50552a68ed365a9b6cc549a3a7a9b60ea56234bbd5d4e724ac",
+          "observed": "Final Game1P overlay; one game marker lit for each player (1\u20131).",
+          "step": 9004
+        }
+      ],
+      "route": "Configuration/replays/two-player-join.json",
+      "routeSHA256": "60b3b33ca0236e3fce086d9431bc6068d0392b4d4eb56477f9a97c8a15c04515",
+      "stereoSampleFrames": 7044477
+    },
+    {
+      "comparedSteps": 11700,
+      "comparisonReport": "build/verification/extended-final-clock1/singles-continue/native-636b4ad2edf5/acceptance.json",
+      "comparisonReportSHA256": "994cd8607f65bc071074cfdf95a99244a3dd80cd6b4d414fbabc1478e42fc17f",
+      "emulatedSeconds": 204.82183904,
+      "finalSH4Ticks": 40964367808,
+      "name": "singles-continue",
+      "native": {
+        "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+        "coreSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+        "finalRGBA_SHA256": "bc568a1c6b07ae26b8f5ff09de80877b361e0a879a2f46843360eddd6af5ecc1",
+        "frameStreamSHA256": "71d9e2c10721bd665eaf184849359dd073724d5bbdefb32b1dd5561b37964e3e",
+        "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+        "path": "build/verification/extended-final-clock1/singles-continue/native-636b4ad2edf5/capture",
+        "pcmStreamSHA256": "90f2ce96b860d703d9daa43ea16d020d707eed6035a5e82ef2af3cac126bb566",
+        "reportSHA256": "1944a9455361612b55c236c95069de86c64eddc4e309de41be90df182ecd08b9",
+        "routeSHA256": "fc61299552ac0bedc9eb14d0037e5590ab08806f9fbdc2b550135d6945c20396"
+      },
+      "reference": {
+        "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+        "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+        "finalRGBA_SHA256": "bc568a1c6b07ae26b8f5ff09de80877b361e0a879a2f46843360eddd6af5ecc1",
+        "frameStreamSHA256": "71d9e2c10721bd665eaf184849359dd073724d5bbdefb32b1dd5561b37964e3e",
+        "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+        "path": "build/verification/extended-final-clock1/singles-continue/reference/capture",
+        "pcmStreamSHA256": "90f2ce96b860d703d9daa43ea16d020d707eed6035a5e82ef2af3cac126bb566",
+        "reportSHA256": "c938699bce12cca6476a09fa41335882f7e94dc72a2d2c7f47ac286a07fb96a5",
+        "routeSHA256": "fc61299552ac0bedc9eb14d0037e5590ab08806f9fbdc2b550135d6945c20396"
+      },
+      "reviewedOriginalScenes": [
+        {
+          "PNG_SHA256": "def146d0c2e9303ed7a0ff65535ff9a5b573aebc30a28537479648db33368e64",
+          "observed": "Original P1 player selection.",
+          "step": 3840
+        },
+        {
+          "PNG_SHA256": "760bebc0b51247c926430985370340bc296ad51fa66d2f477c2661139a1521ed",
+          "observed": "Computer has one game and40points in the next game; P1 has0points.",
+          "step": 8400
+        },
+        {
+          "PNG_SHA256": "bde30eaeca4f34be432330c8516dd8ba2060b127258fc592155e2807601ac9be",
+          "observed": "Original Continue?9 after match loss.",
+          "step": 8880
+        },
+        {
+          "PNG_SHA256": "6d08fec51213452fe730fd9f551024c1e00749476b53e071832a83d291647331",
+          "observed": "Original Continue?6 just before the new coin input.",
+          "step": 9120
+        },
+        {
+          "PNG_SHA256": "43c27163697f5c83c5f29efe415c7c6ead807d538fe3bc7199164a5c8f3e9858",
+          "observed": "Accepted continuation returns to1STROUND Courier versusJohansson,0\u20130.",
+          "step": 9360
+        },
+        {
+          "PNG_SHA256": "602779e065d2288a00e77c4ece7b1e7c91562cf2a5dbc0f6bbd9ed3d8c1697a7",
+          "observed": "Continued match is live with a visible rally.",
+          "step": 9840
+        },
+        {
+          "PNG_SHA256": "a3e05f9c775aec6e4cdebf66277ed9f1518905505455f6778f54b2851ecfcca9",
+          "observed": "Continued match has advanced to COM30/P10.",
+          "step": 11280
+        }
+      ],
+      "route": "Configuration/replays/singles-continue.json",
+      "routeSHA256": "fc61299552ac0bedc9eb14d0037e5590ab08806f9fbdc2b550135d6945c20396",
+      "stereoSampleFrames": 9032936
+    }
+  ],
+  "schema": 1,
+  "sourcePins": {
+    "build/reference-lab/fixed-clock.dylib": "7684e76b24fed21469129fedb5e4324c31617e9d05189b31700bb494fa090e42",
+    "build/reference-lab/gl-harness": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+    "build/verification/extended-final-clock1/reference-scenes.json": "ef139e714081add2d54e4f8dba71b28c05bd85594552a64ec2c758b7d21097ec",
+    "build/verification/extended-final-clock1/run-native-final.py": "59fb1c0ab06a9be87663025b1bc84c308735620730c754a8c23ed46158f59999",
+    "build/verification/extended-final-clock1/summarize-final.py": "5d9e870f7f6569100b4ece1bcce80c4ea0440adfeef0408b8a888e377f2c5966",
+    "scripts/verify_replay.py": "7a0d3ac10b47bdfe235eb747126e68d89f083129d4b1a004465a33320e15f368"
+  },
+  "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+  "stereoSampleFrames": 16077413
+}

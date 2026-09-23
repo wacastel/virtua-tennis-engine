@@ -1,0 +1,653 @@
+{
+  "schema": 1,
+  "optimizationOnly": true,
+  "traceRequiredForGeneration": false,
+  "maximumSegments": 16,
+  "minimumInstructions": 4,
+  "maximumInstructions": 16,
+  "scope": {
+    "firstFetchRemainsOriginal": true,
+    "noHoistingAcrossMemoryOrControl": true,
+    "originalOperationBodiesAndPerOperationCyclesRetained": true,
+    "failedPreflightHasNoArchitecturalEffects": true,
+    "ordinaryBusEventCountsPreserved": false,
+    "budgetStrictlyGreaterThanAllUnitMaximum": true,
+    "plainOriginalMappedRAMOnly": true
+  },
+  "originalSourceSHA256": {
+    "core/hw/sh4/interpr/sh4_opcodes.cpp": "f1b0da1c74094225d073335efe505f0d2e5403974ff7436aefc2d62be67e5d10",
+    "core/hw/sh4/interpr/sh4_fpu.cpp": "7909424e2124989d94335955d8e12bf057ffd579461c372ccb657c858db58def",
+    "core/hw/sh4/sh4_opcode_list.cpp": "4a5c2aff6aefe9d948544cbe63cd4e1ca37db6506ffd0f73db74b5812295d772",
+    "core/hw/sh4/sh4_cycles.cpp": "54cf0a06dad848cab8d8b2fefc6abb450f554f7263ef4cfd2479a2649b6c22a0",
+    "core/hw/sh4/sh4_cycles.h": "67c571bb4aff2a36c18fb1d52be63db222815e4fe42bb18e060648e000ccfb27",
+    "core/hw/sh4/sh4_if.h": "e0e1c59540f2292428e356a32c106a84cfcf5ba8a5b3f725e91c2ce2febf3941",
+    "core/hw/sh4/sh4_core.h": "019829493397165ad7bf7a0e5b74437768ad90d7d1e0d249766dfae687b68108",
+    "core/hw/sh4/dyna/decoder.h": "117d549c04c30367c712b512db06676bcfb7d515302c8610f414ce16620a5f18"
+  },
+  "reviewedOperationBodySHA256": {
+    "i0000_nnnn_0101_1010": "6fa150d218a12c1978f75bd08bdd0dc4b0b1637b6cf54dcaad3b02efb8ecb8db",
+    "i0010_nnnn_mmmm_1001": "f3d184d8816ac4fb75ebb89388366e3cc40b66ec20994f6a02d88dce31039fef",
+    "i0010_nnnn_mmmm_1011": "af814be0fa47c158c1c411d8e6b2e405774efee678daa37efd7569daa6c06dea",
+    "i0011_nnnn_mmmm_0011": "833b9092b4dcaa81badfcb539891cff0e4345b502145f52c5ecabd77d8f45d58",
+    "i0011_nnnn_mmmm_0111": "814e6f863d45be9745ab85dc61468857d39268d409ed660beab830247a2dc281",
+    "i0011_nnnn_mmmm_1100": "51001a71a296f51987b4d777183abf63c9c653ec1d45694a4d2751fc1c2b625d",
+    "i0100_nnnn_0000_0000": "f4df0d91ae93170c32531458f12763c90915ac12a9260aeadecbc90f091d4b9f",
+    "i0100_nnnn_0000_1000": "3ebed225b824f2e5f473461b0316a2a562bc4149cf13f70d45201045747a11e8",
+    "i0100_nnnn_0001_0000": "c62cb3c2807a0402b4ab8160bb26fdc28d99bf59729734f68d1608567b4903bf",
+    "i0100_nnnn_0001_1000": "89e4ad0ba340ad51f39256110d8a371402c085cdd51e13657324e88fb905d25a",
+    "i0100_nnnn_0010_1000": "d5380ba26cb4a7b31e35f3c490583b53363574e1b90943fd0d5dabb28ee95546",
+    "i0100_nnnn_0101_1010": "781a16e0db479886f45e422ffcb4c6a8625bea1935ee3d22723009600e30ce17",
+    "i0110_nnnn_mmmm_0011": "cd764843c384c6293a6009149eaf97479386977a0ada9a636a577cbed30e6c28",
+    "i0111_nnnn_iiii_iiii": "75f917bee7817a7b5f468b65a5e27a66004eb2fdc354e9554d82efadd792159c",
+    "i1110_nnnn_iiii_iiii": "6fe95455137c67ccb2b71006a539ac363f8add98c6f014325336d231120a9d9b",
+    "i1111_nnnn_0000_1101": "af2ace2463783cb3c73cadef9e7745149ceeacb988bcc60ad0e5fa816b4c5305",
+    "i1111_nnnn_0001_1101": "8f7cd8f12ca8055d3187d85f8b804995cdedcda323bfe063e1ad0e6954ecfb0a",
+    "i1111_nnnn_0010_1101": "42fcbb70e83fbcb6d16db8ca0979ef33316e148336091ab8dda05a6ecf66399c",
+    "i1111_nnnn_0011_1101": "5a5aef41c57ea15364866b55048331c164743ee141e4ea9982a96193385b575f",
+    "i1111_nnnn_1000_1101": "374a9cc69c02113e9cab621609cdb320b888b64656b2771cf4d0850bdbc9ab21",
+    "i1111_nnnn_1001_1101": "1e273a687bddf846de955dd49e4227d42b4a0095cd671b9b9f7d8f9d17b9071b",
+    "i1111_nnnn_mmmm_0000": "af98ee08643e0d114803a772810dc00baadbe2949e11fe348137ab06176ba3e1",
+    "i1111_nnnn_mmmm_0001": "12d99b52eada18f6ef33ebd43a4c0420a0f010e0d69c8c0c155d27b06e977564",
+    "i1111_nnnn_mmmm_0010": "2bb420bdc74174be08d008809adebf7140b052cfcdfdbe6450874186b3ace3f8",
+    "i1111_nnnn_mmmm_0011": "143545b8a6502bc5fb3385361c115265973c80762f2e178acfe22766a6884d86",
+    "i1111_nnnn_mmmm_0101": "c1b861fa1fea0aa5cb80abbc015345b0759fb85ff02170149f2ca4d162f92b5c",
+    "i1111_nnnn_mmmm_1100": "d0542573afac42196beff283fb30206ac5d311ad9cffe4a9a9dd11888f192e4d"
+  },
+  "allowedCalls": [
+    "CHECK_FPU_32",
+    "GetImm8",
+    "GetM",
+    "GetN",
+    "GetSImm8",
+    "dr_hex",
+    "fixNaN64",
+    "fr_hex",
+    "getDRm",
+    "getDRn",
+    "if",
+    "isnan",
+    "setDRn",
+    "sqrt",
+    "sqrtf",
+    "switch",
+    "xd_hex"
+  ],
+  "segments": [
+    {
+      "pc": "0x0c0afeb8",
+      "parentBlockPC": "0x0c0afeb8",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 5,
+      "instructionSpanSHA256": "617eec4ce757bb0f59ebea0a3315067cea7dffb3227d72f28aac9385eff2344d",
+      "sourceOffset": 589496,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "EX": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "LS": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0ae056",
+      "parentBlockPC": "0x0c0ae054",
+      "image": "game0",
+      "firstInstructionIndex": 1,
+      "instructions": 7,
+      "instructionSpanSHA256": "d56d0ca3bd501ae29520409de8ddbe3b88ee23b462e81c12f7538ae7cec393d3",
+      "sourceOffset": 581718,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "EX": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "LS": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0afef8",
+      "parentBlockPC": "0x0c0afef8",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 5,
+      "instructionSpanSHA256": "617eec4ce757bb0f59ebea0a3315067cea7dffb3227d72f28aac9385eff2344d",
+      "sourceOffset": 589560,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "EX": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "LS": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "EX"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        }
+      }
+    },
+    {
+      "pc": "0x0c09d2e8",
+      "parentBlockPC": "0x0c09d2e8",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 15,
+      "instructionSpanSHA256": "4103c0d9823051429c8b287ffc2714e9d115fe52604c0c9c14603d05fa41ff79",
+      "sourceOffset": 512744,
+      "maximumExactCost": 10,
+      "cycleTable": {
+        "MT": {
+          "cycles": 9,
+          "finalUnit": "CO"
+        },
+        "EX": {
+          "cycles": 9,
+          "finalUnit": "CO"
+        },
+        "BR": {
+          "cycles": 9,
+          "finalUnit": "CO"
+        },
+        "LS": {
+          "cycles": 10,
+          "finalUnit": "CO"
+        },
+        "FE": {
+          "cycles": 9,
+          "finalUnit": "CO"
+        },
+        "CO": {
+          "cycles": 10,
+          "finalUnit": "CO"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0ae0ae",
+      "parentBlockPC": "0x0c0ae0ae",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 7,
+      "instructionSpanSHA256": "01c0a505c149c7a10f51c1d9b9bcbca9e873bb1a16f2ac38df79ad16199b5410",
+      "sourceOffset": 581806,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        },
+        "EX": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        },
+        "BR": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        },
+        "LS": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        },
+        "FE": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "EX"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0adf26",
+      "parentBlockPC": "0x0c0adf26",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 6,
+      "instructionSpanSHA256": "5d0dcfbeb147a2d485309c8a421e09c45e11acc1c6eefa96062dfae1f8d0ec28",
+      "sourceOffset": 581414,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "EX": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "LS": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0adf12",
+      "parentBlockPC": "0x0c0adf10",
+      "image": "game0",
+      "firstInstructionIndex": 1,
+      "instructions": 4,
+      "instructionSpanSHA256": "6bb7d99af11d260ff9ca08f04adb032120de277763bdc9f0c13fefec8bf9cbdf",
+      "sourceOffset": 581394,
+      "maximumExactCost": 2,
+      "cycleTable": {
+        "MT": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "EX": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "BR": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "LS": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "FE": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "CO": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0af046",
+      "parentBlockPC": "0x0c0af046",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 6,
+      "instructionSpanSHA256": "006fc77de9f1af78f6b84bcaba6cd8bc3b18c840bfbecf9f42abbd819a2eee01",
+      "sourceOffset": 585798,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "EX": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "LS": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0ae09c",
+      "parentBlockPC": "0x0c0ae09c",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 4,
+      "instructionSpanSHA256": "8ef68294ec4357599c1028ae4c65f85223baa388fba61496e7f6a5871424c1fc",
+      "sourceOffset": 581788,
+      "maximumExactCost": 2,
+      "cycleTable": {
+        "MT": {
+          "cycles": 2,
+          "finalUnit": "LS"
+        },
+        "EX": {
+          "cycles": 2,
+          "finalUnit": "LS"
+        },
+        "BR": {
+          "cycles": 2,
+          "finalUnit": "LS"
+        },
+        "LS": {
+          "cycles": 2,
+          "finalUnit": "LS"
+        },
+        "FE": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "CO": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0adf7a",
+      "parentBlockPC": "0x0c0adf7a",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 6,
+      "instructionSpanSHA256": "266e95e7a70966039be9a57d75e08fedf25362c390d13226d59ed9e65daf064b",
+      "sourceOffset": 581498,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "EX": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "LS": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0af078",
+      "parentBlockPC": "0x0c0af068",
+      "image": "game0",
+      "firstInstructionIndex": 8,
+      "instructions": 4,
+      "instructionSpanSHA256": "2a36d01223a873c2b3fd804209dbefa69c136d50d3a4a5673b1eca056314d3c2",
+      "sourceOffset": 585848,
+      "maximumExactCost": 2,
+      "cycleTable": {
+        "MT": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "EX": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "BR": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "LS": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "FE": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "CO": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0af0a6",
+      "parentBlockPC": "0x0c0af0a6",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 6,
+      "instructionSpanSHA256": "266e95e7a70966039be9a57d75e08fedf25362c390d13226d59ed9e65daf064b",
+      "sourceOffset": 585894,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "EX": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "LS": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "FE"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "FE"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0af0d8",
+      "parentBlockPC": "0x0c0af0c8",
+      "image": "game0",
+      "firstInstructionIndex": 8,
+      "instructions": 4,
+      "instructionSpanSHA256": "dcb6ec6293645f9dae66c4142ab0b22468fdbe34d45f1d86f145bd6f4a536204",
+      "sourceOffset": 585944,
+      "maximumExactCost": 2,
+      "cycleTable": {
+        "MT": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "EX": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "BR": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "LS": {
+          "cycles": 2,
+          "finalUnit": "EX"
+        },
+        "FE": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        },
+        "CO": {
+          "cycles": 2,
+          "finalUnit": "CO"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0adb04",
+      "parentBlockPC": "0x0c0adb04",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 12,
+      "instructionSpanSHA256": "07adde77bbbde0820826d1912cac4a329332434ca316aa215cdf322a158f6af7",
+      "sourceOffset": 580356,
+      "maximumExactCost": 7,
+      "cycleTable": {
+        "MT": {
+          "cycles": 6,
+          "finalUnit": "EX"
+        },
+        "EX": {
+          "cycles": 7,
+          "finalUnit": "EX"
+        },
+        "BR": {
+          "cycles": 6,
+          "finalUnit": "EX"
+        },
+        "LS": {
+          "cycles": 6,
+          "finalUnit": "EX"
+        },
+        "FE": {
+          "cycles": 6,
+          "finalUnit": "EX"
+        },
+        "CO": {
+          "cycles": 7,
+          "finalUnit": "EX"
+        }
+      }
+    },
+    {
+      "pc": "0x0c0a11f2",
+      "parentBlockPC": "0x0c0a11f2",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 16,
+      "instructionSpanSHA256": "e349111961521db4b1526c20b0073cf7b19f4f18ae2415a8592e77f59a4dedb5",
+      "sourceOffset": 528882,
+      "maximumExactCost": 16,
+      "cycleTable": {
+        "MT": {
+          "cycles": 15,
+          "finalUnit": "LS"
+        },
+        "EX": {
+          "cycles": 15,
+          "finalUnit": "LS"
+        },
+        "BR": {
+          "cycles": 15,
+          "finalUnit": "LS"
+        },
+        "LS": {
+          "cycles": 16,
+          "finalUnit": "LS"
+        },
+        "FE": {
+          "cycles": 15,
+          "finalUnit": "LS"
+        },
+        "CO": {
+          "cycles": 16,
+          "finalUnit": "LS"
+        }
+      }
+    },
+    {
+      "pc": "0x0c09dca0",
+      "parentBlockPC": "0x0c09dca0",
+      "image": "game0",
+      "firstInstructionIndex": 0,
+      "instructions": 7,
+      "instructionSpanSHA256": "a5476910b01e4f3310c84781b881326953bb3215e3836bf2c299fed4293422e2",
+      "sourceOffset": 515232,
+      "maximumExactCost": 4,
+      "cycleTable": {
+        "MT": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "EX": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "BR": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "LS": {
+          "cycles": 4,
+          "finalUnit": "CO"
+        },
+        "FE": {
+          "cycles": 3,
+          "finalUnit": "CO"
+        },
+        "CO": {
+          "cycles": 4,
+          "finalUnit": "CO"
+        }
+      }
+    }
+  ]
+}

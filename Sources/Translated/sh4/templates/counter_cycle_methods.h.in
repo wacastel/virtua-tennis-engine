@@ -1,0 +1,9 @@
+// Exact native counter-loop boundary; no class layout or ordinary path change.
+    bool vtCounterLoopReady(const Sh4Context *expected) const {
+        return ctx==expected && cpuRatio==1 && lastUnit==BR && memOps>=4 && memOps<=0x7fffffff-14*14;
+    }
+    void vtCounterLoopCommit(unsigned iterations) {
+        memOps += 14*iterations;
+        ctx->cycle_counter -= 30*iterations;
+    }
+

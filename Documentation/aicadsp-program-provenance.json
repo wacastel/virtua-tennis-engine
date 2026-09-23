@@ -1,0 +1,23 @@
+{
+  "cartridgeCopies": {
+    "mpr-22924.ic9": {
+      "fileSHA256": "56080e0f00e0f1d788d4313cae51e24438a5830a0b826ad798420249c407bab7",
+      "offset": 1054888
+    },
+    "mpr-22925.ic10": {
+      "fileSHA256": "be3ebcabb44d62f1f8b0bf41da24bed09aced3e93f34938b11dd4c63862e2259",
+      "offset": 18244
+    },
+    "mpr-22926.ic11": {
+      "fileSHA256": "50c2cee5a34096b6f86f01327491734b3e5a30bfb2831a154e144d7b40f767c7",
+      "offset": 17304
+    }
+  },
+  "completeProgramSHA256": "20f83a224c4a53a3b9b8d4e882bd8f2684531de3e65e4f9513d8e63a26f6861b",
+  "identitySetsExactlyEqual": true,
+  "loadClearPrefixImages": 644,
+  "observedUploadImages": 644,
+  "programBytes": 2048,
+  "scope": "Every ascending MPRO-slot load/clear prefix of this pinned program. Other DSP program families are not admitted.",
+  "status": "passed"
+}

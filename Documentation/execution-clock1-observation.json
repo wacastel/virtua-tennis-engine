@@ -1,0 +1,31 @@
+{
+  "purpose": "Corrected 200MHz read-only original CPU observation; raw observations remain local",
+  "traceRecords": [
+    {
+      "path": "build/verification/sh4-clock1.jsonl",
+      "sha256": "4b069e95e7a70a009a9569a093aaa0eba934b1d17183ae968dfb1ca410a89046",
+      "records": {
+        "instruction": 143454,
+        "page": 278
+      }
+    },
+    {
+      "path": "build/verification/arm7-clock1.jsonl",
+      "sha256": "c5ad66adfba6226643b590c08084d64eef95571eecea1e3f5d5001d6d3938fd1",
+      "records": {
+        "enable": 3,
+        "instruction": 5058,
+        "page": 61
+      }
+    },
+    {
+      "path": "build/verification/aicadsp-clock1.jsonl",
+      "sha256": "e3b1bec6f6f88155878ff7d9db018bcd9c124aae35a3ea27c068e11df36895b2",
+      "records": {
+        "sample-program": 313,
+        "program": 644,
+        "write": 10240
+      }
+    }
+  ]
+}

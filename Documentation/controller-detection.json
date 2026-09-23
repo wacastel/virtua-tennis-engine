@@ -1,0 +1,13 @@
+{
+  "connectedCount": 1,
+  "controllers": [
+    {
+      "category": "DualSense",
+      "dualSense": true,
+      "extendedGamepad": true,
+      "name": "DualSense Wireless Controller"
+    }
+  ],
+  "game": "Virtua Tennis",
+  "physicalActuationTested": false
+}

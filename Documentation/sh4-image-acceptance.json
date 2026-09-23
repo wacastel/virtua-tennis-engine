@@ -1,0 +1,190 @@
+{
+  "checks": [
+    {
+      "image": "bios_bootstrap",
+      "loaderPCsObserved": [
+        "0x800000bc",
+        "0x800000be",
+        "0x800000c0",
+        "0x800000c2",
+        "0x800000c4",
+        "0x800000c8",
+        "0x800000ca"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 1,
+          "snapshotSHA256": "a545620af3131ca973dce171024def905105508e4093bbc4af6040430c638869"
+        },
+        {
+          "page": 2,
+          "snapshotSHA256": "0ef5c4d4f2a36369423176a664f9f7673c00b79a80f53df39cbd4fb377e3ed78"
+        },
+        {
+          "page": 3,
+          "snapshotSHA256": "36c16dc96b5268f30bb6d72cece301060df2355ffd58e8eb28b99d5dac85ad84"
+        },
+        {
+          "page": 4,
+          "snapshotSHA256": "941f67c41b57fb1ae047fb4b4caa6918e20c250111e3e890298cb69ce4d17c87"
+        }
+      ],
+      "sampleAddress": "0x0c0000e0",
+      "sampleBytes": 32,
+      "sampleSHA256": "6d9dcda1f45d1d024cf6f1ec845e2a4a8ab16b1cc11578e62e00bac20e87ff36"
+    },
+    {
+      "image": "bios_ram",
+      "loaderPCsObserved": [
+        "0x8c0000e4",
+        "0x8c0000e6",
+        "0x8c0000e8",
+        "0x8c0000ea",
+        "0x8c0000ec",
+        "0x8c0000ee",
+        "0x8c0000f0"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 56,
+          "snapshotSHA256": "69975090b9108b1b91aac16dd1e21da8cece36ed4753db8a350c1a98e518f7c1"
+        }
+      ],
+      "sampleAddress": "0x0c04a000",
+      "sampleBytes": 4096,
+      "sampleSHA256": "69975090b9108b1b91aac16dd1e21da8cece36ed4753db8a350c1a98e518f7c1"
+    },
+    {
+      "image": "bios_relocated",
+      "loaderPCsObserved": [
+        "0xa00005a6",
+        "0xa00005a8",
+        "0xa00005aa",
+        "0xa00005ac",
+        "0xa00005ae",
+        "0xa00005b0",
+        "0xa00005b2",
+        "0xa00005b4",
+        "0xa00005b6"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 6,
+          "snapshotSHA256": "235dc9949f703cec863d6d9ef1f2611750c2d4ad880516d1ca0ffc6407c5aad9"
+        }
+      ],
+      "sampleAddress": "0x0c001000",
+      "sampleBytes": 4096,
+      "sampleSHA256": "235dc9949f703cec863d6d9ef1f2611750c2d4ad880516d1ca0ffc6407c5aad9"
+    },
+    {
+      "image": "bios_module",
+      "loaderPCsObserved": [
+        "0x0c033c8e",
+        "0x0c033c90",
+        "0x0c033c92",
+        "0x0c033ca0",
+        "0x0c033ca2",
+        "0x0c033ca8",
+        "0x0c033caa"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 19,
+          "snapshotSHA256": "39d8cddd526e3e21e5cb0b0a4d75b82091977ff648e3c1cc521a7e821411c219"
+        }
+      ],
+      "sampleAddress": "0x0c019000",
+      "sampleBytes": 4096,
+      "sampleSHA256": "39d8cddd526e3e21e5cb0b0a4d75b82091977ff648e3c1cc521a7e821411c219"
+    },
+    {
+      "image": "bios_exception_return",
+      "loaderPCsObserved": [
+        "0xac001b58",
+        "0xac001b62",
+        "0xac001b64",
+        "0xac001b66"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 8,
+          "snapshotSHA256": "7302430bdbd8fe769a7c8cedcd01e75e2795badd19113d41f3d75d09892178c9"
+        },
+        {
+          "page": 40,
+          "snapshotSHA256": "318dc59acd42c166d708452da94176b8739106c108e8d8b8ada31077f23e5d31"
+        }
+      ],
+      "sampleAddress": "0x0c000620",
+      "sampleBytes": 12,
+      "sampleSHA256": "46ef3be718d38e550d6ca575605f4c5604820f656a79aed9faba144dd2fbfc43"
+    },
+    {
+      "image": "bios_vector_100",
+      "loaderPCsObserved": [
+        "0xac001b8c",
+        "0xac001b8e"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 8,
+          "snapshotSHA256": "7302430bdbd8fe769a7c8cedcd01e75e2795badd19113d41f3d75d09892178c9"
+        },
+        {
+          "page": 40,
+          "snapshotSHA256": "318dc59acd42c166d708452da94176b8739106c108e8d8b8ada31077f23e5d31"
+        }
+      ],
+      "sampleAddress": "0x0c000100",
+      "sampleBytes": 20,
+      "sampleSHA256": "0a0fd6c5d42755f394e37aad920f34aa92579570d41eabae5725c014e7a8d718"
+    },
+    {
+      "image": "bios_vector_400",
+      "loaderPCsObserved": [
+        "0xac001b9e",
+        "0xac001ba0"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 8,
+          "snapshotSHA256": "7302430bdbd8fe769a7c8cedcd01e75e2795badd19113d41f3d75d09892178c9"
+        },
+        {
+          "page": 40,
+          "snapshotSHA256": "318dc59acd42c166d708452da94176b8739106c108e8d8b8ada31077f23e5d31"
+        }
+      ],
+      "sampleAddress": "0x0c000400",
+      "sampleBytes": 20,
+      "sampleSHA256": "0a0fd6c5d42755f394e37aad920f34aa92579570d41eabae5725c014e7a8d718"
+    },
+    {
+      "image": "bios_vector_600",
+      "loaderPCsObserved": [
+        "0xac001bb0",
+        "0xac001bb2"
+      ],
+      "originalWitnesses": [
+        {
+          "page": 8,
+          "snapshotSHA256": "7302430bdbd8fe769a7c8cedcd01e75e2795badd19113d41f3d75d09892178c9"
+        },
+        {
+          "page": 40,
+          "snapshotSHA256": "318dc59acd42c166d708452da94176b8739106c108e8d8b8ada31077f23e5d31"
+        }
+      ],
+      "sampleAddress": "0x0c000600",
+      "sampleBytes": 20,
+      "sampleSHA256": "0a0fd6c5d42755f394e37aad920f34aa92579570d41eabae5725c014e7a8d718"
+    }
+  ],
+  "copyConfigurationSHA256": "d637fc4f3990d03d5f3b05a0999f23e5dbc2f553f8f32c318dc4f0b67b3b56dc",
+  "generatorSHA256": "ff9a52208e7b7f928351a6cf0b215fdb364c27a52fdb767f740eee36cdb84fb1",
+  "passed": true,
+  "scope": "Original executed loader bounds plus exact sampled original RAM bytes; not a claim that every translated byte is executable.",
+  "traceSHA256": "4b069e95e7a70a009a9569a093aaa0eba934b1d17183ae968dfb1ca410a89046",
+  "verifierSHA256": "37e27ff4b576adc54dd0da7bf2fad89e752a539d878c797d047b7f3f59158d6e"
+}

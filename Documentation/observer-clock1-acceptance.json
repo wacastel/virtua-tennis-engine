@@ -1,0 +1,39 @@
+{
+  "comparedSteps": 6244,
+  "emulatedSeconds": 113.45780992,
+  "exactInputAndHardwareClock": true,
+  "exactPCMAndCounts": true,
+  "exactRGBA": true,
+  "finalSH4Ticks": 22691561984,
+  "firstDifferences": [],
+  "passed": true,
+  "purpose": "Corrected 200 MHz original versus original observation CPU execution; exact video, audio and scheduler ticks",
+  "runs": [
+    {
+      "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+      "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+      "finalRGBA_SHA256": "126a4be93a6329a4b2393fae883b2e08f8f31cc8018592c461bf92fdda155b9c",
+      "frameStreamSHA256": "100688f2429120b3829392727deac017fd551d65700776a07215bb92e51fe77a",
+      "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+      "path": "build/verification/reference-clock1",
+      "pcmStreamSHA256": "745d2bc88bcbd0a3c01e80a7c40a918b57e3c5d5c5385dea941976d84a3a9f91",
+      "reportSHA256": "d79f7ce58fb37d83805bf8ceb548655b712d182369516040b8c7ec90f3bfee8c",
+      "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+    },
+    {
+      "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+      "coreSHA256": "c452a3624d8fc6e77cd8ff697e2619688c0d8276c065dda50387fc3d7abf13d3",
+      "finalRGBA_SHA256": "126a4be93a6329a4b2393fae883b2e08f8f31cc8018592c461bf92fdda155b9c",
+      "frameStreamSHA256": "100688f2429120b3829392727deac017fd551d65700776a07215bb92e51fe77a",
+      "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+      "path": "build/verification/observer-clock1",
+      "pcmStreamSHA256": "745d2bc88bcbd0a3c01e80a7c40a918b57e3c5d5c5385dea941976d84a3a9f91",
+      "reportSHA256": "26d59c19b5791a798654e208b8dd1324ce598044e5c96011513e18a11b4f82a3",
+      "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+    }
+  ],
+  "scope": "Exact pixels, samples/counts, inputs and scheduler ticks for this authentic replay on this host. This does not prove unvisited paths, all players or physical-board equivalence.",
+  "sourceScriptSHA256": "f1d92afa428b27f2fa7a2576fb61c51dd7548a9b3a34e2eb8969a8daf77134e1",
+  "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+  "stereoSampleFrames": 5003652
+}
