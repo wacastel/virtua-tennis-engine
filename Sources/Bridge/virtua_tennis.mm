@@ -275,7 +275,10 @@ static void start(vt_context* c) {
                {"reicast_detect_vsync_swap_interval", "disabled"}, {"reicast_auto_skip_frame", "disabled"},
                {"reicast_frame_skipping", "disabled"}, {"reicast_widescreen_cheats", "disabled"},
                {"reicast_widescreen_hack", "disabled"}, {"reicast_upnp", "disabled"}, {"reicast_dcnet", "disabled"},
-               {"reicast_per_content_vmus", "All VMUs"}};
+               {"reicast_per_content_vmus", "All VMUs"},
+               // The intro samples rendered images through VRAM for its
+               // monochrome effect. GPU-only RTT caching produces flat grey.
+               {"reicast_enable_rttb", "enabled"}};
     hardware = {}; av = {}; failure.clear(); shutdownRequested = false;
     buttons = 0; pictureWidth = pictureHeight = videoCalls = 0; picture.clear(); pcm.clear();
     coreGLErrors.clear(); unknownEnvironment.clear(); vt_fixed_clear_error();

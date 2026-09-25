@@ -32,6 +32,13 @@ Inputs follow the original NAOMI libretro mapping: Shot→JOYPAD_B, Lob→JOYPAD
 
 Outputs are `frames.jsonl` (every presented/duplicate buffer and PCM hash/count), `report.json` (identities, options, renderer, timing and whole-PCM digest), `final.rgba`, `final.png`, and optional periodic PNGs. Raw RGBA alpha is retained for exact comparison; PNG display ignores alpha because the arcade framebuffer is an opaque screen. Unsupported optional libretro environment commands and pending upstream GL errors are recorded. Readback GL failures are fatal.
 
+Render-to-texture VRAM readback is enabled by default, matching the app and
+restoring the intro's monochrome effects. The laboratory-only option
+`--rtt-readback disabled` reproduces the former flat-grey scenes;
+`--rtt-readback enabled` explicitly selects the corrected setting. Other
+values fail before core loading. See
+[intro rendering](../../Documentation/intro-rendering.md) for the A/B checks.
+
 A harness step is one `retro_run`, which may advance through multiple vblanks while the BIOS does not draw. It is not necessarily one 60-Hz frame. The optional `vt_fixed_ticks` read-only export adds actual SH-4 scheduler ticks to each record. Use these ticks, or PCM duration with its limits, when assessing realtime speed. The measured calls-per-second number alone is not a claim of original-speed gameplay.
 
 The first input-only investigation found coin at call indices 3000–3001 and Start at 3060–3061 reach the player selection screen. Shot confirms the highlighted player once selection is ready. Exact accepted routes belong in the authored verification inputs after original/observer parity; the exploratory files under `build/reference-lab` are not final acceptance evidence.

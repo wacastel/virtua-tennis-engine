@@ -245,6 +245,11 @@ int main(int argc, char** argv) { @autoreleasepool {
             require(key.rfind("--", 0) == 0 && i + 1 < argc, "Each argument requires a value");
             require(args.emplace(key, argv[++i]).second, "Duplicate argument: " + key);
         }
+        // Match the app's intro framebuffer feedback. The laboratory can
+        // disable readback to reproduce the former flat-grey scenes.
+        const std::string rttReadback = args.count("--rtt-readback") ? args.at("--rtt-readback") : "enabled";
+        require(rttReadback == "enabled" || rttReadback == "disabled",
+                "--rtt-readback must be enabled or disabled");
         createGL();
         if (args.count("--self-test")) {
             glClearColor(0.25, 0.5, 0.75, 1); glClear(GL_COLOR_BUFFER_BIT);
@@ -267,7 +272,7 @@ int main(int argc, char** argv) { @autoreleasepool {
         }
         for (auto key : {"--core", "--content", "--system", "--saves", "--out"}) require(args.count(key), std::string("Missing ") + key);
         for (const auto& [key, value] : args)
-            require(key == "--core" || key == "--content" || key == "--system" || key == "--saves" || key == "--out" || key == "--frames" || key == "--route" || key == "--capture-every", "Unknown argument " + key);
+            require(key == "--core" || key == "--content" || key == "--system" || key == "--saves" || key == "--out" || key == "--frames" || key == "--route" || key == "--capture-every" || key == "--rtt-readback", "Unknown argument " + key);
         systemPath = fs::absolute(args.at("--system")).string(); savePath = fs::absolute(args.at("--saves")).string();
         require(fs::is_directory(systemPath), "System directory does not exist");
         for (auto key : {"--saves", "--out"}) {
@@ -299,7 +304,7 @@ int main(int argc, char** argv) { @autoreleasepool {
                    {"reicast_detect_vsync_swap_interval", "disabled"}, {"reicast_auto_skip_frame", "disabled"},
                    {"reicast_frame_skipping", "disabled"}, {"reicast_widescreen_cheats", "disabled"},
                    {"reicast_widescreen_hack", "disabled"}, {"reicast_upnp", "disabled"}, {"reicast_dcnet", "disabled"},
-                   {"reicast_per_content_vmus", "All VMUs"}};
+                   {"reicast_per_content_vmus", "All VMUs"}, {"reicast_enable_rttb", rttReadback}};
         library = dlopen(fs::absolute(args.at("--core")).c_str(), RTLD_NOW | RTLD_LOCAL);
         require(library != nullptr, std::string("Cannot open core: ") + (library ? "" : dlerror()));
         auto setEnvironment = symbol<void(*)(retro_environment_t)>(library, "retro_set_environment");

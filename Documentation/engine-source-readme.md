@@ -6,7 +6,15 @@ The upstream hardware and graphics source is Flycast commit `628bd3dbb160ea27502
 
 The corrected reference uses the SH-4's 200 MHz clock by changing the original non-strict interpreter cycle multiplier from eight to one. Both original and fixed targets retain the same remaining hardware options for comparison. The macOS host uses actual scheduler ticks to pace rendering and audio. Early reports explicitly marked `ratio8` are historical exploratory measurements, not final timing or release qualification.
 
-The corrected-clock fixed/reference comparisons pass 26,948 steps across singles, two-player play and accepted continuation after a match loss. Graphics, audio samples/counts, inputs and hardware ticks match exactly. The actual packaged Swift app separately passes the 6,244-step baseline. This establishes bounded path coverage, not whole-game or physical-board equivalence.
+The earlier corrected-clock fixed/reference comparisons pass 26,948 steps across singles, two-player play and accepted continuation after a match loss. Graphics, audio samples/counts, inputs and hardware ticks match exactly. The actual packaged Swift app separately passes the 6,244-step baseline. This establishes bounded path coverage, not whole-game or physical-board equivalence.
+
+The intro's monochrome shots now use rendered-texture readback into VRAM,
+restoring scene detail where the earlier build and its reference both showed
+flat grey. The corrected artifact passes a new 6,000-step intro comparison
+and the existing 6,244-step singles route through both the native core and
+actual packaged app. See
+`Documentation/intro-rendering.md` and `Documentation/validation.md` for
+the A/B evidence, current artifact checks and historical coverage boundaries.
 
 Live-audio testing has recorded brief underruns and timing recovery in a short gameplay section despite averaging approximately real time. The strict smooth-playback check is separate from replay correctness. See `Documentation/validation.md`, `Documentation/native-performance.json` and `Documentation/playback-investigation.json` for exact artifacts, measurements and limits. Physical controller actuation and audible speaker quality remain unverified.
 

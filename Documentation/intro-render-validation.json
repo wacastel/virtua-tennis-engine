@@ -1,0 +1,538 @@
+{
+  "CPUProgramsRegenerated": false,
+  "baselineEngineManifestSHA256": "7938749170baea217f01e3f1e08ba5bde8d8ba1550431dc9ec5d0d4618394702",
+  "checks": {
+    "baselineOriginalNative": {
+      "comparedSteps": 3600,
+      "emulatedSeconds": 69.10536192,
+      "exactInputAndHardwareClock": true,
+      "exactPCMAndCounts": true,
+      "exactRGBA": true,
+      "finalSH4Ticks": 13821072384,
+      "firstDifferences": [],
+      "passed": true,
+      "purpose": "Reproduce the shared pre-fix flat-grey intro defect",
+      "runs": [
+        {
+          "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+          "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+          "finalRGBA_SHA256": "6c9c9863b8130747184a54fa97a721f61b97a575dd7568e2bf8c25fc0213b97a",
+          "frameStreamSHA256": "311a2ce414ef4344b56a6e11970079a7d8d79a6718cf2ed3f8f5ec1961eb7994",
+          "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+          "path": "build/intro-render-investigation/reference/capture",
+          "pcmStreamSHA256": "827e7d3d46d40ecf6ba0057da08c059b6bd100609f9bcd25e93a9f3b02d5fa96",
+          "reportSHA256": "96f460a79fc5034e2bc27f37b7758b4297166abe5300e553ad66745731c2dc18",
+          "routeSHA256": null
+        },
+        {
+          "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+          "coreSHA256": "636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e",
+          "finalRGBA_SHA256": "6c9c9863b8130747184a54fa97a721f61b97a575dd7568e2bf8c25fc0213b97a",
+          "frameStreamSHA256": "311a2ce414ef4344b56a6e11970079a7d8d79a6718cf2ed3f8f5ec1961eb7994",
+          "harnessSHA256": "803aa2146628961a060a00ca34b60608158a12754affe7e5f6d293714729f475",
+          "path": "build/intro-render-investigation/native/capture",
+          "pcmStreamSHA256": "827e7d3d46d40ecf6ba0057da08c059b6bd100609f9bcd25e93a9f3b02d5fa96",
+          "reportSHA256": "760ab74c53457821727260089bdbc3488be5b1a5425125c195462df794d71e96",
+          "routeSHA256": null
+        }
+      ],
+      "scope": "Exact pixels, samples/counts, inputs and scheduler ticks for this authentic replay on this host. This does not prove unvisited paths, all players or physical-board equivalence.",
+      "sourceScriptSHA256": "7a0d3ac10b47bdfe235eb747126e68d89f083129d4b1a004465a33320e15f368",
+      "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+      "stereoSampleFrames": 3047645
+    },
+    "bridge": {
+      "checks": [
+        "shipping marker",
+        "missing media rejected",
+        "same-length altered media rejected",
+        "bundle writes rejected",
+        "real engine creation",
+        "640x480 stereo format",
+        "second session rejected",
+        "initial step 1",
+        "initial step 2",
+        "initial step 3",
+        "initial step 4",
+        "initial step 5",
+        "initial step 6",
+        "initial step 7",
+        "initial step 8",
+        "initial step 9",
+        "initial step 10",
+        "initial step 11",
+        "initial step 12",
+        "initial step 13",
+        "initial step 14",
+        "initial step 15",
+        "initial step 16",
+        "initial step 17",
+        "initial step 18",
+        "initial step 19",
+        "initial step 20",
+        "initial step 21",
+        "initial step 22",
+        "initial step 23",
+        "initial step 24",
+        "hardware time advances",
+        "invalid input fails closed",
+        "fault is sticky",
+        "reset recovers input fault",
+        "foreign thread rejected",
+        "reset recovers ownership fault",
+        "recovered step 1",
+        "recovered step 2",
+        "recovered step 3",
+        "recovered step 4",
+        "recovered step 5",
+        "recovered step 6",
+        "recovered step 7",
+        "recovered step 8",
+        "recovered step 9",
+        "recovered step 10",
+        "recovered step 11",
+        "recovered step 12",
+        "recovered step 13",
+        "recovered step 14",
+        "recovered step 15",
+        "recovered step 16",
+        "recovered step 17",
+        "recovered step 18",
+        "recovered step 19",
+        "recovered step 20",
+        "recovered step 21",
+        "recovered step 22",
+        "recovered step 23",
+        "recovered step 24",
+        "closed session rejected",
+        "staged media unchanged"
+      ],
+      "engineSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+      "mediaSHA256": {
+        "system/dc/naomi.zip": "520a5e0ef9cc86a655d31b053c3bf2a125517d9c986c4efdc0b5b32c4fb114ad",
+        "vtennis.zip": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2"
+      },
+      "passed": true,
+      "scope": "Actual fixed-engine C ABI: media validation, format, 48 boot steps, singleton, sticky faults, creating-thread requirement and two resets. No gameplay/controller or full match claim.",
+      "scriptSHA256": "3ef890498c4047de342f47f6d3ac73f5cf61e32d93ecdae45fc5bb8827eec8d3"
+    },
+    "introOriginalNative": {
+      "comparedSteps": 6000,
+      "emulatedSeconds": 109.29349536,
+      "exactInputAndHardwareClock": true,
+      "exactPCMAndCounts": true,
+      "exactRGBA": true,
+      "finalSH4Ticks": 21858699072,
+      "firstDifferences": [],
+      "passed": true,
+      "purpose": "Corrected monochrome intro through title, tutorial and player showcase",
+      "runs": [
+        {
+          "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+          "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+          "finalRGBA_SHA256": "c34841d6cfe4d073ee5ead58912b2cff9a2c37badfbac698ec1d0a15f8335073",
+          "frameStreamSHA256": "17f890e75f729ced8e34d8a666e210eb581aea9d4fed9939281c8d559053c846",
+          "harnessSHA256": "d1cc8caab943e92611f4c53f6466411f37c32d927db98dd2954fcfecb58f5f7f",
+          "path": "build/intro-render-investigation/intro-reference/capture",
+          "pcmStreamSHA256": "960b19fc8a2ace736a6845705fb37a235cf701be8513575c7560cecee0f8bd0a",
+          "reportSHA256": "51be871e4298683ba3ef9ad09adb697b9e499a40478503f073c78fa63c6ea270",
+          "routeSHA256": null
+        },
+        {
+          "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+          "coreSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+          "finalRGBA_SHA256": "c34841d6cfe4d073ee5ead58912b2cff9a2c37badfbac698ec1d0a15f8335073",
+          "frameStreamSHA256": "17f890e75f729ced8e34d8a666e210eb581aea9d4fed9939281c8d559053c846",
+          "harnessSHA256": "d1cc8caab943e92611f4c53f6466411f37c32d927db98dd2954fcfecb58f5f7f",
+          "path": "build/intro-render-investigation/intro-native/capture",
+          "pcmStreamSHA256": "960b19fc8a2ace736a6845705fb37a235cf701be8513575c7560cecee0f8bd0a",
+          "reportSHA256": "8cd98e36758c2b9bd3476d164de9467752ab43329f4471c52ae2e28b1b8bede2",
+          "routeSHA256": null
+        }
+      ],
+      "scope": "Exact pixels, samples/counts, inputs and scheduler ticks for this authentic replay on this host. This does not prove unvisited paths, all players or physical-board equivalence.",
+      "sourceScriptSHA256": "7a0d3ac10b47bdfe235eb747126e68d89f083129d4b1a004465a33320e15f368",
+      "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+      "stereoSampleFrames": 4819999
+    },
+    "introPackagedApp": {
+      "appFramesSHA256": "f8a6dac9176e98e5dbaee8ab3a905b733e0c5b2aed2387cf1654af364536d2db",
+      "appReportSHA256": "8fd563ae844d6bb28b023c2c05f25a55c936cbc7e45f78017671d6c7042cd35c",
+      "clockComparison": "Integer 200MHz ticks reconstructed by rounding C ABI double seconds after JSON serialization",
+      "emulatedSeconds": 109.29349536,
+      "exactRGBA_PCM_Counts_Clock": true,
+      "firstDifferences": [],
+      "originalReportSHA256": "51be871e4298683ba3ef9ad09adb697b9e499a40478503f073c78fa63c6ea270",
+      "packageArtifacts": {
+        "Contents/Frameworks/libvirtua_tennis.dylib": {
+          "architecture": "arm64",
+          "dependencies": [
+            "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+            "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+            "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)",
+            "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+            "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)"
+          ],
+          "minimumMacOS": "14.0",
+          "sha256": "412103e7ec0de888438f6ec3ca56daaebaf5beb67ad563fd16e5127debf98515"
+        },
+        "Contents/MacOS/VirtuaTennis": {
+          "architecture": "arm64",
+          "dependencies": [
+            "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+            "/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit (compatibility version 1.0.0, current version 53.0.2)",
+            "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+            "/System/Library/Frameworks/GameController.framework/Versions/A/GameController (compatibility version 1.0.0, current version 14.0.24)",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+            "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+            "/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio (compatibility version 1.0.0, current version 1.0.0)",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)",
+            "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+            "/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2450.77.5, weak)",
+            "/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)",
+            "/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 482.102.10, weak)",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)",
+            "/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 3.0.0, weak)",
+            "/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)",
+            "/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.0.10)",
+            "/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.0.2)",
+            "/usr/lib/swift/libswiftGLKit.dylib (compatibility version 1.0.0, current version 1.1.0, weak)",
+            "/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+            "/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 382.5.3, weak)",
+            "/usr/lib/swift/libswiftModelIO.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+            "/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)",
+            "/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0)",
+            "/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)",
+            "/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+            "/usr/lib/swift/libswiftSpriteKit.dylib (compatibility version 1.0.0, current version 1.2.0, weak)",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 917.0.1)",
+            "/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)",
+            "/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.0.0, weak)",
+            "/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 25.0.0, weak)"
+          ],
+          "minimumMacOS": "14.0",
+          "sha256": "4d3a9424a1fdf9c3a3a6ea6dfcfba1e4344a990d0ff9503636781cc532696ad5"
+        }
+      },
+      "packageManifestSHA256": "d5a3e5dc7eae5ea9e1401c91dde98394fe4ef0af6cdfe282e1191c4aaeb8e311",
+      "passed": true,
+      "scope": "Per-step equality through the actual packaged Swift host and C ABI, with fixed RTC and the same authored digital input route. This does not establish live audio pacing or physical controller actuation.",
+      "scriptSHA256": "c41d361767f722c5d7fee52361467d0517ee01ac3f8afc88a54d2d14e6993b88",
+      "steps": 6000,
+      "stereoSampleFrames": 4819999
+    },
+    "introVerifierControls": {
+      "checks": [
+        {
+          "case": "valid paired records",
+          "passed": true
+        },
+        {
+          "case": "changed reference core",
+          "passed": true
+        },
+        {
+          "case": "changed media",
+          "passed": true
+        },
+        {
+          "case": "unrelated option",
+          "passed": true
+        },
+        {
+          "case": "RTT remains disabled",
+          "passed": true
+        },
+        {
+          "case": "altered PCM",
+          "passed": true
+        },
+        {
+          "case": "altered input",
+          "passed": true
+        },
+        {
+          "case": "altered tick count",
+          "passed": true
+        },
+        {
+          "case": "grey picture unchanged",
+          "passed": true
+        },
+        {
+          "case": "color picture changed",
+          "passed": true
+        },
+        {
+          "case": "incomplete run",
+          "passed": true
+        },
+        {
+          "case": "missing visual capture",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "scope": "Synthetic rejected mutations of local A/B records; no additional game execution.",
+      "scriptSHA256": "b8ad32d814fd97e8c439e97ef00c886f69da55cd804ba8062da49684e370fa7a"
+    },
+    "singlesOriginalNative": {
+      "comparedSteps": 6244,
+      "emulatedSeconds": 113.45780992,
+      "exactInputAndHardwareClock": true,
+      "exactPCMAndCounts": true,
+      "exactRGBA": true,
+      "finalSH4Ticks": 22691561984,
+      "firstDifferences": [],
+      "passed": true,
+      "purpose": "Existing singles route with intro RTT readback enabled",
+      "runs": [
+        {
+          "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+          "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+          "finalRGBA_SHA256": "126a4be93a6329a4b2393fae883b2e08f8f31cc8018592c461bf92fdda155b9c",
+          "frameStreamSHA256": "0986b4b123740cb6d69060d4cb5409c123f59aae087ee6f5529f54e3f7aa4fc9",
+          "harnessSHA256": "d1cc8caab943e92611f4c53f6466411f37c32d927db98dd2954fcfecb58f5f7f",
+          "path": "build/intro-render-investigation/singles-reference/capture",
+          "pcmStreamSHA256": "745d2bc88bcbd0a3c01e80a7c40a918b57e3c5d5c5385dea941976d84a3a9f91",
+          "reportSHA256": "be477358255a786a8dbc38047521de8a0446c6f6dabb0455274589b4775fd208",
+          "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+        },
+        {
+          "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+          "coreSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+          "finalRGBA_SHA256": "126a4be93a6329a4b2393fae883b2e08f8f31cc8018592c461bf92fdda155b9c",
+          "frameStreamSHA256": "0986b4b123740cb6d69060d4cb5409c123f59aae087ee6f5529f54e3f7aa4fc9",
+          "harnessSHA256": "d1cc8caab943e92611f4c53f6466411f37c32d927db98dd2954fcfecb58f5f7f",
+          "path": "build/intro-render-investigation/singles-native/capture",
+          "pcmStreamSHA256": "745d2bc88bcbd0a3c01e80a7c40a918b57e3c5d5c5385dea941976d84a3a9f91",
+          "reportSHA256": "176f9dd265a2adad759c35b3f36274d082aee6fba41955721882d18ae3304e2f",
+          "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3"
+        }
+      ],
+      "scope": "Exact pixels, samples/counts, inputs and scheduler ticks for this authentic replay on this host. This does not prove unvisited paths, all players or physical-board equivalence.",
+      "sourceScriptSHA256": "7a0d3ac10b47bdfe235eb747126e68d89f083129d4b1a004465a33320e15f368",
+      "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+      "stereoSampleFrames": 5003652
+    },
+    "singlesPackagedApp": {
+      "appFramesSHA256": "813ad4ab5f0917409fdd47e04d9648fe39743b3c67dc35be71fb41d29247f02e",
+      "appReportSHA256": "dad0dd3bea2b61df68a1e27beeefef9e1b71d1cc89781b8d364ccf47aa4688a9",
+      "clockComparison": "Integer 200MHz ticks reconstructed by rounding C ABI double seconds after JSON serialization",
+      "emulatedSeconds": 113.45780991999997,
+      "exactRGBA_PCM_Counts_Clock": true,
+      "firstDifferences": [],
+      "originalReportSHA256": "be477358255a786a8dbc38047521de8a0446c6f6dabb0455274589b4775fd208",
+      "packageArtifacts": {
+        "Contents/Frameworks/libvirtua_tennis.dylib": {
+          "architecture": "arm64",
+          "dependencies": [
+            "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+            "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+            "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)",
+            "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+            "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)"
+          ],
+          "minimumMacOS": "14.0",
+          "sha256": "412103e7ec0de888438f6ec3ca56daaebaf5beb67ad563fd16e5127debf98515"
+        },
+        "Contents/MacOS/VirtuaTennis": {
+          "architecture": "arm64",
+          "dependencies": [
+            "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+            "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+            "/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit (compatibility version 1.0.0, current version 53.0.2)",
+            "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+            "/System/Library/Frameworks/GameController.framework/Versions/A/GameController (compatibility version 1.0.0, current version 14.0.24)",
+            "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+            "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+            "/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio (compatibility version 1.0.0, current version 1.0.0)",
+            "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+            "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)",
+            "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+            "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)",
+            "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+            "/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2450.77.5, weak)",
+            "/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)",
+            "/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 482.102.10, weak)",
+            "/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)",
+            "/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 3.0.0, weak)",
+            "/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)",
+            "/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.0.10)",
+            "/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.0.2)",
+            "/usr/lib/swift/libswiftGLKit.dylib (compatibility version 1.0.0, current version 1.1.0, weak)",
+            "/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+            "/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 382.5.3, weak)",
+            "/usr/lib/swift/libswiftModelIO.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+            "/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)",
+            "/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0)",
+            "/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)",
+            "/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+            "/usr/lib/swift/libswiftSpriteKit.dylib (compatibility version 1.0.0, current version 1.2.0, weak)",
+            "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 917.0.1)",
+            "/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)",
+            "/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.0.0, weak)",
+            "/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 25.0.0, weak)"
+          ],
+          "minimumMacOS": "14.0",
+          "sha256": "4d3a9424a1fdf9c3a3a6ea6dfcfba1e4344a990d0ff9503636781cc532696ad5"
+        }
+      },
+      "packageManifestSHA256": "d5a3e5dc7eae5ea9e1401c91dde98394fe4ef0af6cdfe282e1191c4aaeb8e311",
+      "passed": true,
+      "scope": "Per-step equality through the actual packaged Swift host and C ABI, with fixed RTC and the same authored digital input route. This does not establish live audio pacing or physical controller actuation.",
+      "scriptSHA256": "c41d361767f722c5d7fee52361467d0517ee01ac3f8afc88a54d2d14e6993b88",
+      "steps": 6244,
+      "stereoSampleFrames": 5003652
+    }
+  },
+  "currentEngineManifestSHA256": "e199417aa2a71a68c9875d502851ccd12dacc29c71950de8da9d11648a41fee9",
+  "engineSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+  "fullFramebufferEmulation": "disabled",
+  "manualVisualReview": {
+    "actualWindow": "Observed the rebuilt app window displaying detailed monochrome player/court imagery during the intro; normal system clock and isolated diagnostic saves.",
+    "actualWindowCaptureSHA256": "257e4321c32cb4f9c58e3c5bed4368549594ed93f4f6bec52bd941ea9d779e16",
+    "monochromeCaptureSteps": [
+      1260,
+      1560,
+      1620,
+      1920,
+      1980,
+      2400,
+      2700,
+      2940,
+      3000,
+      3240,
+      3300
+    ],
+    "result": "Players, court, crowd and shadows visible where baseline was flat grey. Stadium scene corresponds visually to the user-supplied example; no exact physical-board comparison.",
+    "titleTutorialAndPlayerShowcase": "Inspected native captures through step 6000."
+  },
+  "originalCPUFallback": false,
+  "packageArtifacts": {
+    "Contents/Frameworks/libvirtua_tennis.dylib": {
+      "architecture": "arm64",
+      "dependencies": [
+        "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+        "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+        "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)"
+      ],
+      "minimumMacOS": "14.0",
+      "sha256": "412103e7ec0de888438f6ec3ca56daaebaf5beb67ad563fd16e5127debf98515"
+    },
+    "Contents/MacOS/VirtuaTennis": {
+      "architecture": "arm64",
+      "dependencies": [
+        "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+        "/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit (compatibility version 1.0.0, current version 53.0.2)",
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController (compatibility version 1.0.0, current version 14.0.24)",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+        "/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)",
+        "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+        "/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2450.77.5, weak)",
+        "/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 482.102.10, weak)",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)",
+        "/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 3.0.0, weak)",
+        "/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)",
+        "/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.0.10)",
+        "/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.0.2)",
+        "/usr/lib/swift/libswiftGLKit.dylib (compatibility version 1.0.0, current version 1.1.0, weak)",
+        "/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 382.5.3, weak)",
+        "/usr/lib/swift/libswiftModelIO.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)",
+        "/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0)",
+        "/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)",
+        "/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftSpriteKit.dylib (compatibility version 1.0.0, current version 1.2.0, weak)",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 917.0.1)",
+        "/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)",
+        "/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.0.0, weak)",
+        "/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 25.0.0, weak)"
+      ],
+      "minimumMacOS": "14.0",
+      "sha256": "4d3a9424a1fdf9c3a3a6ea6dfcfba1e4344a990d0ff9503636781cc532696ad5"
+    }
+  },
+  "packageManifestSHA256": "d5a3e5dc7eae5ea9e1401c91dde98394fe4ef0af6cdfe282e1191c4aaeb8e311",
+  "passed": true,
+  "readbackSetting": "reicast_enable_rttb=enabled",
+  "scope": "Bounded source- and artifact-bound graphics correction, original/native and packaged-app replay checks. Existing audio limitation remains unresolved; extended two-player and continuation replays are historical, not rerun here. Raw media/captures remain excluded.",
+  "unchangedCPUInputPins": true,
+  "visibleIntro": {
+    "clock": "ordinary system clock",
+    "reportSHA256": "2d81de40adc6ed72781a79f4382e094f6c2c7e2e38e3c83dbf7592b8eaf93180",
+    "requestedWallSeconds": 120,
+    "saves": "fresh isolated diagnostic saves",
+    "scope": "One 120-second neutral-input visible attract run with real audio output and no competing engine runs. No engine fault or recorded audio underrun/recovery in this run. Not proof of uninterrupted audio across gameplay or a resolution of previously measured hitches.",
+    "telemetry": {
+      "automaticRecoveryCount": 0,
+      "backlogRecoveryCount": 0,
+      "clockBalanceSeconds": -0.0051043216676021075,
+      "continuationUpdates": 2291,
+      "discardedClockGaps": 0,
+      "displayUpdates": 5914,
+      "engineFailureCount": 0,
+      "engineStartCount": 1,
+      "flushCounts": {
+        "host": 3
+      },
+      "gameFrames": 6580,
+      "gameState": {
+        "closed": false,
+        "emulatedSeconds": 119.01022783999998,
+        "faultCode": 0,
+        "frame": 6580,
+        "framesPerSecond": 59.79377128284546,
+        "height": 480,
+        "sampleRate": 44100,
+        "width": 640
+      },
+      "isPlaying": true,
+      "isRunning": true,
+      "lastInput": {
+        "buttons": 0
+      },
+      "maximumDisplayUpdateGapSeconds": 0.1644914999960747,
+      "maximumSceneUpdateGapSeconds": 0.12007595832983498,
+      "maximumSceneUpdateSeconds": 0.11909245832976012,
+      "minPendingFrames": 1270,
+      "outputLatencySeconds": 0.059604166666666666,
+      "outputSampleRate": 48000,
+      "pausedByHost": false,
+      "peakPendingFrames": 8262,
+      "pendingFrames": 4725,
+      "preferredDisplayFramesPerSecond": 60,
+      "renderedFrames": 1314768,
+      "sceneUpdateWallSeconds": 85.05856116666291,
+      "sceneUpdates": 8205,
+      "scheduledFrames": 1319493,
+      "sourceSampleRate": 44100,
+      "texturePresentations": 5676,
+      "underrunCount": 0,
+      "updatesOnMainThread": true,
+      "windowOccluded": false,
+      "windowVisible": true
+    }
+  }
+}

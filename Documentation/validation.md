@@ -5,10 +5,29 @@ using an arm64 macOS 14 deployment target. The selected media is the original
 NAOMI Virtua Tennis cartridge with the USA/English BIOS. This is an offline CPU
 translation project; original interpreters are isolated in the reference lab.
 
-The final engine SHA-256 is
-`636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e`.
+The current engine SHA-256 is
+`cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c`.
 Ad-hoc signing changes the packaged Mach-O hash; the package report binds that
 signed copy separately.
+
+The [intro rendering correction](intro-rendering.md) enables rendered-texture
+readback into VRAM, restoring the monochrome shots that previously appeared
+flat grey. The current artifact passes 6,000 original/native and packaged-app
+steps through the intro, title, tutorial and player showcase, with exact
+RGBA, PCM, sample counts and scheduler ticks. The A/B comparison preserves
+audio and timing over 3,600 steps and changes all 11 selected monochrome
+samples while preserving 15 adjacent color samples. The existing 6,244-step
+singles route also passes again through the original/native pair and the
+actual packaged app, and all 63 bridge lifecycle checks pass. Current evidence is in
+[intro effect acceptance](intro-render-acceptance.json) and
+[current artifact validation](intro-render-validation.json).
+
+The table below records the earlier qualification of engine
+`636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e`.
+Its CPU translations and host sources are unchanged by this graphics fix;
+the longer two-player/continuation routes have not been rerun with readback
+enabled. Earlier reference parity also reproduced the grey-scene defect,
+so it did not establish correct monochrome rendering.
 
 | Check | Result and scope |
 |---|---|
@@ -29,7 +48,14 @@ runs are not performance measurements.
 
 ## Playback and visible presentation
 
-The final four-minute offscreen test used the unchanged production host, real
+A current 120-second visible attract-mode run with readback enabled advanced
+6,580 steps and 119.010 emulated seconds. The rebuilt window visibly displayed
+detailed monochrome imagery and recorded no engine fault, audio underrun or
+clock/backlog recovery in that run. It used real audio output, the normal system
+clock and fresh isolated diagnostic saves, with no competing engine runs.
+This short intro check does not resolve the prior gameplay audio limitation.
+
+The earlier four-minute offscreen test used the production host, real
 AVAudioEngine output, fresh saves and the singles-continuation route. It ran
 13,769 native steps, advancing 239.524 emulated seconds in 240.048 wall seconds
 (0.997820 times real time), without a native fault. It recorded seven audio
@@ -46,8 +72,8 @@ DualSense was detected; its physical buttons and sticks were not actuated.
 A [follow-up audio investigation](audio-hitch-investigation.md) measured the
 producer delays and tested two recovery changes using tagged PCM. Both changes
 were rejected after regressions in the controlled burst cases. The delivered
-app and runtime sources remain unchanged, and the original playback limitation
-and acceptance results above still apply.
+audio implementation remains unchanged. Those measurements predate the RTT
+correction; the original playback limitation remains unresolved.
 
 ## Evidence
 
