@@ -100,9 +100,9 @@ final class VTScene: SKScene {
             // cost is included before full end-of-chunk clock accounting.
             if source == .display, !failed,
                presentationMarker.needsPresentation(frame: game.frameCount, available: game.latestFrame != nil),
-               let image = game.latestFrame?.image {
-                let texture = SKTexture(cgImage: image)
-                texture.filteringMode = .nearest; picture.texture = texture
+               let frame = game.latestFrame,
+               let texture = makeVTFrameTexture(rgba: frame.rgba, width: frame.width, height: frame.height) {
+                picture.texture = texture
                 presentationMarker.presented(frame: game.frameCount)
                 presentationCount += 1
             }

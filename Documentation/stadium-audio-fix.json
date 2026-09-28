@@ -1,0 +1,862 @@
+{
+  "artifacts": {
+    "CPUInputFilesUnchanged": true,
+    "CPUManifests": {
+      "aicadsp": "576409af0fcffec44d6b3c1c069da58f386c5f24f612823fd1559f669b6115fb",
+      "arm7": "d9379eb7df662fcde6f9b5542e19a30280bf3a434dee7dbb8a68775ac9f283f9",
+      "sh4": "d276592fb6b3145123e252c3a87eb87e9117875b004ca5e506d09c81cb3cf814"
+    },
+    "CPUManifestsUnchanged": true,
+    "bridgeSourceSHA256": {
+      "Sources/Bridge/media_identity.h": "030a340c7c4dc437eceb7aad640bede5cf315148eaee198db47e2fd8e75f9b99",
+      "Sources/Bridge/virtua_tennis.h": "55d1228264868651a77973202fab9575f05a5aa8f5ef0f0da24d677e157d9983",
+      "Sources/Bridge/virtua_tennis.mm": "03b7bdc98d5c3cdb1ac03e7079aa8a349dc109a38f840542c1393591ba470717"
+    },
+    "changedLinkedInputFiles": [
+      "build/native/virtua_tennis_bridge.o"
+    ],
+    "engineManifestSHA256": "2e81ed41915875e34e662038201a62854e6b3ff94098a527035b6d3db0eca534",
+    "engineSHA256": "b0dedf14347b3a93534d9a7c85ab327b99b947c0417d968c384f9f8e8fdf44e4",
+    "hostSourceSHA256": {
+      "Sources/Mac/AudioOutput.swift": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+      "Sources/Mac/Controls.swift": "9df51fefbb4a3611a736fa9192887d557560c4eb5b7670cbd9256555a88f52ad",
+      "Sources/Mac/FrameClock.swift": "6f70e02a27f4bb83209dfcfddcdaad8e0bc23dc06d6c12b05aa9125f62e0da99",
+      "Sources/Mac/FrameContinuation.swift": "c69003ab2d2e051af9b41bd3ed6aed462dbe59db56f583cebe392a669f744906",
+      "Sources/Mac/FramePresentation.swift": "44a24ca8625b4d91f420b8b3cd91aa8cbe62bb00ac57463f07732c97c584847e",
+      "Sources/Mac/GameScene.swift": "786726e341c1f7b2ca9369c968b8d7f242dfd0aff987f904a878f475f2643547",
+      "Sources/Mac/Input.swift": "989a7d383f56568c6d611199c610ec3d90fa3fd526fb05c3912f8ef49d7f9383",
+      "Sources/Mac/Media.swift": "20718890c882f89f67c15b8d52bc367fdb7cfc502664b6ffbe18172640dcd3ce",
+      "Sources/Mac/NativeGame.swift": "556bee976275a54d2556fe5d2aff21bf534b5310d8174d4c0a29d585f20fe1b8",
+      "Sources/Mac/Tests/FramePresentationTests.swift": "eb39c625730e3779a0b51ee6fb7ef7782d0ae6b9e43e6a2d67eeec8e5668d7a1",
+      "Sources/Mac/Tests/FrameSchedulingTests.swift": "0ba40e26c5ce41c55ee74c9f6e026c28aec5d0c20b388070e9c302bf63bdbe25",
+      "Sources/Mac/Tests/main.swift": "130871f19eb827a29758840fc2adc35933993b45a9415881c693c4fcb9bca1d8",
+      "Sources/Mac/main.swift": "6f1e4633c1dff389d699ad5dde9b0c948f8a2022b48453892622639ffea6a181",
+      "scripts/build.sh": "61a60cedd281fca2e43c8bdb3c89f30a0efdd0e12583a7c4e02bb133311cb674",
+      "scripts/build_host.sh": "105956f73f7389f5f69389406d24652a4c5c8d38fcfa121edcafef92262cf5b3",
+      "scripts/build_icon.sh": "c3feae527e824b4685b687d28cf60ced7557c7a9efab217b35715c7729be8aaf",
+      "scripts/native_provenance.py": "8fdbdfad1d5de9b41c3e579b68759b1e8648dc7fc553431a18f48f8425f49b62"
+    },
+    "originalCPUsRemaining": [],
+    "packageManifestSHA256": "ca7e54496ec3468b144dad1a173757f396b16099a9148b0566f2c62637f3eded",
+    "packagedArtifacts": {
+      "Contents/Frameworks/libvirtua_tennis.dylib": {
+        "architecture": "arm64",
+        "minimumMacOS": "14.0",
+        "sha256": "f765d7709dd74d3ac52c7b442fd57fe16c8ade4c7d09730fa3528fa7f61b85a6"
+      },
+      "Contents/MacOS/VirtuaTennis": {
+        "architecture": "arm64",
+        "minimumMacOS": "14.0",
+        "sha256": "a49393c2e9e8087476972c5b8b8b24aeda261e02c0849e8419b04789b5e0902f"
+      }
+    },
+    "priorEngineManifestSHA256": "e199417aa2a71a68c9875d502851ccd12dacc29c71950de8da9d11648a41fee9",
+    "priorEngineSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+    "runtimeInterpreterFallback": false
+  },
+  "change": {
+    "audioBufferingChanged": false,
+    "coreThreadedRendererEnabled": false,
+    "graphicsDriver": "Enable and query kCGLCEMPEngine once during context initialization; keep host context/guest execution on its owner thread. Unconfirmed capability is logged.",
+    "guestInstructionsOrClocksChanged": false,
+    "inputChanged": false,
+    "outputSurfaceSize": [
+      2048,
+      2048
+    ],
+    "presentation": "Use the production makeVTFrameTexture helper with a presentation-only opaque RGBA copy and flipped=true; retain nearest filtering.",
+    "rawFramebufferOrPCMChanged": false,
+    "upstreamSourceChanged": false
+  },
+  "diagnosticExperiments": {
+    "experimentScope": "Instrumented diagnostic runs, serialized without other test/build workloads. One trial per variant; not independent acoustic or universal performance evidence. Earlier candidate identities precede the final source/packaged rebuild. No audio buffering, PCM, guest CPU, instruction, guest scheduler or input changes.",
+    "experiments": {
+      "baseline": {
+        "analysisSHA256": "b0ab1e1493bf2a37d990a123bbbad7bf9e078366faf66f33545a12d2cd562582",
+        "backlogRecoveryCount": 0,
+        "burst": {
+          "emulatedSeconds": 1.1539651199999952,
+          "firstStep": 4139,
+          "lastStep": 4207,
+          "nativeWallSeconds": 1.3698871249798685,
+          "steps": 69
+        },
+        "discardedClockGaps": 1,
+        "emulatedSeconds": 109.745048,
+        "engineSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+        "executableSHA256": "63d4963cc8913883ad2af635d4a47c797134eb5c923d0cb9089171457e96fd40",
+        "measuredWallSeconds": 110.08156312489882,
+        "recoveries": [
+          {
+            "frame": 4177,
+            "nextPlayCallDelaySeconds": 0.052129291638266295,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.008095238095238095
+          },
+          {
+            "frame": 4195,
+            "nextPlayCallDelaySeconds": 0.07416208332870156,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.008299319727891157
+          },
+          {
+            "frame": 4195,
+            "nextPlayCallDelaySeconds": 0.07182583335088566,
+            "reason": "host",
+            "sampledPendingSeconds": null
+          },
+          {
+            "frame": 4819,
+            "nextPlayCallDelaySeconds": 0.04164208337897435,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.00040816326530612246
+          }
+        ],
+        "reportSHA256": "01e696cfd12053a59f90fdd93dbed01b5f4bbc22324687473e4256c8515afe23",
+        "strictPlaybackPassed": false,
+        "traceSHA256": "d00c6f0d5a56bc00645064d57ddf9c73a34f1f83bcb4945f342327bd555c2894",
+        "underrunCount": 3
+      },
+      "cache": {
+        "analysisSHA256": "7f06e366e90848a0c54f2451805565cf311da5b7a48aae23de6e4ff724814d8f",
+        "backlogRecoveryCount": 0,
+        "burst": {
+          "emulatedSeconds": 1.1539651199999952,
+          "firstStep": 4139,
+          "lastStep": 4207,
+          "nativeWallSeconds": 1.3718481664545834,
+          "steps": 69
+        },
+        "discardedClockGaps": 1,
+        "emulatedSeconds": 109.79522175999998,
+        "engineSHA256": "6dcf7fe399b332794726bbde84220840ee7c3b605a18355c40e4c5701dc97f15",
+        "executableSHA256": "63d4963cc8913883ad2af635d4a47c797134eb5c923d0cb9089171457e96fd40",
+        "measuredWallSeconds": 110.07044137490448,
+        "recoveries": [
+          {
+            "frame": 4169,
+            "nextPlayCallDelaySeconds": 0.04986020835349336,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.003219954648526077
+          },
+          {
+            "frame": 4188,
+            "nextPlayCallDelaySeconds": 0.051935291674453765,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0022448979591836735
+          },
+          {
+            "frame": 4195,
+            "nextPlayCallDelaySeconds": 0.06722495832946151,
+            "reason": "host",
+            "sampledPendingSeconds": null
+          },
+          {
+            "frame": 5353,
+            "nextPlayCallDelaySeconds": 0.038218791654799134,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.002018140589569161
+          }
+        ],
+        "reportSHA256": "da1d735f8ca46209dfab38fccecc4f34d09c83609c09f89ef00e05b197eb9766",
+        "strictPlaybackPassed": false,
+        "traceSHA256": "6473120c45a5216233fa168e3af3dabc0d2e67e9d5bc9e9a26d689ee63ed6498",
+        "underrunCount": 3
+      },
+      "surface-texture": {
+        "analysisSHA256": "7bc65615d8bb238a9b57bc4264b4dacf3d4db991d261160dc23eef2b83684962",
+        "backlogRecoveryCount": 0,
+        "burst": {
+          "emulatedSeconds": 1.1539651199999952,
+          "firstStep": 4139,
+          "lastStep": 4207,
+          "nativeWallSeconds": 1.362470250169281,
+          "steps": 69
+        },
+        "discardedClockGaps": 1,
+        "emulatedSeconds": 109.72832415999999,
+        "engineSHA256": "23dfd66de319d3b62dd7af9938dd2d77bf6d7be42a2b121788bfd1c3f1941b58",
+        "executableSHA256": "44c129dabbb168c88a88c1866f4cbc0e1a0df2e078ef51f68470003cbf4d783c",
+        "measuredWallSeconds": 110.06622024992248,
+        "recoveries": [
+          {
+            "frame": 4183,
+            "nextPlayCallDelaySeconds": 0.05237683333689347,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0037414965986394557
+          },
+          {
+            "frame": 4202,
+            "nextPlayCallDelaySeconds": 0.0465766666457057,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0022448979591836735
+          },
+          {
+            "frame": 4207,
+            "nextPlayCallDelaySeconds": 0.05515862500760704,
+            "reason": "host",
+            "sampledPendingSeconds": null
+          }
+        ],
+        "reportSHA256": "9ebc0a695d371a7f129c8b60390626c0276c90bfc3508a19c342c6a484381e33",
+        "strictPlaybackPassed": false,
+        "traceSHA256": "cd049253718acd59dac5a8f9cc96b1243b60fac1083f1f6bf49797a2cb3e3bfc",
+        "underrunCount": 2
+      },
+      "worker-only": {
+        "analysisSHA256": "53bf56118da17409859bf1e5154d917e21dce9eaaf758a5897437e1756cda78c",
+        "backlogRecoveryCount": 1,
+        "burst": {
+          "emulatedSeconds": 1.1539651199999952,
+          "firstStep": 4139,
+          "lastStep": 4207,
+          "nativeWallSeconds": 1.0966656666132621,
+          "steps": 69
+        },
+        "discardedClockGaps": 3,
+        "emulatedSeconds": 109.24332383999997,
+        "engineSHA256": "1e8dfc2b511489fedefe2be3cbfed35be63162897754eedf73aa67e4a2c535bc",
+        "executableSHA256": "63d4963cc8913883ad2af635d4a47c797134eb5c923d0cb9089171457e96fd40",
+        "measuredWallSeconds": 110.06028299994068,
+        "recoveries": [
+          {
+            "frame": 8,
+            "nextPlayCallDelaySeconds": 0.006381291663274169,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.022312925170068026
+          },
+          {
+            "frame": 10,
+            "nextPlayCallDelaySeconds": 0.006153333350084722,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0063718820861678
+          },
+          {
+            "frame": 13,
+            "nextPlayCallDelaySeconds": 0.0067428749753162265,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.018480725623582765
+          },
+          {
+            "frame": 14,
+            "nextPlayCallDelaySeconds": 0.06891724996967241,
+            "reason": "host",
+            "sampledPendingSeconds": null
+          },
+          {
+            "frame": 19,
+            "nextPlayCallDelaySeconds": 0.01304175000404939,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0019501133786848073
+          },
+          {
+            "frame": 23,
+            "nextPlayCallDelaySeconds": 0.0038131666369736195,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0019501133786848073
+          },
+          {
+            "frame": 27,
+            "nextPlayCallDelaySeconds": 0.011282416642643511,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.001927437641723356
+          },
+          {
+            "frame": 31,
+            "nextPlayCallDelaySeconds": 0.006463916623033583,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.012630385487528345
+          },
+          {
+            "frame": 34,
+            "nextPlayCallDelaySeconds": 0.005333041655831039,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.009478458049886621
+          },
+          {
+            "frame": 36,
+            "nextPlayCallDelaySeconds": 0.06844891665969044,
+            "reason": "host",
+            "sampledPendingSeconds": null
+          },
+          {
+            "frame": 42,
+            "nextPlayCallDelaySeconds": 0.008960500010289252,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.005124716553287982
+          },
+          {
+            "frame": 428,
+            "nextPlayCallDelaySeconds": 0.004407999978866428,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.03614512471655329
+          },
+          {
+            "frame": 431,
+            "nextPlayCallDelaySeconds": 0.008348333358298987,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.009160997732426304
+          },
+          {
+            "frame": 458,
+            "nextPlayCallDelaySeconds": 0.0071605833363719285,
+            "reason": "underrun",
+            "sampledPendingSeconds": -2.2675736961451248e-05
+          },
+          {
+            "frame": 489,
+            "nextPlayCallDelaySeconds": 0.009221124986652285,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.001927437641723356
+          },
+          {
+            "frame": 503,
+            "nextPlayCallDelaySeconds": 0.06718237500172108,
+            "reason": "host",
+            "sampledPendingSeconds": null
+          },
+          {
+            "frame": 521,
+            "nextPlayCallDelaySeconds": 0.005888916668482125,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0003401360544217687
+          },
+          {
+            "frame": 528,
+            "nextPlayCallDelaySeconds": 0.008294041675981134,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0007256235827664399
+          },
+          {
+            "frame": 539,
+            "nextPlayCallDelaySeconds": 0.007556166674476117,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0027891156462585033
+          },
+          {
+            "frame": 546,
+            "nextPlayCallDelaySeconds": 0.0068913333234377205,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0007256235827664399
+          },
+          {
+            "frame": 550,
+            "nextPlayCallDelaySeconds": 0.01203616667771712,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.00199546485260771
+          },
+          {
+            "frame": 557,
+            "nextPlayCallDelaySeconds": 0.00880166661227122,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.0007936507936507937
+          },
+          {
+            "frame": 577,
+            "nextPlayCallDelaySeconds": 0.024458749976474792,
+            "reason": "backlog",
+            "sampledPendingSeconds": 0.25630385487528345
+          }
+        ],
+        "reportSHA256": "3b3340025ab57292e96bd12b23b64f0eaccb7b8dfc5464b0d9d18fcd9ef3ecdb",
+        "strictPlaybackPassed": false,
+        "traceSHA256": "d5b77493211c2054bbcebce465f361177f5bee090687cb32323d0326839c408c",
+        "underrunCount": 19
+      },
+      "worker-texture": {
+        "analysisSHA256": "09f563c6dadcb8904aca9706d381826b6ef85f0087406132042e437efaf7d589",
+        "backlogRecoveryCount": 0,
+        "burst": {
+          "emulatedSeconds": 1.1539651199999952,
+          "firstStep": 4139,
+          "lastStep": 4207,
+          "nativeWallSeconds": 0.9795912082190625,
+          "steps": 69
+        },
+        "discardedClockGaps": 0,
+        "emulatedSeconds": 110.02935776,
+        "engineSHA256": "1e8dfc2b511489fedefe2be3cbfed35be63162897754eedf73aa67e4a2c535bc",
+        "executableSHA256": "44c129dabbb168c88a88c1866f4cbc0e1a0df2e078ef51f68470003cbf4d783c",
+        "measuredWallSeconds": 110.10018170828698,
+        "recoveries": [
+          {
+            "frame": 545,
+            "nextPlayCallDelaySeconds": 0.008461333345621824,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.00029478458049886624
+          },
+          {
+            "frame": 548,
+            "nextPlayCallDelaySeconds": 0.012040666653774679,
+            "reason": "underrun",
+            "sampledPendingSeconds": -0.009478458049886621
+          }
+        ],
+        "reportSHA256": "b3c8ad411dbd01abec6edbbb0dfeaaa19aed4d32122f3522a7deec73447f1eb1",
+        "strictPlaybackPassed": false,
+        "traceSHA256": "efaef743a76c6f78a3a36a1f75e8a9d4a8f0fccbccd80c79465438bc0c45c7cd",
+        "underrunCount": 2
+      }
+    },
+    "schemaVersion": 1
+  },
+  "environment": {
+    "architecture": "arm64",
+    "build": "26A428",
+    "fixedRTCForReplayAndPlayback": 946684800,
+    "freshIsolatedSaves": true,
+    "macOS": "27.0",
+    "machine": "Apple M3 Ultra",
+    "minimumMacOS": "14.0",
+    "performanceJobsSerialized": true
+  },
+  "focusedDiagnosticProfile": {
+    "approximateSteps": [
+      4133,
+      4203
+    ],
+    "localSample": "build/stadium-audio-investigation/sampled-baseline-run/stadium-sample.txt",
+    "mainThreadSamples": 1348,
+    "openGLDrawSamples": 413,
+    "rendererSamples": 510,
+    "sampleSHA256": "06d9f95adadb58c92f07c0e89477d34d914fd25f25d130fa52bfaa368e117a26",
+    "scope": "Sampling overhead is present. Inclusive stack counts diagnose where time was spent; they are not independent clean timing measurements.",
+    "sortedTranslucentColorPassIdentified": true
+  },
+  "hostChecks": {
+    "checkCount": 159,
+    "executableSHA256": "bcf8f065c323537f165edaf531e9857f0d6b301a0729d8335c8d81281d028c20",
+    "localReport": "build/host-tests/input-tests.json",
+    "passed": true,
+    "reportSHA256": "afebc62eaa215ec9259af2722c09cde2282c4e7b685aca3ca6d76a7e5fc95401",
+    "scope": "Actual host input/router, variable-time clock, continuation queue and presentation ordering with keyboard events and Apple synthetic extended gamepads. No engine, ROM, GUI or audio is executed; tennis/game semantics require separate engine acceptance."
+  },
+  "hostTypecheck": {
+    "localReport": "build/host-tests/typecheck.json",
+    "passed": true,
+    "reportSHA256": "475c13a585866f4ffc1e6e6e19d684e500ca8b2e99211cc0f0411e7571f09a33",
+    "target": "arm64-apple-macosx14.0"
+  },
+  "limitations": [
+    "Strict whole-run no-underrun acceptance remains false; boot and earlier intro recoveries are not silently excluded.",
+    "One trial per diagnostic variant and bounded routes on one machine do not establish universal performance.",
+    "Exact packaged replay parity proves equality on the authored 6244-step route only. Earlier wider replay reports bind older artifacts.",
+    "Raw traces, captures, generated programs and game media stay local and are excluded from Git."
+  ],
+  "nativeLifecycle": {
+    "checkCount": 63,
+    "engineSHA256": "b0dedf14347b3a93534d9a7c85ab327b99b947c0417d968c384f9f8e8fdf44e4",
+    "localReport": "build/stadium-audio-investigation/production-bridge-verification/report.json",
+    "passed": true,
+    "reportSHA256": "067ea0fe2a7064babf386736a5ad9565027b5dc5c45916179ee1ea1907c04649",
+    "scope": "Actual fixed-engine C ABI: media validation, format, 48 boot steps, singleton, sticky faults, creating-thread requirement and two resets. No gameplay/controller or full match claim."
+  },
+  "productionUninstrumentedPlayback": {
+    "backlogRecoveryCount": 0,
+    "buildManifestSHA256": "16d528f368b1fb7560ce9e25d0f2ac47c8bebd0ecd234c0489fef7caedc06694",
+    "checks": {
+      "audioEngineRunning": true,
+      "audioPlayerRunning": true,
+      "audioRendered": true,
+      "diagnosticSchedulingRestored": true,
+      "durationCompleted": true,
+      "emulatedTimeWithinTwoPercentOfWallTime": true,
+      "fixedArtifactsUnchanged": true,
+      "mainThreadUpdates": true,
+      "nativeFaultFree": true,
+      "noAudioBacklogRecovery": true,
+      "noAudioEngineFailures": true,
+      "noAudioUnderruns": false,
+      "noDiscardedClockGaps": false,
+      "notPaused": true
+    },
+    "discardedClockGaps": 1,
+    "emulatedToWallTimeRatio": 0.9986615425349001,
+    "engineFailureCount": 0,
+    "engineSHA256": "b0dedf14347b3a93534d9a7c85ab327b99b947c0417d968c384f9f8e8fdf44e4",
+    "executableSHA256": "6aedc5b93c00180686e9180679ca82d821a048037199f98e978636d759a25006",
+    "firstMeasurement": {
+      "backlogRecoveryCount": 0,
+      "discardedClockGaps": 1,
+      "engineFailureCount": 0,
+      "step": 195,
+      "underrunCount": 4,
+      "wallSeconds": 5.006735458271578
+    },
+    "gameFrames": 13782,
+    "limitation": "All recoveries occurred before the first five-second measurement; this coarse report cannot identify exact frames or prove the startup PCM was silent. Original strict false result is retained.",
+    "localReport": "build/stadium-audio-investigation/production-long-playback/report.json",
+    "maximumSceneUpdateSeconds": 0.13854412490036339,
+    "measuredWallSeconds": 240.0631809165934,
+    "measurementCount": 47,
+    "noAdditionalRecoveryThroughWallSeconds": 240.0631809165934,
+    "passed": false,
+    "remainingMeasurementsHaveUnchangedRecoveryCounts": true,
+    "reportSHA256": "76d10dbf397bf59719a4c62fab6e6ed063727cea0ff0969819a108f13edbe623",
+    "requestedWallSeconds": 240,
+    "routeFrames": 11700,
+    "routeSHA256": "fc61299552ac0bedc9eb14d0037e5590ab08806f9fbdc2b550135d6945c20396",
+    "scope": "Offscreen main-run-loop VTScene/VTFrameClock/VTGame/VTAudioOutput producer and real AVAudioEngine pacing; no visible window, display presentation, physical controller or audible-speaker proof.",
+    "underrunCount": 4
+  },
+  "referenceParity": {
+    "appFramesSHA256": "813ad4ab5f0917409fdd47e04d9648fe39743b3c67dc35be71fb41d29247f02e",
+    "appReportSHA256": "0e18ea62072fae8a51609b62ce180300198a6812796f7a515250615ed97a7b8c",
+    "clockComparison": "Integer 200MHz ticks reconstructed by rounding C ABI double seconds after JSON serialization",
+    "emulatedSeconds": 113.45780991999997,
+    "exactRGBA_PCM_Counts_Clock": true,
+    "firstDifferences": [],
+    "localReport": "build/stadium-audio-investigation/packaged-parity.json",
+    "originalReportSHA256": "be477358255a786a8dbc38047521de8a0446c6f6dabb0455274589b4775fd208",
+    "passed": true,
+    "reportSHA256": "f33216103cab4abbd4e38fa2bc9c465b61cb4648a4c0de41994e81a9952c1775",
+    "scope": "Per-step equality through the actual packaged Swift host and C ABI, with fixed RTC and the same authored digital input route. This does not establish live audio pacing or physical controller actuation.",
+    "steps": 6244,
+    "stereoSampleFrames": 5003652
+  },
+  "schemaVersion": 1,
+  "scope": "Bounded local Apple Silicon validation of this rendering change. No physical arcade, speaker acoustics, controller actuation, full-tournament or independent public-companion rebuild claim.",
+  "status": "Stadium production bottleneck addressed; exact reference parity passes. Recoveries elsewhere remain, so whole-run strict smooth playback is not qualified.",
+  "syntheticProductionTexture": {
+    "buildManifestSHA256": "9716a4c325fecdda616f6d8bce7f066da1226c7c78865b8c153dcef3e5d8194a",
+    "cases": [
+      {
+        "case": "minimal",
+        "height": 1,
+        "nearestFiltering": true,
+        "normalizedTextureComparison": {
+          "candidateSHA256": "5fc1f3b5dfc3af9f4a3c54c77f448216c82908ce3953813f1e12695bb71271c8",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "5fc1f3b5dfc3af9f4a3c54c77f448216c82908ce3953813f1e12695bb71271c8"
+        },
+        "originalRenderCoverage": {
+          "distinctRGBColors": 1,
+          "magentaBackgroundFraction": 0,
+          "nonOpaquePixels": 0,
+          "passed": false
+        },
+        "passed": true,
+        "sameDimensions": true,
+        "sameSKViewRenderComparison": {
+          "candidateSHA256": "deccb13da5e68b39fd85c559eb10a8e1706951e8ae9d2c32a1f9a3783bfdc58c",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "deccb13da5e68b39fd85c559eb10a8e1706951e8ae9d2c32a1f9a3783bfdc58c"
+        },
+        "sourceRawAlphaUnchanged": true,
+        "width": 1,
+        "wrongOrientationCheckApplicable": false,
+        "wrongOrientationRejected": true
+      },
+      {
+        "case": "odd-small",
+        "height": 29,
+        "nearestFiltering": true,
+        "normalizedTextureComparison": {
+          "candidateSHA256": "120b19929e9023df688b5bd596d50e4bf2ed5a5a9f55b0799c8795f27640d2ca",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "120b19929e9023df688b5bd596d50e4bf2ed5a5a9f55b0799c8795f27640d2ca"
+        },
+        "originalRenderCoverage": {
+          "distinctRGBColors": 685,
+          "magentaBackgroundFraction": 0,
+          "nonOpaquePixels": 0,
+          "passed": true
+        },
+        "passed": true,
+        "sameDimensions": true,
+        "sameSKViewRenderComparison": {
+          "candidateSHA256": "26efded4b0519aab9783c3180e46ee40e3b12b7825edbbf5199b6f09085cac0e",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "26efded4b0519aab9783c3180e46ee40e3b12b7825edbbf5199b6f09085cac0e"
+        },
+        "sourceRawAlphaUnchanged": true,
+        "width": 37,
+        "wrongOrientationCheckApplicable": true,
+        "wrongOrientationRejected": true
+      },
+      {
+        "case": "ramp-small",
+        "height": 48,
+        "nearestFiltering": true,
+        "normalizedTextureComparison": {
+          "candidateSHA256": "1ab6f77f1e182b593c6422dce587c09ecddec02a99bdd4466542b0a96ac900c1",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "1ab6f77f1e182b593c6422dce587c09ecddec02a99bdd4466542b0a96ac900c1"
+        },
+        "originalRenderCoverage": {
+          "distinctRGBColors": 1821,
+          "magentaBackgroundFraction": 0,
+          "nonOpaquePixels": 0,
+          "passed": true
+        },
+        "passed": true,
+        "sameDimensions": true,
+        "sameSKViewRenderComparison": {
+          "candidateSHA256": "2ee8bf66a068a96be11a3c0f747aa93df81fda0c068183a3366a0dc784513fee",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "2ee8bf66a068a96be11a3c0f747aa93df81fda0c068183a3366a0dc784513fee"
+        },
+        "sourceRawAlphaUnchanged": true,
+        "width": 64,
+        "wrongOrientationCheckApplicable": true,
+        "wrongOrientationRejected": true
+      },
+      {
+        "case": "game-size",
+        "height": 480,
+        "nearestFiltering": true,
+        "normalizedTextureComparison": {
+          "candidateSHA256": "ce13c79523f71393dbe1e98436ea2f5046fc54309c549e26dd89908425fb9acf",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "ce13c79523f71393dbe1e98436ea2f5046fc54309c549e26dd89908425fb9acf"
+        },
+        "originalRenderCoverage": {
+          "distinctRGBColors": 62037,
+          "magentaBackgroundFraction": 9.765625e-06,
+          "nonOpaquePixels": 0,
+          "passed": true
+        },
+        "passed": true,
+        "sameDimensions": true,
+        "sameSKViewRenderComparison": {
+          "candidateSHA256": "2514ae7f90b7ce9339016a0e7acd90d59e53dbef28679752fd0ae2bd423fb051",
+          "differentBytes": 0,
+          "differentPixels": 0,
+          "exact": true,
+          "firstDifferences": [],
+          "maximumChannelDelta": 0,
+          "meanAbsoluteChannelDelta": 0,
+          "referenceSHA256": "2514ae7f90b7ce9339016a0e7acd90d59e53dbef28679752fd0ae2bd423fb051"
+        },
+        "sourceRawAlphaUnchanged": true,
+        "width": 640,
+        "wrongOrientationCheckApplicable": true,
+        "wrongOrientationRejected": true
+      }
+    ],
+    "copiedSources": {
+      "FramePresentation.swift": "44a24ca8625b4d91f420b8b3cd91aa8cbe62bb00ac57463f07732c97c584847e",
+      "TexturePresentationHarness.swift": "24e5edaa08f44cde18beadf8c944770494d9f29b5437e994550b4f77cf9b392f"
+    },
+    "executableSHA256": "d67ad7a368ff925a56f932b26218bcd5096f6e17aa1d692b58c871a13e9ee4b3",
+    "invalidInputsRejected": 12,
+    "localReport": "build/stadium-texture-production-lab/validation/report.json",
+    "normalization": "Identical sRGB premultiplied-last RGBA8 big-endian CGContext for both images; all channel values must match exactly.",
+    "passed": true,
+    "reportSHA256": "2c19d7ba38ddc0bfec92b1ebbca9a9574ff424b325b75daaf196f4bb34c7c41f",
+    "scope": "Actual production texture helper with synthetic patterns and same-view offscreen rendering. No native engine, media, input, clock, audio or on-screen game qualification."
+  },
+  "visibleInstrumentedLocalization": {
+    "analysisSHA256": "215ea2d67b45164a7b1a967d7a17efe74adc226d3f168ae44062ed98148c7235",
+    "buildManifestSHA256": "6e9d604d579d0c36c32e43357bac13d95b20369fdb9bc3ca1aaeff92d5e1379e",
+    "builderSHA256": "4e17d88b804f9cba3523777b6f9495bb87ed0c9b58c082c3063cf9040a9a93e5",
+    "engineSHA256": "b0dedf14347b3a93534d9a7c85ab327b99b947c0417d968c384f9f8e8fdf44e4",
+    "executableSHA256": "cb3dbe846d3e8dca7f9e3496b2056b27c65dce171f60f3d4ef73e9ed29de5dec",
+    "instrumentationChangesSHA256": "baf597ddae0c8981440dd6c2254ef078ca5df177ad6ea36b0766cfab75b19550",
+    "integrityIssues": [],
+    "interpretation": "Boot shortages at steps 8, 10 and 13; host flush at 14; one intro shortage at 1251. No later recovery through 6049, including the stadium interval. This separate trial does not retroactively locate events in the prior aggregate-only visible report.",
+    "inverseTransformVerified": true,
+    "localReport": "build/stadium-audio-investigation/visible-trace-run/report.json",
+    "originalSceneUnchanged": true,
+    "packagedSignedEngineSHA256": "f765d7709dd74d3ac52c7b442fd57fe16c8ade4c7d09730fa3528fa7f61b85a6",
+    "recoveriesDuringMeasurement": [
+      {
+        "frame": 8,
+        "reason": "underrun",
+        "wallSeconds": 0.602638374955859
+      },
+      {
+        "frame": 10,
+        "reason": "underrun",
+        "wallSeconds": 0.740471999917645
+      },
+      {
+        "frame": 13,
+        "reason": "underrun",
+        "wallSeconds": 0.9405849166214466
+      },
+      {
+        "frame": 14,
+        "reason": "host",
+        "wallSeconds": 1.012008124962449
+      },
+      {
+        "frame": 1251,
+        "reason": "underrun",
+        "wallSeconds": 27.192104291636497
+      }
+    ],
+    "reportSHA256": "985022dfb73475e3e454e8141813e8854016d03deadac14f3b966315515f4a5f",
+    "scope": "Derived visible application with reversible bounded in-memory timing instrumentation and the unchanged final engine/scene. Instrumentation overhead is unmeasured; no screenshot capture during playback, no speaker recording or acoustic proof.",
+    "stadiumInterval": {
+      "emulatedSeconds": 1.1539651199999952,
+      "firstStep": 4139,
+      "lastStep": 4207,
+      "nativeWallSeconds": 0.9860782087198459,
+      "recoveryCount": 0,
+      "steps": 69
+    },
+    "strictCheckScope": "Derived from nonzero measured recovery counts, not an app exit-status or original report field.",
+    "strictNoRecoveryCheckPassed": false,
+    "telemetry": {
+      "automaticRecoveryCount": 4,
+      "backlogRecoveryCount": 0,
+      "batchTraceNotTruncated": true,
+      "clockBalanceSeconds": 0.0018052566709372275,
+      "continuationUpdates": 1854,
+      "discardedClockGaps": 1,
+      "displayUpdates": 5516,
+      "engineFailureCount": 0,
+      "engineStartCount": 1,
+      "flushCounts": {
+        "host": 1,
+        "underrun": 4
+      },
+      "gameFrames": 6049,
+      "gameState": {
+        "closed": false,
+        "emulatedSeconds": 110.19660063999999,
+        "faultCode": 0,
+        "frame": 6049,
+        "framesPerSecond": 59.79377128284546,
+        "height": 480,
+        "sampleRate": 44100,
+        "width": 640
+      },
+      "isPlaying": true,
+      "isRunning": true,
+      "lastInput": {
+        "buttons": 0
+      },
+      "maximumDisplayUpdateGapSeconds": 0.19851991662289947,
+      "maximumSceneUpdateGapSeconds": 0.14742724993266165,
+      "maximumSceneUpdateSeconds": 0.1450834582792595,
+      "measuredWallSeconds": 110.50736108329147,
+      "minPendingFrames": -514,
+      "outputLatencySeconds": 0.059604166666666666,
+      "outputSampleRate": 48000,
+      "pausedByHost": false,
+      "peakPendingFrames": 8279,
+      "pendingFrames": 7473,
+      "preferredDisplayFramesPerSecond": 60,
+      "renderedFrames": 3671472,
+      "sceneUpdateWallSeconds": 76.53266045864439,
+      "sceneUpdates": 7370,
+      "scheduledFrames": 3678945,
+      "sourceSampleRate": 44100,
+      "texturePresentations": 5304,
+      "underrunCount": 4,
+      "updatesOnMainThread": true,
+      "windowOccluded": false,
+      "windowVisible": true
+    },
+    "trace": {
+      "clock": "ProcessInfo.systemUptime, monotonic seconds",
+      "complete": true,
+      "droppedEvents": 0,
+      "file": "audio-batches.jsonl",
+      "measurementEndSeconds": 316222.2667797916,
+      "measurementStartSeconds": 316111.75941870833,
+      "recordLimit": 65536,
+      "recordedEvents": 24210,
+      "scope": "Diagnostic metadata only; in-memory bounded producer-thread recording, serialized after playback and shutdown. Instrumentation adds timestamp/append overhead. No PCM, microphone, audio tap, buffering or scheduling change.",
+      "sha256": "1ed0961014ced9b1636350914543ede46363ac7c1d3590d9f87c182e5b09cbb0"
+    }
+  },
+  "visiblePackagedPlayback": {
+    "captureSHA256": "7ad2bd033fbebda957d4dc5b75dbce2920380ee4f34803f30e8bb1881c45d108",
+    "instrumented": false,
+    "localReport": "build/stadium-audio-investigation/visible-playback/report.json",
+    "reportSHA256": "a29f2b4408239fc296ddc447dbd3ed046cb099f090f41deca33555c0c42cf823",
+    "requestedWallSeconds": 110,
+    "route": "Configuration/replays/singles-baseline.json",
+    "routeSHA256": "3e4a927e1114556631204bd74792ac25c415fad1b762ab614813720bf174cbe3",
+    "scope": "Actual built app, visible unoccluded window and real audio output. Aggregate counters do not locate recoveries. No independent audible-speaker measurement.",
+    "telemetry": {
+      "automaticRecoveryCount": 3,
+      "backlogRecoveryCount": 0,
+      "clockBalanceSeconds": -0.0012062017078136034,
+      "continuationUpdates": 1885,
+      "discardedClockGaps": 1,
+      "displayUpdates": 5387,
+      "engineFailureCount": 0,
+      "engineStartCount": 1,
+      "flushCounts": {
+        "host": 1,
+        "underrun": 3
+      },
+      "gameFrames": 6049,
+      "gameState": {
+        "closed": false,
+        "emulatedSeconds": 110.19660063999999,
+        "faultCode": 0,
+        "frame": 6049,
+        "framesPerSecond": 59.79377128284546,
+        "height": 480,
+        "sampleRate": 44100,
+        "width": 640
+      },
+      "isPlaying": true,
+      "isRunning": true,
+      "lastInput": {
+        "buttons": 0
+      },
+      "maximumDisplayUpdateGapSeconds": 0.19551270827651024,
+      "maximumSceneUpdateGapSeconds": 0.14283737493678927,
+      "maximumSceneUpdateSeconds": 0.1417147915926762,
+      "minPendingFrames": -984,
+      "outputLatencySeconds": 0.059604166666666666,
+      "outputSampleRate": 48000,
+      "pausedByHost": false,
+      "peakPendingFrames": 5641,
+      "pendingFrames": 4835,
+      "preferredDisplayFramesPerSecond": 60,
+      "renderedFrames": 4823952,
+      "sceneUpdateWallSeconds": 76.60307291918434,
+      "sceneUpdates": 7272,
+      "scheduledFrames": 4828787,
+      "sourceSampleRate": 44100,
+      "texturePresentations": 5222,
+      "underrunCount": 3,
+      "updatesOnMainThread": true,
+      "windowOccluded": false,
+      "windowVisible": true
+    },
+    "visualObservation": "Actual window showed correctly oriented grayscale intro with image detail. Saved source framebuffer at 80 seconds showed gameplay after the stadium pan."
+  }
+}

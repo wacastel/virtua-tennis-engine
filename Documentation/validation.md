@@ -6,14 +6,22 @@ NAOMI Virtua Tennis cartridge with the USA/English BIOS. This is an offline CPU
 translation project; original interpreters are isolated in the reference lab.
 
 The current engine SHA-256 is
-`cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c`.
+`b0dedf14347b3a93534d9a7c85ab327b99b947c0417d968c384f9f8e8fdf44e4`.
 Ad-hoc signing changes the packaged Mach-O hash; the package report binds that
 signed copy separately.
 
 The current Mac host maps pause/resume to DualSense Create rather than the
 left-stick press. It passes 159 source checks and the Swift typecheck. The
-[pause and opening-serve investigation](pause-and-serve.md) records current
+[pause and opening-serve investigation](pause-and-serve.md) records that change's
 host/package evidence and a 5,646-step neutral-after-selection comparison.
+
+The [stadium crowd-audio fix](stadium-audio-fix.md) enables the graphics driver's
+worker and reduces frame-upload overhead. Its rebuilt packaged app matches the
+reference across all 6,244 baseline steps and 5,003,652 stereo sample frames.
+The 159 host checks, Swift typecheck, 63 native lifecycle checks and synthetic
+texture comparisons pass. CPU manifests and CPU inputs are unchanged; the
+only changed native link input is the bridge object. Exact current source,
+engine, package and test identities are in [the stadium report](stadium-audio-fix.json).
 
 The [intro rendering correction](intro-rendering.md) enables rendered-texture
 readback into VRAM, restoring the monochrome shots that previously appeared
@@ -25,7 +33,7 @@ samples while preserving 15 adjacent color samples. The existing 6,244-step
 singles route also passes again through the original/native pair and the
 actual packaged app, and all 63 bridge lifecycle checks pass. That build's evidence is in
 [intro effect acceptance](intro-render-acceptance.json) and
-[current artifact validation](intro-render-validation.json).
+[graphics-correction artifact validation](intro-render-validation.json).
 
 The table below records the earlier qualification of engine
 `636b4ad2edf5336cc3e6f5f9c29d10d79600a243460f77e7f505e6c333d6f50e`.
@@ -53,6 +61,16 @@ runs are not performance measurements.
 
 ## Playback and visible presentation
 
+The September 28 stadium fix completed a four-minute uninstrumented production
+playback run. Four audio shortages and one clock recovery occurred before its
+first five-second snapshot; the counters remained unchanged for the rest of
+the run, including both stadium transitions. A separate visible diagnostic
+run recorded recoveries at boot and once earlier in the intro, with none during
+the stadium scene or afterward through step 6,049. **The strict whole-run
+smooth-playback check still fails.** These are bounded queue measurements,
+not proof of uninterrupted audible output. See the [stadium report](stadium-audio-fix.json)
+for the separate uninstrumented visible run, exact locations, and limitations.
+
 The September 24 120-second visible attract-mode run with readback enabled advanced
 6,580 steps and 119.010 emulated seconds. The rebuilt window visibly displayed
 detailed monochrome imagery and recorded no engine fault, audio underrun or
@@ -78,10 +96,13 @@ A [follow-up audio investigation](audio-hitch-investigation.md) measured the
 producer delays and tested two recovery changes using tagged PCM. Both changes
 were rejected after regressions in the controlled burst cases. The delivered
 audio implementation remains unchanged. Those measurements predate the RTT
-correction; the original playback limitation remains unresolved.
+correction and the stadium fix. They remain historical evidence for their
+recorded artifacts; the current bounded improvement and remaining recoveries
+are described above.
 
 ## Evidence
 
+- [Current stadium fix and validation](stadium-audio-fix.json)
 - [CPU and build acceptance](cpu-acceptance.json)
 - [Baseline original/native comparison](native-clock1-acceptance.json)
 - [Extended gameplay comparisons](extended-replay-acceptance.json)

@@ -16,7 +16,7 @@ actual packaged app. See
 `Documentation/intro-rendering.md` and `Documentation/validation.md` for
 the A/B evidence, current artifact checks and historical coverage boundaries.
 
-Live-audio testing has recorded brief underruns and timing recovery in a short gameplay section despite averaging approximately real time. The strict smooth-playback check is separate from replay correctness. See `Documentation/validation.md`, `Documentation/native-performance.json` and `Documentation/playback-investigation.json` for exact artifacts, measurements and limits. Physical controller actuation and audible speaker quality remain unverified.
+The stadium crowd-audio fix enables the OpenGL driver's worker during context initialization and reduces SpriteKit texture-upload overhead. The rebuilt packaged app matches the reference across 6,244 steps. A four-minute production playback run recorded no additional audio shortages after its first five seconds, including both stadium transitions. A separate visible diagnostic run also recorded no stadium shortages, but did record boot and earlier intro recoveries. The strict whole-run smooth-playback check still fails. See `Documentation/stadium-audio-fix.md` and its artifact-bound report for the current evidence; earlier performance reports retain their original artifact scope. Physical controller actuation and audible speaker quality remain unverified.
 
 ## Rebuild requirements
 

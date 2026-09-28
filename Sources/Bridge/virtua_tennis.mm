@@ -95,6 +95,16 @@ static void createGL() {
     CGLDestroyPixelFormat(format);
     require(result == kCGLNoError && context, "CGLCreateContext failed");
     require(CGLSetCurrentContext(context) == kCGLNoError, "Cannot make CGL context current");
+    // Offload driver command processing; guest CPUs, renderer submission and
+    // synchronous frame readback still belong to this context's owner thread.
+    // Toggle once during initialization, never while a frame is being drawn.
+    const CGLError workerStatus = CGLEnable(context, kCGLCEMPEngine);
+    GLint workerEnabled = GL_FALSE;
+    const bool driverWorker = workerStatus == kCGLNoError
+        && CGLIsEnabled(context, kCGLCEMPEngine, &workerEnabled) == kCGLNoError
+        && workerEnabled == GL_TRUE;
+    fprintf(stderr, "[graphics] OpenGL driver worker %s\n",
+            driverWorker ? "enabled" : "not confirmed");
     glGenFramebuffers(1, &framebuffer); glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
     glGenTextures(1, &color); glBindTexture(GL_TEXTURE_2D, color);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, surfaceSize, surfaceSize, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
