@@ -73,7 +73,9 @@ final class VTControls {
             if pad.buttonMenu.isPressed { buttons |= VTButton.start }
             buttons <<= UInt32(index * 8)
             if pad.leftShoulder.isPressed { buttons |= index == 0 ? VTButton.coin1 : VTButton.coin2 }
-            let pause = pad.leftThumbstickButton?.isPressed == true
+            // DualSense Create (left of the touchpad); pressing the movement
+            // stick must never interrupt a rally.
+            let pause = pad.buttonOptions?.isPressed == true
             if slot.needsNeutral {
                 if buttons == 0 && !pause { slot.needsNeutral = false }
                 slot.pause = pause; slot.current = 0; continue

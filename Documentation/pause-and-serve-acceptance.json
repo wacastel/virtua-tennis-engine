@@ -1,0 +1,232 @@
+{
+  "date": "2026-09-28",
+  "engineUnchangedSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+  "guiHelp": {
+    "observed": "Actual packaged Help > Controls dialog names Create (small button left of touchpad), Options remains Start; pause overlay names Create / Options / Return.",
+    "reportSHA256": "8d8ddad0e7d2a806f94caba3b57b37e87f4ada534861ea1f5b9046ae28b222b0",
+    "scope": "Muted UI inspection while a separate correctness replay ran; focus changes and Help pause were exercised. This is not a performance or live audio acceptance run. Existing audio limitation remains unresolved."
+  },
+  "hostChecks": {
+    "checkCount": 159,
+    "inputReportSHA256": "c160f7da90efee843a9c64e7872e912d8184394f9d84d6ac55554f37a929e8d5",
+    "passed": true,
+    "physicalControllerActuationTested": false,
+    "sourceSHA256": {
+      "Sources/Mac/AudioOutput.swift": "fd11c4d9fa95671a8fe5cd3756c322b10253505946f27846c61130923837753b",
+      "Sources/Mac/Controls.swift": "9df51fefbb4a3611a736fa9192887d557560c4eb5b7670cbd9256555a88f52ad",
+      "Sources/Mac/FrameClock.swift": "6f70e02a27f4bb83209dfcfddcdaad8e0bc23dc06d6c12b05aa9125f62e0da99",
+      "Sources/Mac/FrameContinuation.swift": "c69003ab2d2e051af9b41bd3ed6aed462dbe59db56f583cebe392a669f744906",
+      "Sources/Mac/FramePresentation.swift": "387e2f3e6d0e339c62a6b2205b81f2b6184c599d4034bffa2398e1836948daa2",
+      "Sources/Mac/GameScene.swift": "02e6fa8716b826aa7802056d9ba0f71d23f464d7810a0876c6a258277fbadf84",
+      "Sources/Mac/Input.swift": "989a7d383f56568c6d611199c610ec3d90fa3fd526fb05c3912f8ef49d7f9383",
+      "Sources/Mac/Media.swift": "20718890c882f89f67c15b8d52bc367fdb7cfc502664b6ffbe18172640dcd3ce",
+      "Sources/Mac/NativeGame.swift": "556bee976275a54d2556fe5d2aff21bf534b5310d8174d4c0a29d585f20fe1b8",
+      "Sources/Mac/Tests/FramePresentationTests.swift": "eb39c625730e3779a0b51ee6fb7ef7782d0ae6b9e43e6a2d67eeec8e5668d7a1",
+      "Sources/Mac/Tests/FrameSchedulingTests.swift": "0ba40e26c5ce41c55ee74c9f6e026c28aec5d0c20b388070e9c302bf63bdbe25",
+      "Sources/Mac/Tests/main.swift": "130871f19eb827a29758840fc2adc35933993b45a9415881c693c4fcb9bca1d8",
+      "Sources/Mac/main.swift": "6f1e4633c1dff389d699ad5dde9b0c948f8a2022b48453892622639ffea6a181",
+      "scripts/build_host.sh": "105956f73f7389f5f69389406d24652a4c5c8d38fcfa121edcafef92262cf5b3"
+    },
+    "typecheckReportSHA256": "301e41d367c6ba3e46e5425385a3d970a2e76041b8e63e13275c7e77fe814243"
+  },
+  "neutralOpeningServe": {
+    "DreamcastCompared": false,
+    "allInputsZeroFromStep": 3847,
+    "allInputsZeroThroughStep": 5646,
+    "captureSHA256": {
+      "4530": "122bdbf9438be0e629db5cfc5a1450b2d258bdbabcf64e79f59253cf34bea17f",
+      "4590": "5400d73914871ea67621d065086ca88676854bb0023a7b3be3dacb4e1d50f8fe",
+      "4620": "d9e2010328a81761d1c14a35e5c34350ac511d641914877c6641a9b2b25d5ceb",
+      "4650": "e66748c2424818a74a11085bfac796f2cf89e50cfb116ef8b3be405038687ff7",
+      "4680": "391a3cdf9cb2c34764d51a6579fc0be36c505ce589cac3971e9a988eefc527a9",
+      "5040": "d816504ff7dbd74ba18d0294206611a326aadec02ed649f8a0a9e2cebd1f2bb9",
+      "5310": "1e72de3d3a95ac1ae37ca4f6f7a70a1aaa6798e8101efaecee5be85d51a460e7",
+      "5340": "d74d7c1e0ce26469938db5ec391a9f518e1b4efbb0cf85a956e4da6d33865bea",
+      "5370": "d3fa6a75145897ebbbbc7ed685e36daed437a08ccd69f51472c7306bf6977eeb",
+      "5400": "25075c00c85094047e50a4ee9fadbdd248ce2b7881467c15443b99d1006b35da"
+    },
+    "inputRoute": "Configuration/replays/neutral-after-selection.json",
+    "physicalBoardCompared": false,
+    "replays": {
+      "originalNative": {
+        "comparedSteps": 5646,
+        "emulatedSeconds": 103.7243536,
+        "exactInputAndHardwareClock": true,
+        "exactPCMAndCounts": true,
+        "exactRGBA": true,
+        "finalSH4Ticks": 20744870720,
+        "firstDifferences": [],
+        "passed": true,
+        "purpose": "First and second serves with all controls neutral after character confirmation",
+        "runs": [
+          {
+            "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+            "coreSHA256": "f2370b63ee0a7f554d84e1389c12f683e5b8112a3133e05fa716953436b91a2d",
+            "finalRGBA_SHA256": "c4ac3b6d012a6ff623c0c878587e04e319fb154de842ee33d5e44b0a78541d9c",
+            "frameStreamSHA256": "1827069c734aa104694a864e266fd0659a5cc64804a7cfe3d65280ce938ce232",
+            "harnessSHA256": "d1cc8caab943e92611f4c53f6466411f37c32d927db98dd2954fcfecb58f5f7f",
+            "path": "build/pause-serve-investigation/reference/capture",
+            "pcmStreamSHA256": "e577fc58e1bc68a657ffcb9a09ce282618a14383408f38a0aca51839f25c3af4",
+            "reportSHA256": "1cc1e7c766d442b99dd07196e1da9857ecc4a4ff287c5787b78d41caaf3c91a3",
+            "routeSHA256": "440764b0ac43a9b1b4e47d9bafd93ca5856040a1e5c15c7e52eca3a6fcced0a1"
+          },
+          {
+            "contentSHA256": "6c02a7827bd33a0bd73782de1fa11839f80096f8e12b616cc13916d001f6a3b2",
+            "coreSHA256": "cb80e534e94afa6f2be4b8399bc11e2694d0a2c4b47d322b85b05dcbce4ac57c",
+            "finalRGBA_SHA256": "c4ac3b6d012a6ff623c0c878587e04e319fb154de842ee33d5e44b0a78541d9c",
+            "frameStreamSHA256": "1827069c734aa104694a864e266fd0659a5cc64804a7cfe3d65280ce938ce232",
+            "harnessSHA256": "d1cc8caab943e92611f4c53f6466411f37c32d927db98dd2954fcfecb58f5f7f",
+            "path": "build/pause-serve-investigation/native/capture",
+            "pcmStreamSHA256": "e577fc58e1bc68a657ffcb9a09ce282618a14383408f38a0aca51839f25c3af4",
+            "reportSHA256": "004e3c15460d893e6258556cd11459ffcdf8fac5a309ee17fd1f1166e56ef09a",
+            "routeSHA256": "440764b0ac43a9b1b4e47d9bafd93ca5856040a1e5c15c7e52eca3a6fcced0a1"
+          }
+        ],
+        "scope": "Exact pixels, samples/counts, inputs and scheduler ticks for this authentic replay on this host. This does not prove unvisited paths, all players or physical-board equivalence.",
+        "sourceScriptSHA256": "7a0d3ac10b47bdfe235eb747126e68d89f083129d4b1a004465a33320e15f368",
+        "stepUnit": "libretro presentation/50-ms timeout boundary, not hardware vblank",
+        "stereoSampleFrames": 4574392
+      },
+      "packagedApp": {
+        "appFramesSHA256": "ee743cfdf48831d66a0b333ab9ebd26b8b395a5f07673843e7a79af944835550",
+        "appReportSHA256": "6e19dd1c2d0cdb350d92010575b49c399af1b814bdbf4da0e8d6bf997fbc58a3",
+        "clockComparison": "Integer 200MHz ticks reconstructed by rounding C ABI double seconds after JSON serialization",
+        "emulatedSeconds": 103.72435359999999,
+        "exactRGBA_PCM_Counts_Clock": true,
+        "firstDifferences": [],
+        "originalReportSHA256": "1cc1e7c766d442b99dd07196e1da9857ecc4a4ff287c5787b78d41caaf3c91a3",
+        "packageArtifacts": {
+          "Contents/Frameworks/libvirtua_tennis.dylib": {
+            "architecture": "arm64",
+            "dependencies": [
+              "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+              "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+              "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+              "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+              "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)",
+              "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+              "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)"
+            ],
+            "minimumMacOS": "14.0",
+            "sha256": "412103e7ec0de888438f6ec3ca56daaebaf5beb67ad563fd16e5127debf98515"
+          },
+          "Contents/MacOS/VirtuaTennis": {
+            "architecture": "arm64",
+            "dependencies": [
+              "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+              "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+              "/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit (compatibility version 1.0.0, current version 53.0.2)",
+              "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+              "/System/Library/Frameworks/GameController.framework/Versions/A/GameController (compatibility version 1.0.0, current version 14.0.24)",
+              "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+              "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+              "/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio (compatibility version 1.0.0, current version 1.0.0)",
+              "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+              "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)",
+              "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+              "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)",
+              "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+              "/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2450.77.5, weak)",
+              "/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)",
+              "/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 482.102.10, weak)",
+              "/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)",
+              "/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 3.0.0, weak)",
+              "/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)",
+              "/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.0.10)",
+              "/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.0.2)",
+              "/usr/lib/swift/libswiftGLKit.dylib (compatibility version 1.0.0, current version 1.1.0, weak)",
+              "/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+              "/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 382.5.3, weak)",
+              "/usr/lib/swift/libswiftModelIO.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+              "/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)",
+              "/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0)",
+              "/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)",
+              "/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+              "/usr/lib/swift/libswiftSpriteKit.dylib (compatibility version 1.0.0, current version 1.2.0, weak)",
+              "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 917.0.1)",
+              "/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)",
+              "/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.0.0, weak)",
+              "/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 25.0.0, weak)"
+            ],
+            "minimumMacOS": "14.0",
+            "sha256": "343170212b752a6f27bf1baa3c76cf435030aa30076b0532f9243b7f6dc26954"
+          }
+        },
+        "packageManifestSHA256": "6a6a7863d532f25552a21e5cc1268f28ed2fe5feed15943ed426ff3eedecca6d",
+        "passed": true,
+        "scope": "Per-step equality through the actual packaged Swift host and C ABI, with fixed RTC and the same authored digital input route. This does not establish live audio pacing or physical controller actuation.",
+        "scriptSHA256": "c41d361767f722c5d7fee52361467d0517ee01ac3f8afc88a54d2d14e6993b88",
+        "steps": 5646,
+        "stereoSampleFrames": 4574392
+      }
+    },
+    "routeSHA256": "440764b0ac43a9b1b4e47d9bafd93ca5856040a1e5c15c7e52eca3a6fcced0a1",
+    "shotSteps": [
+      3845,
+      3846
+    ],
+    "visualInspection": "First toss visible at step4650, followed by rally; another idle serve visible on the following point. Both occur with no inputs after player confirmation.",
+    "zeroInputSteps": 1800
+  },
+  "packageArtifacts": {
+    "Contents/Frameworks/libvirtua_tennis.dylib": {
+      "architecture": "arm64",
+      "dependencies": [
+        "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+        "/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2200.27.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+        "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)"
+      ],
+      "minimumMacOS": "14.0",
+      "sha256": "412103e7ec0de888438f6ec3ca56daaebaf5beb67ad563fd16e5127debf98515"
+    },
+    "Contents/MacOS/VirtuaTennis": {
+      "architecture": "arm64",
+      "dependencies": [
+        "@rpath/libvirtua_tennis.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit (compatibility version 45.0.0, current version 2775.10.103)",
+        "/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit (compatibility version 1.0.0, current version 53.0.2)",
+        "/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation (compatibility version 1.0.0, current version 2.0.0)",
+        "/System/Library/Frameworks/GameController.framework/Versions/A/GameController (compatibility version 1.0.0, current version 14.0.24)",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics (compatibility version 64.0.0, current version 2050.0.0)",
+        "/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1359.0.0)",
+        "/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit (compatibility version 1.0.0, current version 1.0.0)",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation (compatibility version 300.0.0, current version 5027.0.69)",
+        "/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO (compatibility version 1.0.0, current version 1.0.0)",
+        "/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)",
+        "/usr/lib/swift/libswiftAVFoundation.dylib (compatibility version 1.0.0, current version 2450.77.5, weak)",
+        "/usr/lib/swift/libswiftCore.dylib (compatibility version 0.0.0, current version 0.0.0)",
+        "/usr/lib/swift/libswiftCoreAudio.dylib (compatibility version 1.0.0, current version 482.102.10, weak)",
+        "/usr/lib/swift/libswiftCoreFoundation.dylib (compatibility version 1.0.0, current version 120.100.0, weak)",
+        "/usr/lib/swift/libswiftCoreImage.dylib (compatibility version 1.0.0, current version 3.0.0, weak)",
+        "/usr/lib/swift/libswiftCoreMIDI.dylib (compatibility version 1.0.0, current version 6.0.0, weak)",
+        "/usr/lib/swift/libswiftDarwin.dylib (compatibility version 1.0.0, current version 428.0.10)",
+        "/usr/lib/swift/libswiftDispatch.dylib (compatibility version 1.0.0, current version 1605.0.2)",
+        "/usr/lib/swift/libswiftGLKit.dylib (compatibility version 1.0.0, current version 1.1.0, weak)",
+        "/usr/lib/swift/libswiftIOKit.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftMetal.dylib (compatibility version 1.0.0, current version 382.5.3, weak)",
+        "/usr/lib/swift/libswiftModelIO.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftOSLog.dylib (compatibility version 1.0.0, current version 10.0.0, weak)",
+        "/usr/lib/swift/libswiftObjectiveC.dylib (compatibility version 1.0.0, current version 973.1.0)",
+        "/usr/lib/swift/libswiftQuartzCore.dylib (compatibility version 1.0.0, current version 5.0.0, weak)",
+        "/usr/lib/swift/libswiftSpatial.dylib (compatibility version 1.0.0, current version 1.0.0, weak)",
+        "/usr/lib/swift/libswiftSpriteKit.dylib (compatibility version 1.0.0, current version 1.2.0, weak)",
+        "/usr/lib/swift/libswiftUniformTypeIdentifiers.dylib (compatibility version 1.0.0, current version 917.0.1)",
+        "/usr/lib/swift/libswiftXPC.dylib (compatibility version 1.0.0, current version 167.0.2, weak)",
+        "/usr/lib/swift/libswiftos.dylib (compatibility version 1.0.0, current version 1090.0.0, weak)",
+        "/usr/lib/swift/libswiftsimd.dylib (compatibility version 1.0.0, current version 25.0.0, weak)"
+      ],
+      "minimumMacOS": "14.0",
+      "sha256": "343170212b752a6f27bf1baa3c76cf435030aa30076b0532f9243b7f6dc26954"
+    }
+  },
+  "packageManifestSHA256": "6a6a7863d532f25552a21e5cc1268f28ed2fe5feed15943ed426ff3eedecca6d",
+  "passed": true,
+  "pauseButton": "DualSense Create (left of touchpad); L3 unused",
+  "scope": "Pause routing verified using Apple synthetic gamepads for both players; actual packaged help inspected. Bounded fresh-save fixed-RTC original/native and packaged replay parity establishes idle serving is shared with original arcade execution, not Sega design intent or Dreamcast behavior. No serving/game-code modification."
+}

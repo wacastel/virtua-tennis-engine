@@ -70,7 +70,7 @@ final class VTScene: SKScene {
     func setPaused(_ paused: Bool) {
         pacingQueue.cancel()
         pausedByHost = paused; controls.setPaused(paused); clock.reset(); audio.flush()
-        shade.isHidden = !paused; title.text = "Paused"; hint.text = "Release controls, then press Return / Options"
+        shade.isHidden = !paused; title.text = "Paused"; hint.text = "Release controls, then press Create / Options / Return"
     }
     func togglePause() { setPaused(!pausedByHost) }
     func resetGame() {

@@ -1,0 +1,35 @@
+{
+  "steps": [
+    {
+      "frames": 3000
+    },
+    {
+      "frames": 2,
+      "buttons": 65536
+    },
+    {
+      "frames": 58
+    },
+    {
+      "frames": 2,
+      "buttons": 128
+    },
+    {
+      "frames": 180
+    },
+    {
+      "frames": 2,
+      "buttons": 128
+    },
+    {
+      "frames": 600
+    },
+    {
+      "frames": 2,
+      "buttons": 16
+    },
+    {
+      "frames": 1800
+    }
+  ]
+}

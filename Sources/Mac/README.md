@@ -13,7 +13,7 @@ App identity, preferences and Application Support data use `local.william.virtua
 | Lob | Circle | X | G |
 | Coin | L1 | 5 | 6 |
 | Start / original menu confirm | Options | 1 / Return | 2 |
-| Pause | L3 | P / Escape | Shared |
+| Pause / resume | Create (small button left of touchpad) | P / Escape | Shared |
 
 Triangle and I are unused. No gameplay cheat was requested. The original arcade game supports singles against the computer or a second player. Shot is original SW1; Lob is SW2.
 

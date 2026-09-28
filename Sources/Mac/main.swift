@@ -41,7 +41,8 @@ if arguments.contains("--help") {
     Each PS5: D-pad/left stick moves; Cross shoots, Circle lobs.
     L1 inserts that player's coin; Options starts. Triangle/I are unused.
     P1 keyboard: arrows, Z/X, 5 coin, 1/Return Start. P2: WASD, F/G, 6 coin, 2 Start.
-    L3/P/Escape pauses the host. Up to two controllers retain their player assignments.
+    Create (left of the touchpad)/P/Escape pauses or resumes the host.
+    Options also resumes when paused. Up to two controllers retain their player assignments.
     """)
     exit(0)
 }
@@ -173,7 +174,7 @@ final class VTApp: NSObject, NSApplicationDelegate, NSWindowDelegate, NSMenuItem
     @objc private func controls() {
         scene.setPaused(true)
         let alert = NSAlert(); alert.messageText = "Virtua Tennis Controls"
-        alert.informativeText = "Each controller: left stick / D-pad moves\nShot: Cross · Lob: Circle\nCoin: L1 · Start: Options\n\nPlayer 1 keyboard: arrows move, Z/X shot/lob, 5 coin, 1 or Return Start\nPlayer 2 keyboard: WASD move, F/G shot/lob, 6 coin, 2 Start\n\nPause: L3 / P / Escape · Resume: Start\n\nUp to two controllers retain their player assignments. Focus loss, sleep or an assigned controller disconnect pauses the app. Release held controls before resuming."
+        alert.informativeText = "Each controller: left stick / D-pad moves\nShot: Cross · Lob: Circle\nCoin: L1 · Start: Options\n\nPlayer 1 keyboard: arrows move, Z/X shot/lob, 5 coin, 1 or Return Start\nPlayer 2 keyboard: WASD move, F/G shot/lob, 6 coin, 2 Start\n\nPause / resume: Create (small button left of touchpad) / P / Escape\nStart also resumes when paused.\n\nUp to two controllers retain their player assignments. Focus loss, sleep or an assigned controller disconnect pauses the app. Release held controls before resuming."
         alert.runModal(); window.makeFirstResponder(view)
     }
     @objc private func about() {

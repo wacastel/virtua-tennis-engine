@@ -80,6 +80,38 @@ do {
         try check(c.input() == VTInput(), "Triangle is unused")
         pad.buttonY.setValue(0); c.pollController()
     }
+    for (index,pad) in [a,b].enumerated() {
+        guard let create = pad.buttonOptions, let stickPress = pad.leftThumbstickButton else {
+            throw CheckError(description: "Synthetic controller lacks Create or L3")
+        }
+        let player = index + 1, shift = UInt32(index * 8), beforePause = pauses, beforeResume = resumes
+        stickPress.setValue(1); c.setPaused(false); c.pollController()
+        pad.leftThumbstick.setValueForXAxis(1,yAxis:0); c.pollController()
+        try check(!c.paused && pauses == beforePause && c.input().buttons == VTButton.right << shift,
+                  "P\(player) L3 neither pauses nor blocks neutral gating and movement")
+        stickPress.setValue(0); pad.leftThumbstick.setValueForXAxis(0,yAxis:0); c.pollController(); c.consumedFrame()
+        pad.buttonA.setValue(1); c.pollController()
+        create.setValue(1); c.pollController()
+        try check(c.paused && pauses == beforePause + 1 && c.input() == VTInput(),
+                  "P\(player) Create pauses and clears held and pending arcade input")
+        c.pollController(); c.pollController()
+        try check(c.paused && pauses == beforePause + 1, "P\(player) held Create toggles only once")
+        create.setValue(0); c.pollController(); create.setValue(1); c.pollController()
+        try check(c.paused && pauses == beforePause + 1,
+                  "P\(player) Create cannot resume while a gameplay button remains held")
+        create.setValue(0); pad.buttonA.setValue(0); c.pollController()
+        create.setValue(1); c.pollController(); c.pollController()
+        try check(!c.paused && pauses == beforePause + 2 && c.input() == VTInput(),
+                  "P\(player) fresh Create resumes once after neutral without entering arcade input")
+        create.setValue(0); c.pollController(); create.setValue(1); c.pollController()
+        create.setValue(0); c.pollController(); pad.buttonMenu.setValue(1); c.pollController(); c.pollController()
+        try check(!c.paused && resumes == beforeResume + 1 && c.input() == VTInput(),
+                  "P\(player) Options resumes without leaking held arcade Start")
+        pad.buttonMenu.setValue(0); c.pollController(); pad.buttonMenu.setValue(1); c.pollController()
+        try check(c.input().buttons == VTButton.start << shift,
+                  "P\(player) Options sends arcade Start after release and a new press")
+        pad.buttonMenu.setValue(0); c.pollController(); c.consumedFrame()
+    }
     b.buttonA.setValue(1); c.pollController(); c.consumedFrame()
     try check(c.refreshControllers([second]) && c.controllers[0] == nil && c.controllers[1] === second && second.playerIndex == .index2, "P1 disconnect preserves P2 slot")
     c.pollController(); try check(c.input().buttons == VTButton.shot << 8, "Surviving P2 remains in the high byte")

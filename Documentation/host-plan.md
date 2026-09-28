@@ -21,7 +21,7 @@ Sega's original-game service documentation describes a joystick, Shot and Lob, w
 | Lob | Circle | X | G |
 | Insert coin | L1 | 5 | 6 |
 | Start / confirm original menu | Options | Return or 1 | 2 |
-| Host pause / resume | L3 | P or Escape | Shared |
+| Host pause / resume | Create (small button left of touchpad) | P or Escape | Shared |
 
 Triangle and I remain unused. No invincibility or timer-freeze menu, replay field, flag or backend hook should be inherited. Reset and sound/fullscreen remain host menu actions. Preserve stable controller slots; disconnecting player 1 must not transfer a still-connected player 2 into player 1's slot. An ignored third pad should not clear an active player's held input.
 
